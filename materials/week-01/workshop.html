@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Workshop — session 1</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Workshop — session 1</h1>
+</header>
+<h1 id="session-1-workshop-files-folders-and-your-first-run">Session 1
+workshop — files, folders, and your first run</h1>
+<p><em>Ungraded, self-checked. You leave with a working setup, your
+first program run, your first error survived, and your first
+commit.</em></p>
+<h2 id="setup-10-min">Setup (10 min)</h2>
+<ol type="1">
+<li><p>Log into Nuvolos and open the <strong>VS Code</strong>
+app.</p></li>
+<li><p>In the left sidebar (the Explorer), find your files. The
+<code>session-01</code> folder was distributed to you. <strong>Copy
+it</strong> into a new folder called <code>dsap</code> — right-click →
+Copy, right-click → Paste. You work on your copy; the original stays
+untouched.</p></li>
+<li><p>Open a terminal: menu → Terminal → New Terminal.</p></li>
+<li><p>Plumbing check — type exactly this and press Enter:</p>
+<pre><code>python check.py</code></pre>
+<p>You should see: <code>setup OK — you can run Python files. ...</code>
+If you see anything else, <strong>raise your hand now.</strong> Nothing
+later works until this does.</p></li>
+</ol>
+<h2 id="paper-first-10-min-keyboard-closed">Paper first (10 min —
+keyboard closed)</h2>
+<p>Draw this tree on your worksheet, then answer in writing:</p>
+<pre><code>files/
+└── dsap/
+    ├── check.py
+    ├── hello.py
+    ├── ledger.csv
+    └── ledger.py</code></pre>
+<ul>
+<li>P1. Write the <strong>absolute path</strong> of
+<code>ledger.csv</code>.</li>
+<li>P2. You stand in <code>dsap</code>. Write the <strong>relative
+path</strong> of <code>ledger.csv</code>.</li>
+<li>P3. You stand in <code>files</code>. Write the relative path of
+<code>ledger.csv</code> now.</li>
+<li>P4. A program standing in <code>files</code> runs
+<code>open("ledger.csv")</code>. Will it find the file? One word, and
+one reason.</li>
+</ul>
+<h2 id="the-tasks-45-min">The tasks (45 min)</h2>
+<p><strong>T1 — run.</strong> In the terminal:
+<code>python hello.py</code>, then <code>python ledger.py</code>. Write
+down the <em>first</em> printed line of each.</p>
+<p><strong>T2 — break it on purpose.</strong> Go one folder up
+(<code>cd ..</code>), run <code>python dsap/ledger.py</code>. It fails.
+Copy the <strong>last line</strong> of the error onto your worksheet,
+word for word. This error means the program stood in the wrong folder —
+you will never fear it again. Return with <code>cd dsap</code>.</p>
+<p><strong>T3 — the unsaved-dot trap.</strong> Open
+<code>hello.py</code> in the editor. Change the message text. <strong>Do
+not save.</strong> Run it. Old message! Look at the tab: the white dot
+means unsaved. Save (Cmd/Ctrl-S), run again. Write one sentence: what
+does the dot mean?</p>
+<p><strong>T4 — edit for real.</strong> In <code>ledger.py</code>,
+change <code>version 0</code> to <code>version 0.1</code>. Save. Run.
+Confirm the output changed.</p>
+<p><strong>T5 — ask your assistant.</strong> Open any free chatbot in a
+second browser tab (create an account now if you don’t have one — you
+need it all semester). Paste the FULL error text from T2 and ask:
+<em>“Explain this error to a complete beginner.”</em> Read the answer.
+Does it agree with what the lecture said (the error is about WHERE, not
+wrong code)?</p>
+<p><strong>T6 — your first commit.</strong> Left sidebar → Source
+Control icon. 1. Click <strong>Initialize Repository</strong> (choose
+your <code>dsap</code> folder). 2. In the terminal, paste these two
+lines with YOUR details:
+<code>git config --global user.name "Your Name"    git config --global user.email "your.name@unil.ch"</code>
+3. Back in Source Control: type the message
+<code>session 1: first run</code>, press <strong>Commit</strong> (stage
+all when asked). 4. Readiness check: the file list in Source Control is
+now empty, and <code>git status</code> in the terminal says “nothing to
+commit”. You will commit like this at the end of every workshop.</p>
+<h2 id="self-check-write-before-you-peek">Self-check — write before you
+peek</h2>
+<p>Answer on the worksheet FIRST, then unfold.</p>
+<ul>
+<li>S1. What is printed first when <code>ledger.py</code> runs
+correctly?</li>
+<li>S2. What is the exact error <em>type</em> from T2 (the word before
+the colon)?</li>
+<li>S3. True or false: after T3’s first run, the file on disk had your
+new text.</li>
+</ul>
+<details>
+<summary>
+Answers (only after writing yours)
+</summary>
+<ul>
+<li>S1: <code>DSAP ledger, version 0</code></li>
+<li>S2: <code>FileNotFoundError</code></li>
+<li>S3: False — the editor had it; the disk still held the old text. The
+dot on the tab told you so.</li>
+</ul>
+</details>
+<h2 id="the-bridge-before-sep-28-no-class-sep-21">The bridge — before
+Sep 28 (no class Sep 21)</h2>
+<p>Two short visits, twenty minutes each. The goal is only this: your
+hands stay warm.</p>
+<p><strong>Visit 1 (this week):</strong> open Nuvolos again. In
+<code>dsap</code>, make a new file <code>notes.py</code> that prints one
+line about your day. Run it. Commit it (<code>bridge: notes</code>).</p>
+<p><strong>Visit 2 (next week):</strong> do the first two pages of <a
+href="https://futurecoder.io">futurecoder.io</a> — in the browser,
+nothing to install. Then make <code>notes.py</code> print a second line,
+run, commit.</p>
+<p>If either visit fails somewhere, that’s <em>useful</em> — write down
+where it stopped, bring it Sep 28, you will not be alone.</p>
+<h2 id="stretch-optional">Stretch (optional)</h2>
+<p>In the terminal, try <code>pwd</code> (print working directory) and
+<code>ls</code> (list files). Then predict: what does
+<code>python ../dsap/hello.py</code> do — and why does it work?</p>
+</body>
+</html>
