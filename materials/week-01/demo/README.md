@@ -5,7 +5,7 @@
 | hello.py | smallest program (witness snippet, slide 7) |
 | ledger.py | the ledger, version 0 — the main read script |
 | ledger.csv | three positions; the thread starts here |
-| check.py | workshop plumbing check |
+| check.py | plumbing check, kept for the site; the worksheet has students type their own files |
 
 Live sequence: run `python ledger.py` inside this folder (works), then
 from the parent (`python demo/ledger.py`) for the FileNotFoundError —
