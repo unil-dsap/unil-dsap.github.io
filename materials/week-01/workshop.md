@@ -263,6 +263,70 @@ again.
 
 ---
 
+## Part 6 — Where your file is
+
+The lecture said a file is bytes plus a name, and the name lives in a
+tree. Look at yours.
+
+1. In the file list, put the mouse on `hello.py` and hold it there. A
+   small label appears: `/files/dsap/hello.py`. That is the **absolute
+   path**: start at the root `/`, go into `files`, then `dsap`, and
+   there is the file. Every file in this workspace has one, and it
+   means the same thing from anywhere.
+2. Click once on `hello.py`, press **F2**, and rename it to `hello.txt`.
+   Press Enter. Look: the colours in the text are gone, and the ▷
+   button is gone. Nothing inside the file changed — every byte is the
+   same. The ending only tells the editor what to expect. This is the
+   lecture's "Windows hides extensions" trap, seen from the other side.
+3. F2 again, back to `hello.py`. Colours and ▷ return.
+
+✅ **Part 6 done** when you can say the full path of `hello.py`, and
+`hello.py` runs again.
+
+---
+
+## Part 7 — The three things hiding in plain sight
+
+The lecture showed them on the screen. Now your computer says them.
+
+New file in `dsap`: `float.py`. Type these three lines and run:
+
+```python
+print(0.1 + 0.2)
+print(0.1 + 0.2 == 0.3)
+print(round(0.5), round(1.5), round(2.5), round(3.5))
+```
+
+```
+0.30000000000000004
+False
+0 2 2 4
+```
+
+Line 1: `0.1` cannot be written exactly in binary, so the computer
+stores a very close neighbour and adds those. Line 2: which is why you
+never compare money with `==`. Line 3: `round` breaks ties toward the
+even number — the banking standard. Not a bug, not a beginner problem;
+this happens to everyone, forever.
+
+One more line, then run again:
+
+```python
+print(0.1 + 0.2 + 0.3, 0.3 + 0.2 + 0.1)
+```
+
+```
+0.6000000000000001 0.6
+```
+
+Same numbers, different order, different answer. Session 2 shows what
+to do about it.
+
+✅ **Part 7 done** when all four lines have printed and nothing
+surprised you the second time.
+
+---
+
 ## Before 28 September
 
 Come back once, on any day, for ten minutes: open Nuvolos, open VSCode,
@@ -276,8 +340,6 @@ and bring it.
 
 - In `portfolio.py`, add a fourth position — `msft = 3 * 410.00` — and
   put it into `total`. What happens to the NESN share? Predict first.
-- In a new file, `print(0.1 + 0.2)`. You saw this on a slide; now it is
-  your computer saying it.
 - New file `me.py`: print three lines — your name, your programme, and
   one number you calculated, for example the days until the end of the
   semester.

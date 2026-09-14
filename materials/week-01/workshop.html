@@ -324,6 +324,55 @@ Always.</p>
 <p>✅ <strong>Part 5 done</strong> when you have seen both messages and
 both files run again.</p>
 <hr />
+<h2 id="part-6-where-your-file-is">Part 6 — Where your file is</h2>
+<p>The lecture said a file is bytes plus a name, and the name lives in a
+tree. Look at yours.</p>
+<ol type="1">
+<li>In the file list, put the mouse on <code>hello.py</code> and hold it
+there. A small label appears: <code>/files/dsap/hello.py</code>. That is
+the <strong>absolute path</strong>: start at the root <code>/</code>, go
+into <code>files</code>, then <code>dsap</code>, and there is the file.
+Every file in this workspace has one, and it means the same thing from
+anywhere.</li>
+<li>Click once on <code>hello.py</code>, press <strong>F2</strong>, and
+rename it to <code>hello.txt</code>. Press Enter. Look: the colours in
+the text are gone, and the ▷ button is gone. Nothing inside the file
+changed — every byte is the same. The ending only tells the editor what
+to expect. This is the lecture’s “Windows hides extensions” trap, seen
+from the other side.</li>
+<li>F2 again, back to <code>hello.py</code>. Colours and ▷ return.</li>
+</ol>
+<p>✅ <strong>Part 6 done</strong> when you can say the full path of
+<code>hello.py</code>, and <code>hello.py</code> runs again.</p>
+<hr />
+<h2 id="part-7-the-three-things-hiding-in-plain-sight">Part 7 — The
+three things hiding in plain sight</h2>
+<p>The lecture showed them on the screen. Now your computer says
+them.</p>
+<p>New file in <code>dsap</code>: <code>float.py</code>. Type these
+three lines and run:</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.2</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.2</span> <span class="op">==</span> <span class="fl">0.3</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">0.5</span>), <span class="bu">round</span>(<span class="fl">1.5</span>), <span class="bu">round</span>(<span class="fl">2.5</span>), <span class="bu">round</span>(<span class="fl">3.5</span>))</span></code></pre></div>
+<pre><code>0.30000000000000004
+False
+0 2 2 4</code></pre>
+<p>Line 1: <code>0.1</code> cannot be written exactly in binary, so the
+computer stores a very close neighbour and adds those. Line 2: which is
+why you never compare money with <code>==</code>. Line 3:
+<code>round</code> breaks ties toward the even number — the banking
+standard. Not a bug, not a beginner problem; this happens to everyone,
+forever.</p>
+<p>One more line, then run again:</p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.2</span> <span class="op">+</span> <span class="fl">0.3</span>, <span class="fl">0.3</span> <span class="op">+</span> <span class="fl">0.2</span> <span class="op">+</span> <span class="fl">0.1</span>)</span></code></pre></div>
+<pre><code>0.6000000000000001 0.6</code></pre>
+<p>Same numbers, different order, different answer. Session 2 shows what
+to do about it.</p>
+<p>✅ <strong>Part 7 done</strong> when all four lines have printed and
+nothing surprised you the second time.</p>
+<hr />
 <h2 id="before-28-september">Before 28 September</h2>
 <p>Come back once, on any day, for ten minutes: open Nuvolos, open
 VSCode, open <code>portfolio.py</code>, change a number, run. If it
@@ -335,8 +384,6 @@ screen said and bring it.</p>
 <li>In <code>portfolio.py</code>, add a fourth position —
 <code>msft = 3 * 410.00</code> — and put it into <code>total</code>.
 What happens to the NESN share? Predict first.</li>
-<li>In a new file, <code>print(0.1 + 0.2)</code>. You saw this on a
-slide; now it is your computer saying it.</li>
 <li>New file <code>me.py</code>: print three lines — your name, your
 programme, and one number you calculated, for example the days until the
 end of the semester.</li>
