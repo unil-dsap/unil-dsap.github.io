@@ -31,9 +31,12 @@ If you get stuck, raise your hand and say which **part** you are on.
 A **file** is text with a name, saved on the computer. A **folder** is
 a list of files. A program is a file.
 
-1. In the file list, right-click on the empty space → **New Folder**.
-   Name it `dsap` — small letters, no spaces. Press Enter.
-2. Right-click on `dsap` → **New File**. Name it `hello.py`. Press Enter.
+1. In the file list on the left, put the mouse on the word **FILES** at
+   the top. Four small icons appear next to it. Click the second one,
+   **New Folder** (a folder with a plus). Name it `dsap` — small letters,
+   no spaces. Press Enter.
+2. Click once on `dsap` so it is selected, then click the first icon,
+   **New File**. Name it `hello.py`. Press Enter.
    The ending `.py` tells the computer: *this file is a Python program.*
 3. The file opens in the middle, empty. Type this exactly, including the
    quotation marks:
