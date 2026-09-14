@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" role="img"
+     aria-label="AND as two switches in a row, OR as two switches side by side, NOT as a switch that drains the line to ground.">
+  <defs>
+    <marker id="aIn" markerWidth="7" markerHeight="7" refX="6" refY="2.2"
+            orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,2.2 L0,4.4 z" fill="#0066ff"/>
+    </marker>
+    <marker id="aOut" markerWidth="7" markerHeight="7" refX="6" refY="2.2"
+            orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,2.2 L0,4.4 z" fill="#3a9b57"/>
+    </marker>
+    <marker id="aCtl" markerWidth="7" markerHeight="7" refX="6" refY="2.2"
+            orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,2.2 L0,4.4 z" fill="#e08a1e"/>
+    </marker>
+  </defs>
+
+  <style>
+    .t   { font-family: "Unil Sans", Arial, sans-serif; font-size: 21px; font-weight: 700; fill: #1e2b3e; }
+    .u   { font-family: "Unil Sans", Arial, sans-serif; font-size: 15px; fill: #8b96a5; }
+    .ctl { font-family: "Unil Sans", Arial, sans-serif; font-size: 17px; font-weight: 700; fill: #e08a1e; }
+    .pin { font-family: "Unil Sans", Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #4b5563; }
+    .c   { font-family: "Unil Sans", Arial, sans-serif; font-size: 16px; fill: #4b5563; }
+  </style>
+
+  <!-- ================================================================
+       Same symbol as the transistor slide: a circle with a slash, blue
+       current in, green current out, orange control. Control is drawn
+       as a single arrow per switch here; the in-and-out pair of the
+       first diagram would treble the clutter and add nothing.
+       ================================================================ -->
+
+  <!-- ============ AND : two in a row ============ -->
+  <g transform="translate(8,0)">
+    <text class="t" x="150" y="26" text-anchor="middle">AND</text>
+    <text class="u" x="150" y="48" text-anchor="middle">two in a row</text>
+
+    <line x1="14" y1="170" x2="62" y2="170" stroke="#0066ff" stroke-width="4"
+          stroke-linecap="round" marker-end="url(#aIn)"/>
+    <circle cx="94" cy="170" r="26" fill="#fdfdfc" stroke="#1e2b3e" stroke-width="3.5"/>
+    <line x1="79" y1="185" x2="109" y2="155" stroke="#1e2b3e" stroke-width="3.5" stroke-linecap="round"/>
+
+    <line x1="120" y1="170" x2="154" y2="170" stroke="#0066ff" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="186" cy="170" r="26" fill="#fdfdfc" stroke="#1e2b3e" stroke-width="3.5"/>
+    <line x1="171" y1="185" x2="201" y2="155" stroke="#1e2b3e" stroke-width="3.5" stroke-linecap="round"/>
+
+    <line x1="212" y1="170" x2="282" y2="170" stroke="#3a9b57" stroke-width="4"
+          stroke-linecap="round" marker-end="url(#aOut)"/>
+
+    <line x1="94" y1="104" x2="94" y2="138" stroke="#e08a1e" stroke-width="4"
+          stroke-linecap="round" marker-end="url(#aCtl)"/>
+    <text class="ctl" x="106" y="124">a</text>
+    <line x1="186" y1="104" x2="186" y2="138" stroke="#e08a1e" stroke-width="4"
+          stroke-linecap="round" marker-end="url(#aCtl)"/>
+    <text class="ctl" x="198" y="124">b</text>
+
+    <text class="c" x="150" y="300" text-anchor="middle">passes only if both are on</text>
+  </g>
+
+  <!-- ============ OR : side by side ============ -->
+  <g transform="translate(348,0)">
+    <text class="t" x="150" y="26" text-anchor="middle">OR</text>
+    <text class="u" x="150" y="48" text-anchor="middle">side by side</text>
+
+    <line x1="14" y1="170" x2="46" y2="170" stroke="#0066ff" stroke-width="4" stroke-linecap="round"/>
+    <line x1="46" y1="128" x2="46" y2="212" stroke="#0066ff" stroke-width="4" stroke-linecap="round"/>
+
+    <line x1="46" y1="128" x2="86" y2="128" stroke="#0066ff" stroke-width="4"
+          stroke-linecap="round" marker-end="url(#aIn)"/>
+    <circle cx="126" cy="128" r="26" fill="#fdfdfc" stroke="#1e2b3e" stroke-width="3.5"/>
+    <line x1="111" y1="143" x2="141" y2="113" stroke="#1e2b3e" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="152" y1="128" x2="214" y2="128" stroke="#3a9b57" stroke-width="4" stroke-linecap="round"/>
+
+    <line x1="46" y1="212" x2="86" y2="212" stroke="#0066ff" stroke-width="4"
+          stroke-linecap="round" marker-end="url(#aIn)"/>
+    <circle cx="126" cy="212" r="26" fill="#fdfdfc" stroke="#1e2b3e" stroke-width="3.5"/>
+    <line x1="111" y1="227" x2="141" y2="197" stroke="#1e2b3e" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="152" y1="212" x2="214" y2="212" stroke="#3a9b57" stroke-width="4" stroke-linecap="round"/>
+
+    <line x1="214" y1="128" x2="214" y2="212" stroke="#3a9b57" stroke-width="4" stroke-linecap="round"/>
+    <line x1="214" y1="170" x2="282" y2="170" stroke="#3a9b57" stroke-width="4"
+          stroke-linecap="round" marker-end="url(#aOut)"/>
+
+    <line x1="126" y1="62" x2="126" y2="96" stroke="#e08a1e" stroke-width="4"
+          stroke-linecap="round" marker-end="url(#aCtl)"/>
+    <text class="ctl" x="138" y="82">a</text>
+    <line x1="126" y1="278" x2="126" y2="244" stroke="#e08a1e" stroke-width="4"
+          stroke-linecap="round" marker-end="url(#aCtl)"/>
+    <text class="ctl" x="138" y="268">b</text>
+
+    <text class="c" x="150" y="300" text-anchor="middle">passes if either is on</text>
+  </g>
+
+  <!-- ============ NOT : one that drains the line ============ -->
+  <g transform="translate(688,0)">
+    <text class="t" x="150" y="26" text-anchor="middle">NOT</text>
+    <text class="u" x="150" y="48" text-anchor="middle">one that drains</text>
+
+    <text class="pin" x="126" y="82" text-anchor="middle">power</text>
+    <line x1="126" y1="92" x2="126" y2="140" stroke="#9aa6b6" stroke-width="4" stroke-linecap="round"/>
+    <line x1="126" y1="140" x2="282" y2="140" stroke="#3a9b57" stroke-width="4"
+          stroke-linecap="round" marker-end="url(#aOut)"/>
+
+    <line x1="126" y1="140" x2="126" y2="176" stroke="#9aa6b6" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="126" cy="202" r="26" fill="#fdfdfc" stroke="#1e2b3e" stroke-width="3.5"/>
+    <line x1="111" y1="217" x2="141" y2="187" stroke="#1e2b3e" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="126" y1="228" x2="126" y2="252" stroke="#9aa6b6" stroke-width="4" stroke-linecap="round"/>
+
+    <line x1="108" y1="254" x2="144" y2="254" stroke="#9aa6b6" stroke-width="4" stroke-linecap="round"/>
+    <line x1="114" y1="263" x2="138" y2="263" stroke="#9aa6b6" stroke-width="4" stroke-linecap="round"/>
+    <line x1="120" y1="272" x2="132" y2="272" stroke="#9aa6b6" stroke-width="4" stroke-linecap="round"/>
+
+    <line x1="48" y1="202" x2="86" y2="202" stroke="#e08a1e" stroke-width="4"
+          stroke-linecap="round" marker-end="url(#aCtl)"/>
+    <text class="ctl" x="38" y="208" text-anchor="end">a</text>
+
+    <text class="c" x="150" y="300" text-anchor="middle">on, unless a drains it away</text>
+  </g>
+</svg>

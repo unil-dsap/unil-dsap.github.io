@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Workshop — session 1</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Workshop — session 1</h1>
+</header>
+<h1 id="session-1-workshop-the-ledger-by-hand">Session 1 workshop — the
+ledger, by hand</h1>
+<p><em>Ungraded. You leave today having typed two short programs,
+predicted what they print, and been wrong at least once on
+purpose.</em></p>
+<p>The next session is in two weeks (no class on 21 September). Today we
+make sure everything works, and we do by hand what the lecture did on
+the screen.</p>
+<p>If you get stuck, raise your hand and say which <strong>part</strong>
+you are on.</p>
+<hr />
+<h2 id="part-1-open-the-editor">Part 1 — Open the editor</h2>
+<ol type="1">
+<li>Open the enrolment link —
+https://app.eu1.nuvolos.cloud/enroll/class/OqWYtk7RxbA — and sign in
+with the email you use for Moodle. <strong>Do this before Monday if you
+can.</strong> It takes two minutes, and it is the one step that cannot
+be hurried in a room of 250 people.</li>
+<li>Click the app called <strong>VSCode</strong>. Wait — the first start
+takes up to a minute. Do not click it again.</li>
+<li>You now see the editor. Three areas matter today.
+<strong>Left:</strong> the list of files, called the Explorer.
+<strong>Middle:</strong> where you type. <strong>Bottom:</strong> where
+results appear after you run something.</li>
+</ol>
+<p>✅ <strong>Part 1 done</strong> when you see the editor with the file
+list on the left.</p>
+<hr />
+<h2 id="part-2-a-folder-a-file-a-run">Part 2 — A folder, a file, a
+run</h2>
+<p>A <strong>file</strong> is text with a name, saved on the computer. A
+<strong>folder</strong> is a list of files. A program is a file.</p>
+<ol type="1">
+<li>In the file list, right-click on the empty space → <strong>New
+Folder</strong>. Name it <code>dsap</code> — small letters, no spaces.
+Press Enter.</li>
+<li>Right-click on <code>dsap</code> → <strong>New File</strong>. Name
+it <code>hello.py</code>. Press Enter. The ending <code>.py</code> tells
+the computer: <em>this file is a Python program.</em></li>
+<li>The file opens in the middle, empty. Type this exactly, including
+the quotation marks:</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;hello&quot;</span>)</span></code></pre></div>
+<ol start="4" type="1">
+<li><strong>Save</strong>: Cmd+S (Mac) or Ctrl+S (Windows). Look at the
+tab above the editor: before saving it shows a <strong>white
+dot</strong>, after saving the dot is gone. The dot means <em>“what you
+see is not yet saved.”</em> The program you run is always the saved
+one.</li>
+<li>Find the <strong>▷ (play) button</strong> at the top right. Click
+it. A panel opens at the bottom and after a moment shows:</li>
+</ol>
+<pre><code>hello</code></pre>
+<p><strong>You have written and run a program.</strong></p>
+<ol start="6" type="1">
+<li>Replace <code>hello</code> with your first name, keeping the
+quotation marks. <strong>Do not save.</strong> Click ▷. The old text
+appears — the dot is still on the tab. Save, run again: now your name.
+This is the most common mistake of the year; you have now made it on
+purpose.</li>
+</ol>
+<p>✅ <strong>Part 2 done</strong> when <code>hello.py</code> prints
+your name.</p>
+<hr />
+<h2 id="part-3-the-ledger-by-hand">Part 3 — The ledger, by hand</h2>
+<p>In the lecture you voted on what this program prints. Now type it. Do
+not copy and paste: typing is the point of this course, and the lecture
+told you why.</p>
+<ol type="1">
+<li>New file in <code>dsap</code>: <code>ledger.py</code>. Type these
+ten lines (the blank lines too — they do nothing, they are for your
+eyes):</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ticker <span class="op">=</span> <span class="st">&quot;AAPL&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>shares <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>price <span class="op">=</span> <span class="fl">190.50</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> shares <span class="op">*</span> price</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;value at&quot;</span>, price, <span class="st">&quot;is&quot;</span>, value)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>price <span class="op">=</span> <span class="fl">200.00</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;price is now&quot;</span>, price)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;value is still&quot;</span>, value)</span></code></pre></div>
+<ol start="2" type="1">
+<li><strong>Before you run it</strong>, write on paper what the last
+line prints.</li>
+<li>Save. Run. Compare with your paper:</li>
+</ol>
+<pre><code>value at 190.5 is 1905.0
+price is now 200.0
+value is still 1905.0</code></pre>
+<p>If you wrote <code>2000.0</code>: you read the program as Excel.
+<code>value = shares * price</code> does not mean <em>“value is always
+shares times price”</em>. It means <em>“work it out now, and call the
+answer <code>value</code>”</em>. Then it is done. The price changed
+afterwards; <code>value</code> did not look back.</p>
+<ol start="4" type="1">
+<li>Now move one line. Cut <code>price = 200.00</code> and paste it
+<strong>above</strong> <code>value = shares * price</code>. Delete the
+two <code>print</code> lines that no longer make sense, so the file
+reads:</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ticker <span class="op">=</span> <span class="st">&quot;AAPL&quot;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>shares <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>price <span class="op">=</span> <span class="fl">190.50</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>price <span class="op">=</span> <span class="fl">200.00</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> shares <span class="op">*</span> price</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;value at&quot;</span>, price, <span class="st">&quot;is&quot;</span>, value)</span></code></pre></div>
+<p>Save, run:</p>
+<pre><code>value at 200.0 is 2000.0</code></pre>
+<p>Two versions. Both run without any error. Only one of them is your
+portfolio. <strong>Nothing on the computer checks which</strong> — that
+is what the lecture called <em>runs and lies</em>, and it is what you
+are here to learn to see.</p>
+<ol start="5" type="1">
+<li>Add two lines at the very end: <code>shares = shares + 5</code>,
+then <code>print(shares)</code>. Predict, run. Read the first one from
+right to left: <em>take what <code>shares</code> is, add five, put it
+back under the name <code>shares</code>.</em> It is an instruction, not
+an equation.</li>
+</ol>
+<p>✅ <strong>Part 3 done</strong> when you have seen
+<code>1905.0</code> and <code>2000.0</code> from the same ten lines, and
+predicted the last one correctly.</p>
+<hr />
+<h2 id="part-4-calling-things">Part 4 — Calling things</h2>
+<p>Look at what you have typed so far. Every line that <em>does</em>
+something has the same shape:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;value at&quot;</span>, price, <span class="st">&quot;is&quot;</span>, value)</span></code></pre></div>
+<p>A <strong>name</strong>, then <strong>parentheses</strong>, and
+inside them what you hand over, separated by commas. That is a
+<strong>call</strong>. <code>print</code> is not a magic word; it is a
+piece of code somebody else wrote, and the parentheses are how you run
+it with your own values. Everything in Python that does work looks like
+this. Libraries, which the lecture called the reason Python won, are
+shelves of things to call.</p>
+<p>There are two kinds. <code>print</code> <strong>does</strong>
+something — text appears. Others <strong>give something back</strong>,
+and that is where today’s problem hides.</p>
+<ol type="1">
+<li>New file in <code>dsap</code>: <code>portfolio.py</code>. Type:</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>aapl <span class="op">=</span> <span class="dv">10</span> <span class="op">*</span> <span class="fl">190.50</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>nesn <span class="op">=</span> <span class="dv">4</span> <span class="op">*</span> <span class="fl">102.30</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>voo <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> <span class="fl">512.00</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> aapl <span class="op">+</span> nesn <span class="op">+</span> voo</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;total:&quot;</span>, total)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>share <span class="op">=</span> nesn <span class="op">/</span> total <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;NESN share, in percent:&quot;</span>, share)</span></code></pre></div>
+<p>Save, run:</p>
+<pre><code>total: 3338.2
+NESN share, in percent: 12.258103169372717</code></pre>
+<p>That last number is correct and unreadable. Python has
+<code>round</code> for this: hand it a number and how many decimals you
+want, and it gives back the rounded number.</p>
+<ol start="2" type="1">
+<li>Leave one blank line, then add two lines at the end:</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">round</span>(share, <span class="dv">2</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;rounded:&quot;</span>, share)</span></code></pre></div>
+<p>Predict. Save, run:</p>
+<pre><code>total: 3338.2
+NESN share, in percent: 12.258103169372717
+rounded: 12.258103169372717</code></pre>
+<p><strong>Nothing changed.</strong> No error, either.
+<code>round</code> did its job and handed back <code>12.26</code> — and
+nobody took it. A value that comes back from a call is not kept anywhere
+unless you give it a name. The line did work and threw the result
+away.</p>
+<ol start="3" type="1">
+<li>Fix the line so the answer is kept:</li>
+</ol>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>share <span class="op">=</span> <span class="bu">round</span>(share, <span class="dv">2</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;rounded:&quot;</span>, share)</span></code></pre></div>
+<pre><code>rounded: 12.26</code></pre>
+<p>Same <code>=</code> as before: <em>call <code>round</code>, take what
+comes back, put it under the name <code>share</code>.</em> This is the
+second thing today that ran perfectly and lied. Code written by a
+chatbot does this one all the time.</p>
+<p>✅ <strong>Part 4 done</strong> when <code>rounded: 12.26</code>
+appears, and you can say why the earlier version printed the long
+number.</p>
+<hr />
+<h2 id="part-5-break-it-three-ways">Part 5 — Break it, three ways</h2>
+<p>The lecture said code fails in three ways. You have already met the
+worst one — it runs and lies — twice. Now the other two, on purpose,
+because you will see them every week and they are the harmless ones.</p>
+<ol type="1">
+<li><strong>It won’t start.</strong> In <code>hello.py</code>, delete
+the second quotation mark. Save, run. Red text. Do not read it all; read
+only the <strong>last line</strong>:</li>
+</ol>
+<pre><code>SyntaxError: unterminated string literal (detected at line 1)</code></pre>
+<p>Python could not understand line 1, so it did not run anything at
+all. Put the quotation mark back.</p>
+<ol start="2" type="1">
+<li><strong>It crashes.</strong> In <code>portfolio.py</code>, change
+the last line to <code>print("rounded:", shar)</code> — one letter
+missing. Save, run:</li>
+</ol>
+<pre><code>total: 3338.2
+NESN share, in percent: 12.258103169372717
+Traceback (most recent call last):
+  File &quot;/files/dsap/portfolio.py&quot;, line 12, in &lt;module&gt;
+    print(&quot;rounded:&quot;, shar)
+                      ^^^^
+NameError: name &#39;shar&#39; is not defined. Did you mean: &#39;share&#39;?</code></pre>
+<p>Two lines printed <strong>before</strong> it stopped: the program ran
+top to bottom until line 12, then hit a name it had never seen. The last
+line says what went wrong and even guesses the fix. Fix it.</p>
+<p>Every error you ever see will look like this: some lines, then a last
+line that says what is wrong. <strong>Read the last line first.</strong>
+Always.</p>
+<p>✅ <strong>Part 5 done</strong> when you have seen both messages and
+both files run again.</p>
+<hr />
+<h2 id="before-28-september">Before 28 September</h2>
+<p>Come back once, on any day, for ten minutes: open Nuvolos, open
+VSCode, open <code>portfolio.py</code>, change a number, save, run. If
+it works, you are ready for session 2. If it does not, write down what
+the screen said and bring it.</p>
+<hr />
+<h2 id="if-you-finished-early">If you finished early</h2>
+<ul>
+<li>In <code>portfolio.py</code>, add a fourth position —
+<code>msft = 3 * 410.00</code> — and put it into <code>total</code>.
+What happens to the NESN share? Predict first.</li>
+<li>In a new file, <code>print(0.1 + 0.2)</code>. You saw this on a
+slide; now it is your computer saying it.</li>
+<li>New file <code>me.py</code>: print three lines — your name, your
+programme, and one number you calculated, for example the days until the
+end of the semester.</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1010 330" role="img"
+     aria-label="Switches are packaged into a gate, gates into an adder, adders into a plus; each level hides the one below.">
+  <defs>
+    <marker id="pIn" markerWidth="7" markerHeight="7" refX="6" refY="2.2"
+            orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,2.2 L0,4.4 z" fill="#0066ff"/>
+    </marker>
+    <marker id="pOut" markerWidth="7" markerHeight="7" refX="6" refY="2.2"
+            orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,2.2 L0,4.4 z" fill="#3a9b57"/>
+    </marker>
+    <marker id="pCtl" markerWidth="7" markerHeight="7" refX="6" refY="2.2"
+            orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,2.2 L0,4.4 z" fill="#e08a1e"/>
+    </marker>
+  </defs>
+
+  <style>
+    .h  { font-family: "Unil Sans", Arial, sans-serif; font-size: 19px; font-weight: 700; fill: #1e2b3e; }
+    .s  { font-family: "Unil Sans", Arial, sans-serif; font-size: 14px; fill: #8b96a5; }
+    .bx { font-family: "Unil Sans", Arial, sans-serif; font-size: 25px; font-weight: 700; fill: #fff; }
+    .pin{ font-family: "Unil Sans", Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #4b5563; }
+    .cap{ font-family: "Unil Sans", Arial, sans-serif; font-size: 15px; fill: #4b5563; }
+  </style>
+
+  <!-- ================================================================
+       Level 1 uses the same circle and slash symbol as the transistor
+       slide, so the room can see that the box in level 2 is literally
+       these switches with a lid on.
+       ================================================================ -->
+
+  <!-- ============== LEVEL 1 : loose switches ============== -->
+  <g transform="translate(6,0)">
+    <text class="h" x="118" y="26" text-anchor="middle">switches</text>
+    <text class="s" x="118" y="47" text-anchor="middle">wires and gaps</text>
+
+    <line x1="18" y1="112" x2="48" y2="112" stroke="#0066ff" stroke-width="3.5"
+          stroke-linecap="round" marker-end="url(#pIn)"/>
+    <circle cx="74" cy="112" r="20" fill="#fdfdfc" stroke="#1e2b3e" stroke-width="3"/>
+    <line x1="62" y1="124" x2="86" y2="100" stroke="#1e2b3e" stroke-width="3" stroke-linecap="round"/>
+    <line x1="94" y1="112" x2="130" y2="112" stroke="#3a9b57" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="74" y1="66" x2="74" y2="88" stroke="#e08a1e" stroke-width="3.5"
+          stroke-linecap="round" marker-end="url(#pCtl)"/>
+
+    <line x1="18" y1="196" x2="48" y2="196" stroke="#0066ff" stroke-width="3.5"
+          stroke-linecap="round" marker-end="url(#pIn)"/>
+    <circle cx="74" cy="196" r="20" fill="#fdfdfc" stroke="#1e2b3e" stroke-width="3"/>
+    <line x1="62" y1="208" x2="86" y2="184" stroke="#1e2b3e" stroke-width="3" stroke-linecap="round"/>
+    <line x1="94" y1="196" x2="130" y2="196" stroke="#3a9b57" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="74" y1="250" x2="74" y2="228" stroke="#e08a1e" stroke-width="3.5"
+          stroke-linecap="round" marker-end="url(#pCtl)"/>
+
+    <line x1="130" y1="112" x2="130" y2="196" stroke="#3a9b57" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="130" y1="154" x2="176" y2="154" stroke="#3a9b57" stroke-width="3.5"
+          stroke-linecap="round" marker-end="url(#pOut)"/>
+
+    <text class="cap" x="112" y="286" text-anchor="middle">fiddly, and easy</text>
+    <text class="cap" x="112" y="305" text-anchor="middle">to get wrong</text>
+  </g>
+
+  <text x="212" y="162" font-size="30" fill="#c3cad4" font-family="Arial">&#8594;</text>
+
+  <!-- ============== LEVEL 2 : packaged as a gate ============== -->
+  <g transform="translate(252,0)">
+    <text class="h" x="100" y="26" text-anchor="middle">a gate</text>
+    <text class="s" x="100" y="47" text-anchor="middle">put a box around it</text>
+
+    <rect x="34" y="108" width="132" height="92" rx="10" fill="#395b8c"/>
+    <text class="bx" x="100" y="162" text-anchor="middle">AND</text>
+
+    <line x1="2"  y1="132" x2="34" y2="132" stroke="#0066ff" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="2"  y1="176" x2="34" y2="176" stroke="#0066ff" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="166" y1="154" x2="200" y2="154" stroke="#3a9b57" stroke-width="3.5"
+          stroke-linecap="round" marker-end="url(#pOut)"/>
+
+    <text class="cap" x="100" y="286" text-anchor="middle">now it has a name,</text>
+    <text class="cap" x="100" y="305" text-anchor="middle">two ways in, one out</text>
+  </g>
+
+  <text x="466" y="162" font-size="30" fill="#c3cad4" font-family="Arial">&#8594;</text>
+
+  <!-- ============== LEVEL 3 : gates wired into an adder ============== -->
+  <g transform="translate(506,0)">
+    <text class="h" x="100" y="26" text-anchor="middle">an adder</text>
+    <text class="s" x="100" y="47" text-anchor="middle">wire gates together</text>
+
+    <rect x="26" y="90" width="150" height="128" rx="10" fill="none"
+          stroke="#c3cad4" stroke-width="2" stroke-dasharray="6 5"/>
+    <rect x="44" y="104" width="54" height="34" rx="6" fill="#6f8cb5"/>
+    <rect x="104" y="104" width="54" height="34" rx="6" fill="#6f8cb5"/>
+    <rect x="44" y="170" width="54" height="34" rx="6" fill="#6f8cb5"/>
+    <rect x="104" y="170" width="54" height="34" rx="6" fill="#6f8cb5"/>
+    <g stroke="#9aa6b6" stroke-width="3">
+      <line x1="98" y1="121" x2="104" y2="121"/>
+      <line x1="98" y1="187" x2="104" y2="187"/>
+      <line x1="71" y1="138" x2="71" y2="170"/>
+      <line x1="131" y1="138" x2="131" y2="170"/>
+    </g>
+
+    <text class="cap" x="100" y="286" text-anchor="middle">four gates, wired —</text>
+    <text class="cap" x="100" y="305" text-anchor="middle">it adds two bits</text>
+  </g>
+
+  <text x="720" y="162" font-size="30" fill="#c3cad4" font-family="Arial">&#8594;</text>
+
+  <!-- ============== LEVEL 4 : the box again ============== -->
+  <g transform="translate(760,0)">
+    <text class="h" x="110" y="26" text-anchor="middle">so box that too</text>
+    <text class="s" x="110" y="47" text-anchor="middle">and keep going</text>
+
+    <rect x="40" y="108" width="140" height="92" rx="10" fill="#1e2b3e"/>
+    <text class="bx" x="110" y="164" text-anchor="middle">+</text>
+
+    <line x1="8"  y1="132" x2="40" y2="132" stroke="#0066ff" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="8"  y1="176" x2="40" y2="176" stroke="#0066ff" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="180" y1="154" x2="214" y2="154" stroke="#3a9b57" stroke-width="3.5"
+          stroke-linecap="round" marker-end="url(#pOut)"/>
+
+    <text class="cap" x="110" y="286" text-anchor="middle">the wires inside are</text>
+    <text class="cap" x="110" y="305" text-anchor="middle">nobody's problem now</text>
+  </g>
+</svg>

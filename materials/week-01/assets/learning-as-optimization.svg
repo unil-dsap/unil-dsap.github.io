@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1010 330" role="img"
+     aria-labelledby="title description">
+  <title id="title">Different learning questions become optimization problems</title>
+  <desc id="description">Prediction measures error against known answers. Grouping measures distances within groups. Both ask for settings that minimise the chosen loss.</desc>
+  <defs>
+    <marker id="loss-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#0066ff"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: "Unil Sans", Arial, sans-serif; fill: #1e2b3e; }
+    .title { font-size: 25px; font-weight: 700; }
+    .body { font-size: 20px; }
+    .label { font-size: 20px; font-weight: 700; fill: #395b8c; }
+  </style>
+
+  <!-- Each question supplies a different loss; both reach the same task. -->
+  <rect x="15" y="20" width="350" height="125" rx="10" fill="#f1f4f8" stroke="#c3cad4" stroke-width="2"/>
+  <text class="title" x="40" y="58">Predict an answer</text>
+  <text class="body" x="40" y="94">Loss: error against</text>
+  <text class="body" x="40" y="121">the known answers</text>
+
+  <rect x="15" y="185" width="350" height="125" rx="10" fill="#f1f4f8" stroke="#c3cad4" stroke-width="2"/>
+  <text class="title" x="40" y="223">Find groups</text>
+  <text class="body" x="40" y="259">Loss: distances within</text>
+  <text class="body" x="40" y="286">the chosen groups</text>
+
+  <path d="M365,82 H405 V145 H476" fill="none" stroke="#0066ff" stroke-width="3" stroke-linejoin="round" marker-end="url(#loss-arrow)"/>
+  <path d="M365,247 H405 V185 H476" fill="none" stroke="#0066ff" stroke-width="3" stroke-linejoin="round" marker-end="url(#loss-arrow)"/>
+
+  <rect x="485" y="85" width="510" height="160" rx="10" fill="#fff" stroke="#395b8c" stroke-width="3"/>
+  <text class="label" x="520" y="126">AN OPTIMIZATION PROBLEM</text>
+  <text class="title" x="520" y="170">Find the settings that make</text>
+  <text class="title" x="520" y="206">the chosen loss small.</text>
+</svg>

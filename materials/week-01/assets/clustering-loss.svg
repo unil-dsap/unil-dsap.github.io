@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1010 355" role="img" aria-labelledby="title desc">
+<title id="title">The same asset histories, grouped in two ways</title>
+<desc id="desc">Two groups of two assets in each panel. Mixed groups have large gaps from their average pattern. Grouping similar patterns makes those gaps smaller. All plots share the same scale. These are synthetic daily percentage changes, not market data.</desc>
+<style>
+text { font-family: "Unil Sans", Arial, sans-serif; fill: #1e2b3e; }
+.heading { font-size: 23px; font-weight: 700; }
+.label { font-size: 18px; }
+.asset { fill: none; stroke: #0066ff; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.mean { fill: none; stroke: #bd7b11; stroke-width: 2.6; stroke-dasharray: 7 5; }
+</style>
+<!-- Coordinates and losses are checked by demo/lecture/verify/why_data_science.py. -->
+<rect x="15" y="5" width="475" height="305" rx="10" fill="#f7f9fc" stroke="#c3cad4" stroke-width="1.5"/><text class="heading" x="35" y="36">Mixed groups: larger loss</text>
+<text class="label" x="35" y="119">A, C</text>
+<line x1="100" y1="113" x2="350" y2="113" stroke="#c3cad4" stroke-width="1"/>
+<polyline id="mixed-0-A" class="asset" points="100,96 180,79 260,96 340,79"/>
+<polyline id="mixed-0-C" class="asset" points="100,130 180,147 260,130 340,147"/>
+<polyline id="mixed-0-mean" class="mean" points="100,113 180,113 260,113 340,113"/>
+<text class="label" x="35" y="247">B, D</text>
+<line x1="100" y1="241" x2="350" y2="241" stroke="#c3cad4" stroke-width="1"/>
+<polyline id="mixed-1-B" class="asset" points="100,213.8 180,196.8 260,213.8 340,196.8"/>
+<polyline id="mixed-1-D" class="asset" points="100,268.2 180,285.2 260,268.2 340,285.2"/>
+<polyline id="mixed-1-mean" class="mean" points="100,241.0 180,241.0 260,241.0 340,241.0"/>
+<rect x="520" y="5" width="475" height="305" rx="10" fill="#f7f9fc" stroke="#c3cad4" stroke-width="1.5"/><text class="heading" x="540" y="36">Similar groups: smaller loss</text>
+<text class="label" x="540" y="119">A, B</text>
+<line x1="605" y1="113" x2="855" y2="113" stroke="#c3cad4" stroke-width="1"/>
+<polyline id="similar-0-A" class="asset" points="605,96 685,79 765,96 845,79"/>
+<polyline id="similar-0-B" class="asset" points="605,85.8 685,68.8 765,85.8 845,68.8"/>
+<polyline id="similar-0-mean" class="mean" points="605,90.9 685,73.9 765,90.9 845,73.9"/>
+<text class="label" x="540" y="247">C, D</text>
+<line x1="605" y1="241" x2="855" y2="241" stroke="#c3cad4" stroke-width="1"/>
+<polyline id="similar-1-C" class="asset" points="605,258 685,275 765,258 845,275"/>
+<polyline id="similar-1-D" class="asset" points="605,268.2 685,285.2 765,268.2 845,285.2"/>
+<polyline id="similar-1-mean" class="mean" points="605,263.1 685,280.1 765,263.1 845,280.1"/>
+<line x1="25" y1="337" x2="65" y2="337" stroke="#0066ff" stroke-width="3"/><text class="label" x="75" y="343">asset</text>
+<line x1="165" y1="337" x2="205" y2="337" stroke="#bd7b11" stroke-width="3" stroke-dasharray="7 5"/><text class="label" x="215" y="343">group average</text>
+<text class="label" x="470" y="343">Daily percentage changes · synthetic · same scale</text>
+</svg>
