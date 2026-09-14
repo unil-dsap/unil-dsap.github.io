@@ -45,10 +45,11 @@ a list of files. A program is a file.
 print("hello")
 ```
 
-4. **Save**: Cmd+S (Mac) or Ctrl+S (Windows). Look at the tab above the
-   editor: before saving it shows a **white dot**, after saving the dot
-   is gone. The dot means *"what you see is not yet saved."* The program
-   you run is always the saved one.
+4. Notice: there is no Save to press. This workspace saves every
+   change by itself — a moment after you type, the file on the computer
+   is already updated. (On your own laptop, VS Code does not do this:
+   there you press Cmd+S or Ctrl+S, and an unsaved file shows a white
+   dot on its tab.)
 5. Find the **▷ (play) button** at the top right. Click it. A panel
    opens at the bottom and after a moment shows:
 
@@ -59,9 +60,8 @@ hello
 **You have written and run a program.**
 
 6. Replace `hello` with your first name, keeping the quotation marks.
-   **Do not save.** Click ▷. The old text appears — the dot is still on
-   the tab. Save, run again: now your name. This is the most common
-   mistake of the year; you have now made it on purpose.
+   Click ▷ again. Your name appears. Change it once more, run once more:
+   what runs is always what is in the file right now.
 
 ✅ **Part 2 done** when `hello.py` prints your name.
 
@@ -90,7 +90,7 @@ print("value is still", value)
 ```
 
 2. **Before you run it**, write on paper what the last line prints.
-3. Save. Run. Compare with your paper:
+3. Run. Compare with your paper:
 
 ```
 value at 190.5 is 1905.0
@@ -117,7 +117,7 @@ value = shares * price
 print("value at", price, "is", value)
 ```
 
-Save, run:
+Run:
 
 ```
 value at 200.0 is 2000.0
@@ -171,7 +171,7 @@ share = nesn / total * 100
 print("NESN share, in percent:", share)
 ```
 
-Save, run:
+Run:
 
 ```
 total: 3338.2
@@ -189,7 +189,7 @@ round(share, 2)
 print("rounded:", share)
 ```
 
-Predict. Save, run:
+Predict. Run:
 
 ```
 total: 3338.2
@@ -229,7 +229,7 @@ worst one — it runs and lies — twice. Now the other two, on purpose,
 because you will see them every week and they are the harmless ones.
 
 1. **It won't start.** In `hello.py`, delete the second quotation mark.
-   Save, run. Red text. Do not read it all; read only the **last line**:
+   Run. Red text. Do not read it all; read only the **last line**:
 
 ```
 SyntaxError: unterminated string literal (detected at line 1)
@@ -239,7 +239,7 @@ Python could not understand line 1, so it did not run anything at all.
 Put the quotation mark back.
 
 2. **It crashes.** In `portfolio.py`, change the last line to
-   `print("rounded:", shar)` — one letter missing. Save, run:
+   `print("rounded:", shar)` — one letter missing. Run:
 
 ```
 total: 3338.2
@@ -266,7 +266,7 @@ again.
 ## Before 28 September
 
 Come back once, on any day, for ten minutes: open Nuvolos, open VSCode,
-open `portfolio.py`, change a number, save, run. If it works, you are
+open `portfolio.py`, change a number, run. If it works, you are
 ready for session 2. If it does not, write down what the screen said
 and bring it.
 

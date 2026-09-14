@@ -146,11 +146,10 @@ the quotation marks:</li>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;hello&quot;</span>)</span></code></pre></div>
 <ol start="4" type="1">
-<li><strong>Save</strong>: Cmd+S (Mac) or Ctrl+S (Windows). Look at the
-tab above the editor: before saving it shows a <strong>white
-dot</strong>, after saving the dot is gone. The dot means <em>“what you
-see is not yet saved.”</em> The program you run is always the saved
-one.</li>
+<li>Notice: there is no Save to press. This workspace saves every change
+by itself — a moment after you type, the file on the computer is already
+updated. (On your own laptop, VS Code does not do this: there you press
+Cmd+S or Ctrl+S, and an unsaved file shows a white dot on its tab.)</li>
 <li>Find the <strong>▷ (play) button</strong> at the top right. Click
 it. A panel opens at the bottom and after a moment shows:</li>
 </ol>
@@ -158,10 +157,8 @@ it. A panel opens at the bottom and after a moment shows:</li>
 <p><strong>You have written and run a program.</strong></p>
 <ol start="6" type="1">
 <li>Replace <code>hello</code> with your first name, keeping the
-quotation marks. <strong>Do not save.</strong> Click ▷. The old text
-appears — the dot is still on the tab. Save, run again: now your name.
-This is the most common mistake of the year; you have now made it on
-purpose.</li>
+quotation marks. Click ▷ again. Your name appears. Change it once more,
+run once more: what runs is always what is in the file right now.</li>
 </ol>
 <p>✅ <strong>Part 2 done</strong> when <code>hello.py</code> prints
 your name.</p>
@@ -189,7 +186,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a hr
 <ol start="2" type="1">
 <li><strong>Before you run it</strong>, write on paper what the last
 line prints.</li>
-<li>Save. Run. Compare with your paper:</li>
+<li>Run. Compare with your paper:</li>
 </ol>
 <pre><code>value at 190.5 is 1905.0
 price is now 200.0
@@ -213,7 +210,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a hr
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> shares <span class="op">*</span> price</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;value at&quot;</span>, price, <span class="st">&quot;is&quot;</span>, value)</span></code></pre></div>
-<p>Save, run:</p>
+<p>Run:</p>
 <pre><code>value at 200.0 is 2000.0</code></pre>
 <p>Two versions. Both run without any error. Only one of them is your
 portfolio. <strong>Nothing on the computer checks which</strong> — that
@@ -258,7 +255,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a hr
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>share <span class="op">=</span> nesn <span class="op">/</span> total <span class="op">*</span> <span class="dv">100</span></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;NESN share, in percent:&quot;</span>, share)</span></code></pre></div>
-<p>Save, run:</p>
+<p>Run:</p>
 <pre><code>total: 3338.2
 NESN share, in percent: 12.258103169372717</code></pre>
 <p>That last number is correct and unreadable. Python has
@@ -270,7 +267,7 @@ want, and it gives back the rounded number.</p>
 <div class="sourceCode" id="cb10"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">round</span>(share, <span class="dv">2</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;rounded:&quot;</span>, share)</span></code></pre></div>
-<p>Predict. Save, run:</p>
+<p>Predict. Run:</p>
 <pre><code>total: 3338.2
 NESN share, in percent: 12.258103169372717
 rounded: 12.258103169372717</code></pre>
@@ -300,8 +297,8 @@ worst one — it runs and lies — twice. Now the other two, on purpose,
 because you will see them every week and they are the harmless ones.</p>
 <ol type="1">
 <li><strong>It won’t start.</strong> In <code>hello.py</code>, delete
-the second quotation mark. Save, run. Red text. Do not read it all; read
-only the <strong>last line</strong>:</li>
+the second quotation mark. Run. Red text. Do not read it all; read only
+the <strong>last line</strong>:</li>
 </ol>
 <pre><code>SyntaxError: unterminated string literal (detected at line 1)</code></pre>
 <p>Python could not understand line 1, so it did not run anything at
@@ -309,7 +306,7 @@ all. Put the quotation mark back.</p>
 <ol start="2" type="1">
 <li><strong>It crashes.</strong> In <code>portfolio.py</code>, change
 the last line to <code>print("rounded:", shar)</code> — one letter
-missing. Save, run:</li>
+missing. Run:</li>
 </ol>
 <pre><code>total: 3338.2
 NESN share, in percent: 12.258103169372717
@@ -329,9 +326,9 @@ both files run again.</p>
 <hr />
 <h2 id="before-28-september">Before 28 September</h2>
 <p>Come back once, on any day, for ten minutes: open Nuvolos, open
-VSCode, open <code>portfolio.py</code>, change a number, save, run. If
-it works, you are ready for session 2. If it does not, write down what
-the screen said and bring it.</p>
+VSCode, open <code>portfolio.py</code>, change a number, run. If it
+works, you are ready for session 2. If it does not, write down what the
+screen said and bring it.</p>
 <hr />
 <h2 id="if-you-finished-early">If you finished early</h2>
 <ul>
