@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 280" width="780" height="280" font-family="'Unil Sans', Arial, sans-serif">
+<rect width="780" height="280" fill="#fdfdfc"/>
+<text x="200.0" y="62.0" font-size="17" fill="#1e2b3e" text-anchor="end" font-weight="700" >Literary Digest</text>
+<text x="200.0" y="82.0" font-size="13" fill="#4b5563" text-anchor="end" font-weight="400" >~2.4 million replies</text>
+<rect x="215" y="46" width="258" height="34" fill="#c0392b"/>
+<text x="481.0" y="70.0" font-size="16" fill="#1e2b3e" text-anchor="start" font-weight="700" >43% for Roosevelt</text>
+<text x="200.0" y="132.0" font-size="17" fill="#1e2b3e" text-anchor="end" font-weight="700" >Gallup</text>
+<text x="200.0" y="152.0" font-size="13" fill="#4b5563" text-anchor="end" font-weight="400" >~50,000 replies</text>
+<rect x="215" y="116" width="336" height="34" fill="#3578b4"/>
+<text x="559.0" y="140.0" font-size="16" fill="#1e2b3e" text-anchor="start" font-weight="700" >56% for Roosevelt</text>
+<text x="200.0" y="202.0" font-size="17" fill="#1e2b3e" text-anchor="end" font-weight="700" >the election</text>
+<text x="200.0" y="222.0" font-size="13" fill="#4b5563" text-anchor="end" font-weight="400" ></text>
+<rect x="215" y="186" width="366" height="34" fill="#1e2b3e"/>
+<text x="589.0" y="210.0" font-size="16" fill="#1e2b3e" text-anchor="start" font-weight="700" >61% for Roosevelt</text>
+<line x1="515" y1="30" x2="515" y2="250" stroke="#4b5563" stroke-dasharray="4 4"/>
+<text x="515.0" y="268.0" font-size="13" fill="#4b5563" text-anchor="middle" font-weight="400" >50%</text>
+</svg>

@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 355" width="620" height="355" font-family="'Unil Sans', Arial, sans-serif">
+<rect width="620" height="355" fill="#fdfdfc"/>
+<text x="210.0" y="28.0" font-size="12" fill="#4b5563" text-anchor="middle" font-weight="400" >film 1</text>
+<text x="254.0" y="28.0" font-size="12" fill="#4b5563" text-anchor="middle" font-weight="400" >film 2</text>
+<text x="298.0" y="28.0" font-size="12" fill="#4b5563" text-anchor="middle" font-weight="400" >film 3</text>
+<text x="342.0" y="28.0" font-size="12" fill="#4b5563" text-anchor="middle" font-weight="400" >film 4</text>
+<text x="386.0" y="28.0" font-size="12" fill="#4b5563" text-anchor="middle" font-weight="400" >film 5</text>
+<text x="430.0" y="28.0" font-size="12" fill="#4b5563" text-anchor="middle" font-weight="400" >film 6</text>
+<text x="474.0" y="28.0" font-size="12" fill="#4b5563" text-anchor="middle" font-weight="400" >film 7</text>
+<text x="518.0" y="28.0" font-size="12" fill="#4b5563" text-anchor="middle" font-weight="400" >film 8</text>
+<text x="562.0" y="28.0" font-size="12" fill="#4b5563" text-anchor="middle" font-weight="400" >film 9</text>
+<text x="100.0" y="62.0" font-size="13" fill="#4b5563" text-anchor="end" font-weight="400" >viewer 1</text>
+<rect x="190" y="44" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="210.0" y="67.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="234" y="44" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="254.0" y="67.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="278" y="44" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="298.0" y="67.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="322" y="44" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="342.0" y="67.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="366" y="44" width="40" height="34" fill="#dbeafe" stroke="#d9dee5"/>
+<text x="386.0" y="67.0" font-size="14" fill="#395b8c" text-anchor="middle" font-weight="700" >4★</text>
+<rect x="410" y="44" width="40" height="34" fill="#dbeafe" stroke="#d9dee5"/>
+<text x="430.0" y="67.0" font-size="14" fill="#395b8c" text-anchor="middle" font-weight="700" >5★</text>
+<rect x="454" y="44" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="474.0" y="67.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="498" y="44" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="518.0" y="67.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="542" y="44" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="562.0" y="67.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<text x="100.0" y="102.0" font-size="13" fill="#4b5563" text-anchor="end" font-weight="400" >viewer 2</text>
+<rect x="190" y="84" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="210.0" y="107.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="234" y="84" width="40" height="34" fill="#dbeafe" stroke="#d9dee5"/>
+<text x="254.0" y="107.0" font-size="14" fill="#395b8c" text-anchor="middle" font-weight="700" >2★</text>
+<rect x="278" y="84" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="298.0" y="107.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="322" y="84" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="342.0" y="107.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="366" y="84" width="40" height="34" fill="#dbeafe" stroke="#d9dee5"/>
+<text x="386.0" y="107.0" font-size="14" fill="#395b8c" text-anchor="middle" font-weight="700" >5★</text>
+<rect x="410" y="84" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="430.0" y="107.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="454" y="84" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="474.0" y="107.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="498" y="84" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="518.0" y="107.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="542" y="84" width="40" height="34" fill="#dbeafe" stroke="#d9dee5"/>
+<text x="562.0" y="107.0" font-size="14" fill="#395b8c" text-anchor="middle" font-weight="700" >1★</text>
+<text x="100.0" y="142.0" font-size="13" fill="#4b5563" text-anchor="end" font-weight="400" >viewer 3</text>
+<rect x="190" y="124" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="210.0" y="147.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="234" y="124" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="254.0" y="147.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="278" y="124" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="298.0" y="147.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="322" y="124" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="342.0" y="147.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="366" y="124" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="386.0" y="147.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="410" y="124" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="430.0" y="147.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="454" y="124" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="474.0" y="147.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="498" y="124" width="40" height="34" fill="#dbeafe" stroke="#d9dee5"/>
+<text x="518.0" y="147.0" font-size="14" fill="#395b8c" text-anchor="middle" font-weight="700" >4★</text>
+<rect x="542" y="124" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="562.0" y="147.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<text x="100.0" y="182.0" font-size="13" fill="#4b5563" text-anchor="end" font-weight="400" >viewer 4</text>
+<rect x="190" y="164" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="210.0" y="187.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="234" y="164" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="254.0" y="187.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="278" y="164" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="298.0" y="187.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="322" y="164" width="40" height="34" fill="#dbeafe" stroke="#d9dee5"/>
+<text x="342.0" y="187.0" font-size="14" fill="#395b8c" text-anchor="middle" font-weight="700" >3★</text>
+<rect x="366" y="164" width="40" height="34" fill="#dbeafe" stroke="#d9dee5"/>
+<text x="386.0" y="187.0" font-size="14" fill="#395b8c" text-anchor="middle" font-weight="700" >5★</text>
+<rect x="410" y="164" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="430.0" y="187.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="454" y="164" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="474.0" y="187.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="498" y="164" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="518.0" y="187.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="542" y="164" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="562.0" y="187.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<text x="100.0" y="222.0" font-size="13" fill="#4b5563" text-anchor="end" font-weight="400" >viewer 5</text>
+<rect x="190" y="204" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="210.0" y="227.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="234" y="204" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="254.0" y="227.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="278" y="204" width="40" height="34" fill="#dbeafe" stroke="#d9dee5"/>
+<text x="298.0" y="227.0" font-size="14" fill="#395b8c" text-anchor="middle" font-weight="700" >1★</text>
+<rect x="322" y="204" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="342.0" y="227.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="366" y="204" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="386.0" y="227.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="410" y="204" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="430.0" y="227.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="454" y="204" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="474.0" y="227.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="498" y="204" width="40" height="34" fill="#dbeafe" stroke="#d9dee5"/>
+<text x="518.0" y="227.0" font-size="14" fill="#395b8c" text-anchor="middle" font-weight="700" >5★</text>
+<rect x="542" y="204" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="562.0" y="227.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<text x="100.0" y="262.0" font-size="13" fill="#4b5563" text-anchor="end" font-weight="400" >viewer 6</text>
+<rect x="190" y="244" width="40" height="34" fill="#dbeafe" stroke="#d9dee5"/>
+<text x="210.0" y="267.0" font-size="14" fill="#395b8c" text-anchor="middle" font-weight="700" >4★</text>
+<rect x="234" y="244" width="40" height="34" fill="#dbeafe" stroke="#d9dee5"/>
+<text x="254.0" y="267.0" font-size="14" fill="#395b8c" text-anchor="middle" font-weight="700" >3★</text>
+<rect x="278" y="244" width="40" height="34" fill="#dbeafe" stroke="#d9dee5"/>
+<text x="298.0" y="267.0" font-size="14" fill="#395b8c" text-anchor="middle" font-weight="700" >1★</text>
+<rect x="322" y="244" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="342.0" y="267.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="366" y="244" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="386.0" y="267.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="410" y="244" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="430.0" y="267.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="454" y="244" width="40" height="34" fill="#dbeafe" stroke="#d9dee5"/>
+<text x="474.0" y="267.0" font-size="14" fill="#395b8c" text-anchor="middle" font-weight="700" >2★</text>
+<rect x="498" y="244" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="518.0" y="267.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="542" y="244" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="562.0" y="267.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<text x="100.0" y="302.0" font-size="13" fill="#4b5563" text-anchor="end" font-weight="400" >viewer 7</text>
+<rect x="190" y="284" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="210.0" y="307.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="234" y="284" width="40" height="34" fill="#dbeafe" stroke="#d9dee5"/>
+<text x="254.0" y="307.0" font-size="14" fill="#395b8c" text-anchor="middle" font-weight="700" >1★</text>
+<rect x="278" y="284" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="298.0" y="307.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="322" y="284" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="342.0" y="307.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="366" y="284" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="386.0" y="307.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="410" y="284" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="430.0" y="307.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="454" y="284" width="40" height="34" fill="#dbeafe" stroke="#d9dee5"/>
+<text x="474.0" y="307.0" font-size="14" fill="#395b8c" text-anchor="middle" font-weight="700" >2★</text>
+<rect x="498" y="284" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="518.0" y="307.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<rect x="542" y="284" width="40" height="34" fill="#fff" stroke="#d9dee5"/>
+<text x="562.0" y="307.0" font-size="16" fill="#c9ced6" text-anchor="middle" font-weight="700" >?</text>
+<text x="390.0" y="340.0" font-size="14" fill="#4b5563" text-anchor="middle" font-weight="400" >filled: ratings people gave · ?: to predict</text>
+</svg>

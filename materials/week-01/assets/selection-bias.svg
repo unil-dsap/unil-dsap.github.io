@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" width="760" height="340" font-family="'Unil Sans', Arial, sans-serif">
+<rect width="760" height="340" fill="#fdfdfc"/>
+<polygon points="80.0,74.6 96.3,82.4 112.6,90.8 129.4,92.5 145.6,98.0 162.2,101.8 178.4,106.7 194.8,107.8 211.3,112.6 227.6,114.8 244.1,119.4 260.5,120.1 277.0,124.1 293.3,125.0 309.8,126.8 326.1,128.4 342.6,129.6 359.0,130.9 375.4,132.3 391.8,133.5 408.2,133.8 424.6,134.8 441.0,136.5 457.4,136.8 473.8,137.3 490.3,137.7 506.7,138.5 523.1,139.1 539.5,139.5 555.9,139.6 572.3,140.4 588.7,140.6 605.1,140.9 621.5,141.2 637.9,141.4 654.4,141.5 670.8,141.8 687.2,142.0 703.6,142.0 720.0,142.2 720.0,145.0 703.6,145.2 687.2,145.3 670.8,145.5 654.4,145.8 637.9,145.9 621.5,146.2 605.1,146.3 588.7,146.9 572.3,146.8 555.9,147.4 539.5,147.7 523.1,148.3 506.7,148.7 490.3,149.3 473.8,150.1 457.4,150.5 441.0,151.3 424.6,152.4 408.2,152.7 391.8,154.6 375.4,154.8 359.0,156.0 342.6,157.5 326.1,158.1 309.8,161.7 293.3,163.4 277.0,164.9 260.5,167.5 244.1,169.4 227.6,171.0 211.3,173.8 194.8,178.9 178.4,182.6 162.2,186.2 145.6,191.2 129.4,194.0 112.6,200.5 96.3,204.1 80.0,208.3" fill="#dbeafe" stroke="#3578b4" stroke-width="1"/>
+<line x1="80" y1="143.6" x2="720" y2="143.6" stroke="#3578b4" stroke-width="2"/>
+<text x="720.0" y="133.6" font-size="15" fill="#3578b4" text-anchor="end" font-weight="700">the survey settles here: 65%</text>
+<line x1="80" y1="215.7" x2="720" y2="215.7" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="7 5"/>
+<text x="720.0" y="237.7" font-size="15" fill="#c0392b" text-anchor="end" font-weight="700">the truth: 55%</text>
+<line x1="80" y1="290" x2="720" y2="290" stroke="#4b5563"/>
+<line x1="80" y1="290" x2="80" y2="30" stroke="#4b5563"/>
+<text x="80.0" y="310.0" font-size="14" fill="#4b5563" text-anchor="middle" font-weight="400">100</text>
+<text x="268.3" y="310.0" font-size="14" fill="#4b5563" text-anchor="middle" font-weight="400">1,000</text>
+<text x="456.7" y="310.0" font-size="14" fill="#4b5563" text-anchor="middle" font-weight="400">10,000</text>
+<text x="720.0" y="310.0" font-size="14" fill="#4b5563" text-anchor="middle" font-weight="400">250,000</text>
+<text x="72.0" y="257.9" font-size="14" fill="#4b5563" text-anchor="end" font-weight="400">50%</text>
+<text x="72.0" y="183.6" font-size="14" fill="#4b5563" text-anchor="end" font-weight="400">60%</text>
+<text x="72.0" y="109.3" font-size="14" fill="#4b5563" text-anchor="end" font-weight="400">70%</text>
+<text x="400.0" y="332.0" font-size="15" fill="#4b5563" text-anchor="middle" font-weight="400">number of responses (log scale)</text>
+<text x="113.2" y="48.0" font-size="14" fill="#3578b4" text-anchor="start" font-weight="400">shaded: where 95% of surveys land</text>
+</svg>

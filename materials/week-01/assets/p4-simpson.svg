@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 360" width="790" height="360" font-family="'Unil Sans', Arial, sans-serif">
+<rect width="790" height="360" fill="#fdfdfc"/>
+<text x="135.0" y="30.0" font-size="16" fill="#1e2b3e" text-anchor="middle" font-weight="700" >small stones</text>
+<rect x="70" y="65.9" width="70" height="214.1" fill="#3578b4"/>
+<text x="105.0" y="57.9" font-size="16" fill="#1e2b3e" text-anchor="middle" font-weight="700" >93%</text>
+<text x="105.0" y="300.0" font-size="16" fill="#1e2b3e" text-anchor="middle" font-weight="700" >A</text>
+<text x="105.0" y="318.0" font-size="12" fill="#4b5563" text-anchor="middle" font-weight="400" >81/87</text>
+<rect x="160" y="80.7" width="70" height="199.3" fill="#9aa3ad"/>
+<text x="195.0" y="72.7" font-size="16" fill="#1e2b3e" text-anchor="middle" font-weight="700" >87%</text>
+<text x="195.0" y="300.0" font-size="16" fill="#1e2b3e" text-anchor="middle" font-weight="700" >B</text>
+<text x="195.0" y="318.0" font-size="12" fill="#4b5563" text-anchor="middle" font-weight="400" >234/270</text>
+<text x="135.0" y="345.0" font-size="15" fill="#3578b4" text-anchor="middle" font-weight="700" >A better</text>
+<text x="385.0" y="30.0" font-size="16" fill="#1e2b3e" text-anchor="middle" font-weight="700" >large stones</text>
+<rect x="320" y="112.1" width="70" height="167.9" fill="#3578b4"/>
+<text x="355.0" y="104.1" font-size="16" fill="#1e2b3e" text-anchor="middle" font-weight="700" >73%</text>
+<text x="355.0" y="300.0" font-size="16" fill="#1e2b3e" text-anchor="middle" font-weight="700" >A</text>
+<text x="355.0" y="318.0" font-size="12" fill="#4b5563" text-anchor="middle" font-weight="400" >192/263</text>
+<rect x="410" y="121.9" width="70" height="158.1" fill="#9aa3ad"/>
+<text x="445.0" y="113.9" font-size="16" fill="#1e2b3e" text-anchor="middle" font-weight="700" >69%</text>
+<text x="445.0" y="300.0" font-size="16" fill="#1e2b3e" text-anchor="middle" font-weight="700" >B</text>
+<text x="445.0" y="318.0" font-size="12" fill="#4b5563" text-anchor="middle" font-weight="400" >55/80</text>
+<text x="385.0" y="345.0" font-size="15" fill="#3578b4" text-anchor="middle" font-weight="700" >A better</text>
+<text x="635.0" y="30.0" font-size="16" fill="#1e2b3e" text-anchor="middle" font-weight="700" >all patients</text>
+<rect x="570" y="100.6" width="70" height="179.4" fill="#3578b4"/>
+<text x="605.0" y="92.6" font-size="16" fill="#1e2b3e" text-anchor="middle" font-weight="700" >78%</text>
+<text x="605.0" y="300.0" font-size="16" fill="#1e2b3e" text-anchor="middle" font-weight="700" >A</text>
+<text x="605.0" y="318.0" font-size="12" fill="#4b5563" text-anchor="middle" font-weight="400" >273/350</text>
+<rect x="660" y="90.1" width="70" height="189.9" fill="#9aa3ad"/>
+<text x="695.0" y="82.1" font-size="16" fill="#1e2b3e" text-anchor="middle" font-weight="700" >83%</text>
+<text x="695.0" y="300.0" font-size="16" fill="#1e2b3e" text-anchor="middle" font-weight="700" >B</text>
+<text x="695.0" y="318.0" font-size="12" fill="#4b5563" text-anchor="middle" font-weight="400" >289/350</text>
+<text x="635.0" y="345.0" font-size="15" fill="#c0392b" text-anchor="middle" font-weight="700" >B better</text>
+<line x1="520" y1="20" x2="520" y2="350" stroke="#d9dee5" stroke-width="2"/>
+</svg>
