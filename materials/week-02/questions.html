@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session 2 questions — Data Science and Advanced Programming, UNIL HEC Lausanne</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  .qq { border: 1px solid var(--hair); background: #fff; padding: 1rem 1.2rem; margin: 1rem 0; max-width: 52rem; }
+  .qq h3 { font-size: 1.05rem; margin-bottom: .5rem; }
+  .qq p { margin: .4rem 0; line-height: 1.5; }
+  .qc { background: #f4f6f8; border-left: 3px solid var(--hec); padding: .7rem .9rem; overflow-x: auto; font: 14px/1.45 ui-monospace, Menlo, Consolas, monospace; margin: .6rem 0; }
+  .ch { margin: .4rem 0 .6rem 1.4rem; line-height: 1.7; }
+  .ch code, .ans code { font-size: 14px; }
+  details summary { cursor: pointer; color: var(--accent); font-weight: 600; margin-top: .4rem; }
+  details[open] { background: var(--gold-tint); padding: .5rem .8rem; }
+  .ans { font-weight: 700; }
+  main .wrap > p.intro { max-width: 52rem; line-height: 1.55; }
+  main .wrap h2.sect { margin-top: 2rem; }
+</style></head><body>
+<div class="wk-mast"><div class="wrap"><p class="crumb"><a href="../../index.html">Data Science and Advanced Programming</a> · Session 2</p>
+<h1>Session 2: the Wooclap questions</h1><p class="q">The reading questions from class, to redo at home.</p></div></div>
+<main><div class="wrap">
+<p class="intro">Answer each question on paper first, without running anything. Then open the answer. If you got it wrong, run the code in your workspace and find the line where your prediction and Python part ways.</p>
+<h2 class="sect">Reading tasks</h2><article class="qq" id="names"><h3>Task 1 · names are labels, not formulas</h3><p>On paper, fill in a table: after each line, what is every name, and what is its type? Then predict what the print shows. Question: price changed on line 5. Why did old_price and value not change with it?</p><pre class="qc"><code>price <span style="color: #666">=</span> <span style="color: #666">102.3</span>
+old_price <span style="color: #666">=</span> price
+shares <span style="color: #666">=</span> <span style="color: #666">4</span>
+value <span style="color: #666">=</span> shares <span style="color: #666">*</span> price
+price <span style="color: #666">=</span> <span style="color: #666">105.0</span>
+shares <span style="color: #666">+=</span> <span style="color: #666">6</span>
+<span style="color: #008000">print</span>(old_price, price, shares, value)
+</code></pre><p class="qn"><b>What does the print show?</b></p><ol class="ch" type="A"><li><code>105.0 105.0 10 1050.0</code></li><li><code>102.3 105.0 10 409.2</code></li><li><code>102.3 105.0 10 1050.0</code></li><li><code>105.0 105.0 10 409.2</code></li></ol><details><summary>Show the answer</summary><p class="ans"><code>102.3 105.0 10 409.2</code></p><p>Assignment binds a name to a value once. old_price got the value 102.3, not &quot;whatever price is&quot;. value was computed on line 4 with the numbers of that moment; nothing is ever recomputed.</p></details></article><article class="qq" id="invariant"><h3>Task 2 · the money disappeared</h3><p>Buying shares at the market price does not make you richer or poorer: shares × price + cash is the same before and after a purchase. This code runs without an error, but it breaks that rule. Find the line, say in one sentence what it does wrong, and fix it.</p><pre class="qc"><code>shares <span style="color: #666">=</span> <span style="color: #666">4</span>
+price <span style="color: #666">=</span> <span style="color: #666">102.3</span>
+cash <span style="color: #666">=</span> <span style="color: #666">1000.0</span>
+wealth_before <span style="color: #666">=</span> shares <span style="color: #666">*</span> price <span style="color: #666">+</span> cash
+
+shares <span style="color: #666">=</span> shares <span style="color: #666">+</span> <span style="color: #666">6</span>
+cash <span style="color: #666">=</span> cash <span style="color: #666">-</span> shares <span style="color: #666">*</span> price
+
+wealth_after <span style="color: #666">=</span> shares <span style="color: #666">*</span> price <span style="color: #666">+</span> cash
+<span style="color: #008000">print</span>(wealth_before, wealth_after)
+</code></pre><p class="qn"><b>Which line breaks the rule?</b></p><ol class="ch" type="A"><li><code>cash = cash - shares * price</code></li><li><code>wealth_before = shares * price + cash</code></li><li><code>wealth_after = shares * price + cash</code></li><li><code>shares = shares + 6</code></li></ol><details><summary>Show the answer</summary><p class="ans"><code>cash = cash - shares * price</code></p><p>The buggy version prints 1409.2 1000.0. Cash is charged AFTER shares was raised to 10, so all 10 shares are paid for, not the 6 bought. The order of lines is state. Charge for what you buy, and check the rule with a tolerance, not ==.</p></details></article><article class="qq" id="floatswap"><h3>Task 3 · the clever swap</h3><p>Someone shows you a way to swap two numbers without a third name. Predict both printed lines, then run. Why does the trick work on the second pair (cents, whole numbers) and not on the first (francs, floats)?</p><pre class="qc"><code>a <span style="color: #666">=</span> <span style="color: #666">190.5</span>
+b <span style="color: #666">=</span> <span style="color: #666">102.3</span>
+a <span style="color: #666">=</span> a <span style="color: #666">+</span> b
+b <span style="color: #666">=</span> a <span style="color: #666">-</span> b
+a <span style="color: #666">=</span> a <span style="color: #666">-</span> b
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 3 CHF:  "</span>, a, b, a <span style="color: #666">==</span> <span style="color: #666">102.3</span>)
+
+a <span style="color: #666">=</span> <span style="color: #666">19050</span>
+b <span style="color: #666">=</span> <span style="color: #666">10230</span>
+a <span style="color: #666">=</span> a <span style="color: #666">+</span> b
+b <span style="color: #666">=</span> a <span style="color: #666">-</span> b
+a <span style="color: #666">=</span> a <span style="color: #666">-</span> b
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 3 cents:"</span>, a, b, a <span style="color: #666">==</span> <span style="color: #666">10230</span>)
+</code></pre><p class="qn"><b>Why does the trick fail on the francs?</b></p><ol class="ch" type="A"><li><code>The names a and b are swapped twice</code></li><li><code>Float addition rounds, so a + b - b is not exactly a</code></li><li><code>190.5 is too large for a float</code></li><li><code>Python cannot subtract floats</code></li></ol><details><summary>Show the answer</summary><p class="ans"><code>Float addition rounds, so a + b - b is not exactly a</code></p><p>Every float operation rounds to the nearest number the machine can store, so (a + b) - b need not give back exactly a. Integers are exact. This is session 1&#x27;s 0.1 + 0.2, hiding inside a &quot;clever&quot; trick.</p></details></article><article class="qq" id="ordefault"><h3>Task 4 · the default that eats a value</h3><p>A cash amount comes from a file. If the file has nothing (None), the program should assume 1000.0. Someone wrote it in one short line with <code>or</code>. Predict the three printed values. Which one is a lie, and why? (You can fix it tomorrow, with <code>if</code>.)</p><pre class="qc"><code>cash_from_file <span style="color: #666">=</span> <span style="color: #666">250.0</span>
+<span style="color: #008000">print</span>(cash_from_file <span style="color: #A2F; font-weight: bold">or</span> <span style="color: #666">1000.0</span>)
+
+cash_from_file <span style="color: #666">=</span> <span style="color: #666">0.0</span>
+<span style="color: #008000">print</span>(cash_from_file <span style="color: #A2F; font-weight: bold">or</span> <span style="color: #666">1000.0</span>)
+
+cash_from_file <span style="color: #666">=</span> <span style="color: #008000; font-weight: bold">None</span>
+<span style="color: #008000">print</span>(cash_from_file <span style="color: #A2F; font-weight: bold">or</span> <span style="color: #666">1000.0</span>)
+</code></pre><p class="qn"><b>Which result is wrong?</b></p><ol class="ch" type="A"><li><code>4a: 250.0 stayed 250.0</code></li><li><code>4c: None became 1000.0</code></li><li><code>4b: 0.0 became 1000.0</code></li><li><code>None of them</code></li></ol><details><summary>Show the answer</summary><p class="ans"><code>4b: 0.0 became 1000.0</code></p><p><code>x or y</code> gives x if x counts as true, otherwise y. None counts as false, as intended, but so does 0.0: a client with exactly zero cash suddenly has 1000.0. Task 4b is the lie. The fix needs to test for None specifically, which is an <code>if</code> (session 3).</p></details></article><article class="qq" id="roundings"><h3>Task 5 · one fee, two roundings</h3><p>A 0.25 % fee on a 1070.00 CHF trade is exactly 2.675 CHF on paper. Predict both printed numbers. They are &quot;the same&quot; 2.675. Why do they round differently?</p><pre class="qc"><code>a <span style="color: #666">=</span> <span style="color: #008000">round</span>(<span style="color: #666">2.675</span>, <span style="color: #666">2</span>)
+b <span style="color: #666">=</span> <span style="color: #008000">round</span>(<span style="color: #666">1070.00</span> <span style="color: #666">*</span> <span style="color: #666">0.0025</span>, <span style="color: #666">2</span>)
+<span style="color: #008000">print</span>(a, b)
+</code></pre><p class="qn"><b>What does the line print?</b></p><ol class="ch" type="A"><li><code>2.67 2.68</code></li><li><code>2.68 2.67</code></li><li><code>2.67 2.67</code></li><li><code>2.68 2.68</code></li></ol><details><summary>Show the answer</summary><p class="ans"><code>2.67 2.68</code></p><p>2.675 is stored slightly below 2.675, so it rounds down. The product 1070.00 × 0.0025 is stored slightly above (2.6750000000000003), so it rounds up. Same number on paper, two different numbers in memory. Money in floats means the rounding of a fee can depend on how you computed it.</p></details></article>
+</div></main></body></html>
