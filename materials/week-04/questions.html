@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session 4 questions — Data Science and Advanced Programming, UNIL HEC Lausanne</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  .qq { border: 1px solid var(--hair); background: #fff; padding: 1rem 1.2rem; margin: 1rem 0; max-width: 52rem; }
+  .qq h3 { font-size: 1.05rem; margin-bottom: .5rem; }
+  .qq p { margin: .4rem 0; line-height: 1.5; }
+  .qc { background: #f4f6f8; border-left: 3px solid var(--hec); padding: .7rem .9rem; overflow-x: auto; font: 14px/1.45 ui-monospace, Menlo, Consolas, monospace; margin: .6rem 0; }
+  .ch { margin: .4rem 0 .6rem 1.4rem; line-height: 1.7; }
+  .ch code, .ans code { font-size: 14px; }
+  details summary { cursor: pointer; color: var(--accent); font-weight: 600; margin-top: .4rem; }
+  details[open] { background: var(--gold-tint); padding: .5rem .8rem; }
+  .ans { font-weight: 700; }
+  main .wrap > p.intro { max-width: 52rem; line-height: 1.55; }
+  main .wrap h2.sect { margin-top: 2rem; }
+</style></head><body>
+<div class="wk-mast"><div class="wrap"><p class="crumb"><a href="../../index.html">Data Science and Advanced Programming</a> · Session 4</p>
+<h1>Session 4: the Wooclap questions</h1><p class="q">The reading questions from class, to redo at home.</p></div></div>
+<main><div class="wrap">
+<p class="intro">Answer each question on paper first, without running anything. Then open the answer. If you got it wrong, run the code in your workspace and find the line where your prediction and Python part ways.</p>
+<h2 class="sect">Reading tasks</h2><p>Every task starts from this ledger:</p><pre class="qc"><code>closes <span style="color: #666">=</span> [<span style="color: #666">190.5</span>, <span style="color: #666">187.2</span>, <span style="color: #666">193.8</span>, <span style="color: #666">185.1</span>, <span style="color: #666">191.4</span>, <span style="color: #666">198.6</span>, <span style="color: #666">194.0</span>]   <span style="color: #3D7B7B; font-style: italic"># AAPL, day 0 to day 6</span>
+</code></pre><article class="qq" id="printreturn"><h3>Task 1 · print is not return</h3><p>Two functions that look almost the same. Predict EVERYTHING the program shows, line by line, in order. Then say what a and b hold.</p><pre class="qc"><code><span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">value_p</span>(shares, price):
+    <span style="color: #008000">print</span>(shares <span style="color: #666">*</span> price)
+
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">value_r</span>(shares, price):
+    <span style="color: #008000; font-weight: bold">return</span> shares <span style="color: #666">*</span> price
+
+a <span style="color: #666">=</span> value_p(<span style="color: #666">4</span>, <span style="color: #666">102.3</span>)
+b <span style="color: #666">=</span> value_r(<span style="color: #666">4</span>, <span style="color: #666">102.3</span>)
+<span style="color: #008000">print</span>(a, b)
+</code></pre><p class="qn"><b>What does the last line print?</b></p><ol class="ch" type="A"><li><code>Task 1: 409.2 None</code></li><li><code>Task 1: None None</code></li><li><code>Task 1: 409.2 409.2</code></li><li><code>Task 1: None 409.2</code></li></ol><details><summary>Show the answer</summary><p class="ans"><code>Task 1: None 409.2</code></p><p>value_p SHOWS 409.2 on the screen while it runs, then gives back nothing: every function without return returns None, so a is None. value_r shows nothing and hands 409.2 back to the program. A value on the screen is not a value in a variable (session 1&#x27;s round, again).</p></details></article><article class="qq" id="scope"><h3>Task 2 · two variables called total</h3><p>Predict the print. Then explain: the function assigns to total. Why is the total outside still 100.0?</p><pre class="qc"><code>total <span style="color: #666">=</span> <span style="color: #666">100.0</span>
+
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">add_fee</span>(amount):
+    total <span style="color: #666">=</span> amount <span style="color: #666">+</span> <span style="color: #666">2.5</span>
+    <span style="color: #008000; font-weight: bold">return</span> total
+
+x <span style="color: #666">=</span> add_fee(<span style="color: #666">40.0</span>)
+<span style="color: #008000">print</span>(x, total)
+</code></pre><p class="qn"><b>What does the print show?</b></p><ol class="ch" type="A"><li><code>42.5 42.5</code></li><li><code>102.5 100.0</code></li><li><code>42.5 100.0</code></li><li><code>NameError</code></li></ol><details><summary>Show the answer</summary><p class="ans"><code>42.5 100.0</code></p><p>Assigning inside a function creates a LOCAL name. The total inside add_fee is a different variable that happens to share the name; it disappears when the call ends. The only way out of a function is return.</p></details></article><article class="qq" id="mutable"><h3>Task 3 · what the function changed</h3><p>Two functions, each changes its parameter. Predict both prints. Why does the list outside change, and the number outside not?</p><pre class="qc"><code><span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">add_position</span>(shares, n):
+    shares<span style="color: #666">.</span>append(n)
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000">len</span>(shares)
+
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">add_one</span>(n):
+    n <span style="color: #666">=</span> n <span style="color: #666">+</span> <span style="color: #666">1</span>
+    <span style="color: #008000; font-weight: bold">return</span> n
+
+shares <span style="color: #666">=</span> [<span style="color: #666">10</span>, <span style="color: #666">4</span>, <span style="color: #666">2</span>]
+k <span style="color: #666">=</span> add_position(shares, <span style="color: #666">7</span>)
+<span style="color: #008000">print</span>(k, shares)
+
+m <span style="color: #666">=</span> <span style="color: #666">5</span>
+y <span style="color: #666">=</span> add_one(m)
+<span style="color: #008000">print</span>(m, y)
+</code></pre><p class="qn"><b>What does Task 3a print?</b></p><ol class="ch" type="A"><li><code>None [10, 4, 2, 7]</code></li><li><code>3 [10, 4, 2]</code></li><li><code>4 [10, 4, 2, 7]</code></li><li><code>4 [10, 4, 2]</code></li></ol><details><summary>Show the answer</summary><p class="ans"><code>4 [10, 4, 2, 7]</code></p><p>Inside add_position, shares is a second name for the caller&#x27;s list (session 3: two names, one list), and append changes that list in place. In add_one, n = n + 1 builds a NEW number and moves the local label n to it; the caller&#x27;s 5 cannot change, because ints are immutable. Lists are mutable.</p></details></article><article class="qq" id="methods"><h3>Task 4 · which methods change the value?</h3><p>One string method chain, one list method. Predict all four printed values. Which method changed its object, and which returned a new one?</p><pre class="qc"><code>ticker <span style="color: #666">=</span> <span style="color: #BA2121">" nesn "</span>
+t2 <span style="color: #666">=</span> ticker<span style="color: #666">.</span>strip()<span style="color: #666">.</span>upper()
+shares <span style="color: #666">=</span> [<span style="color: #666">10</span>, <span style="color: #666">4</span>, <span style="color: #666">2</span>]
+s2 <span style="color: #666">=</span> shares<span style="color: #666">.</span>sort()
+<span style="color: #008000">print</span>(<span style="color: #008000">repr</span>(ticker), t2, shares, s2)
+</code></pre><p class="qn"><b>What does the print show?</b></p><ol class="ch" type="A"><li><code>&#x27;NESN&#x27; NESN [2, 4, 10] [2, 4, 10]</code></li><li><code>&#x27;NESN&#x27; NESN [2, 4, 10] None</code></li><li><code>&#x27; nesn &#x27; NESN [2, 4, 10] None</code></li><li><code>&#x27; nesn &#x27; NESN [10, 4, 2] [2, 4, 10]</code></li></ol><details><summary>Show the answer</summary><p class="ans"><code>&#x27; nesn &#x27; NESN [2, 4, 10] None</code></p><p>Strings never change: .strip() and .upper() each return a NEW string, and ticker keeps its spaces. .sort() changes the list itself and returns None, so s2 is None. That is why shares = shares.sort() destroys a list. repr() shows the quotes, so the spaces become visible.</p></details></article><article class="qq" id="swaparg"><h3>Task 5 · the weight that lies</h3><p>AAPL is worth 1905.0 of a 3338.2 CHF ledger. The function below computes its weight in percent. The call runs and prints a number. Is it right? Find the mistake and fix it so that no one can make it again.</p><pre class="qc"><code><span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">weight</span>(value, total):
+    <span style="color: #008000; font-weight: bold">return</span> value <span style="color: #666">/</span> total <span style="color: #666">*</span> <span style="color: #666">100</span>
+
+<span style="color: #008000">print</span>(<span style="color: #BA2121">f"</span><span style="color: #A45A77; font-weight: bold">{</span>weight(<span style="color: #666">3338.2</span>,<span style="color: #BBB"> </span><span style="color: #666">1905.0</span>)<span style="color: #A45A77; font-weight: bold">:</span><span style="color: #BA2121">.1f</span><span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">%"</span>)
+</code></pre><p class="qn"><b>What does the buggy call print?</b></p><ol class="ch" type="A"><li><code>TypeError</code></li><li><code>1.8%</code></li><li><code>57.1%</code></li><li><code>175.2%</code></li></ol><details><summary>Show the answer</summary><p class="ans"><code>175.2%</code></p><p>The buggy call prints 175.2%: arguments are matched by POSITION, so value got the total and total got the value. No error, because dividing two numbers always works. Rough check: one position cannot be 175 % of the ledger. Keyword arguments (value=..., total=...) make the order impossible to get wrong.</p></details></article>
+</div></main></body></html>
