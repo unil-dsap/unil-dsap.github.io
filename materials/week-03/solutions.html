@@ -1,0 +1,140 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session 3 solutions — Data Science and Advanced Programming, UNIL HEC Lausanne</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  .qq { border: 1px solid var(--hair); background: #fff; padding: 1rem 1.2rem; margin: 1rem 0; max-width: 52rem; }
+  .qq h3 { font-size: 1.05rem; margin-bottom: .5rem; }
+  .qq p { margin: .4rem 0; line-height: 1.5; }
+  .qc, .qo { background: #f4f6f8; border-left: 3px solid var(--hec); padding: .7rem .9rem; overflow-x: auto; font: 14px/1.45 Menlo, Consolas, monospace; margin: .6rem 0; }
+  .qo { border-left-color: #1d7a45; }
+  details summary { cursor: pointer; color: var(--accent); font-weight: 600; margin-top: .4rem; }
+  details[open] { background: var(--gold-tint); padding: .5rem .8rem; }
+  .ans { font-weight: 700; }
+  main .wrap > p.intro { max-width: 52rem; line-height: 1.55; }
+  main .wrap h2.sect { margin-top: 2rem; }
+</style></head><body>
+<div class="wk-mast"><div class="wrap"><p class="crumb"><a href="../../index.html">Data Science and Advanced Programming</a> · Session 3</p>
+<h1>Session 3: solutions</h1><p class="q">The writing tasks from <code>week-03/workshop/</code>, solved.</p></div></div>
+<main><div class="wrap">
+<p class="intro">Try each task in your workspace first. Open a solution only when your code runs, or when you have been stuck for a while. Your solution can be different and still right: compare what it prints. The reading tasks and their answers are on the <a href="questions.html">Questions</a> page.</p>
+<h2 class="sect">Writing tasks</h2><article class="qq" id="texttotal"><h3>Task 6 · from text to a total</h3><p>A ledger file arrives as lines of text. Loop over the lines, cut each one at the commas with .split(&quot;,&quot;), convert the pieces, and add up the value.</p><details><summary>Show the solution</summary><pre class="qc"><code>lines <span style="color: #666">=</span> [<span style="color: #BA2121">"AAPL,10,190.50"</span>, <span style="color: #BA2121">"NESN,4,102.30"</span>, <span style="color: #BA2121">"VOO,2,512.00"</span>]
+total <span style="color: #666">=</span> <span style="color: #666">0.0</span>
+<span style="color: #008000; font-weight: bold">for</span> line <span style="color: #A2F; font-weight: bold">in</span> lines:
+    parts <span style="color: #666">=</span> line<span style="color: #666">.</span>split(<span style="color: #BA2121">","</span>)
+    total <span style="color: #666">+=</span> <span style="color: #008000">int</span>(parts[<span style="color: #666">1</span>]) <span style="color: #666">*</span> <span style="color: #008000">float</span>(parts[<span style="color: #666">2</span>])
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 6:"</span>, total)
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 6: 3338.2</code></pre><p>split gives a list of three strings. They are text, so &quot;10&quot; * &quot;190.50&quot; would fail and &quot;10&quot; + &quot;4&quot; would join: convert with int() and float() first (session 2: data from files arrives as text).</p></details></article><article class="qq" id="largest"><h3>Task 7 · the largest position, without max()</h3><p>Find which position is worth the most, and print its ticker and value. Do not use max(): keep &quot;the best so far&quot; in two names and update them. Loop with zip(tickers, shares).</p><details><summary>Show the solution</summary><pre class="qc"><code>best_ticker, best_value <span style="color: #666">=</span> <span style="color: #BA2121">""</span>, <span style="color: #666">0.0</span>
+<span style="color: #008000; font-weight: bold">for</span> t, n <span style="color: #A2F; font-weight: bold">in</span> <span style="color: #008000">zip</span>(tickers, shares):
+    v <span style="color: #666">=</span> n <span style="color: #666">*</span> price[t]
+    <span style="color: #008000; font-weight: bold">if</span> v <span style="color: #666">&gt;</span> best_value:
+        best_ticker, best_value <span style="color: #666">=</span> t, v
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 7:"</span>, best_ticker, <span style="color: #BA2121">f"</span><span style="color: #A45A77; font-weight: bold">{</span>best_value<span style="color: #A45A77; font-weight: bold">:</span><span style="color: #BA2121">.2f</span><span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">"</span>)
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 7: AAPL 1905.00</code></pre><p>The pattern &quot;best so far&quot;: start below any possible value, look at each item once, replace the best when something beats it. This is what max() does inside; now you can also keep WHICH item was best.</p></details></article><article class="qq" id="nonefix"><h3>Task 8 · yesterday&#x27;s lie, fixed</h3><p>Yesterday, cash_from_file or 1000.0 turned a real balance of 0.0 into 1000.0. Now you have if. Write it so that ONLY a missing value (None) becomes 1000.0, and 0.0 stays 0.0. Try it on 250.0, 0.0 and None.</p><details><summary>Show the solution</summary><pre class="qc"><code><span style="color: #008000; font-weight: bold">for</span> cash_from_file <span style="color: #A2F; font-weight: bold">in</span> [<span style="color: #666">250.0</span>, <span style="color: #666">0.0</span>, <span style="color: #008000; font-weight: bold">None</span>]:
+    <span style="color: #008000; font-weight: bold">if</span> cash_from_file <span style="color: #A2F; font-weight: bold">is</span> <span style="color: #008000; font-weight: bold">None</span>:
+        cash <span style="color: #666">=</span> <span style="color: #666">1000.0</span>
+    <span style="color: #008000; font-weight: bold">else</span>:
+        cash <span style="color: #666">=</span> cash_from_file
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 8:"</span>, cash_from_file, <span style="color: #BA2121">"-&gt;"</span>, cash)
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 8: 250.0 -&gt; 250.0
+Task 8: 0.0 -&gt; 0.0
+Task 8: None -&gt; 1000.0</code></pre><p>Test for the one case you mean. <code>is None</code> (or == None) is true only for a missing value; <code>or</code> treats every &quot;empty&quot; value (0, 0.0, &quot;&quot;, []) as missing.</p></details></article><article class="qq" id="safeget"><h3>Task 9 · ask before you look up</h3><p>Loop over the tickers AAPL, MSFT, VOO. For each one, print its price, or &quot;no price&quot; if the dict does not have it. Write it once with in, and once with .get().</p><details><summary>Show the solution</summary><pre class="qc"><code>wanted <span style="color: #666">=</span> [<span style="color: #BA2121">"AAPL"</span>, <span style="color: #BA2121">"MSFT"</span>, <span style="color: #BA2121">"VOO"</span>]
+<span style="color: #008000; font-weight: bold">for</span> t <span style="color: #A2F; font-weight: bold">in</span> wanted:
+    <span style="color: #008000; font-weight: bold">if</span> t <span style="color: #A2F; font-weight: bold">in</span> price:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 9:"</span>, t, price[t])
+    <span style="color: #008000; font-weight: bold">else</span>:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 9:"</span>, t, <span style="color: #BA2121">"no price"</span>)
+<span style="color: #008000; font-weight: bold">for</span> t <span style="color: #A2F; font-weight: bold">in</span> wanted:
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 9:"</span>, t, price<span style="color: #666">.</span>get(t, <span style="color: #BA2121">"no price"</span>))
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 9: AAPL 190.5
+Task 9: MSFT no price
+Task 9: VOO 512.0</code></pre><p>in asks the question first; .get(key, default) asks and answers in one call. Both avoid the KeyError from Task 5. Use in when the two cases need different code, .get when you only need a fallback value.</p></details></article><article class="qq" id="whileyears"><h3>Task 10 · how many years until 1500?</h3><p>1000.00 CHF grows by 3 % a year. After how many whole years is it worth at least 1500.00? Nobody knows the number of passes in advance, so use while. Print the years and the value then.</p><details><summary>Show the solution</summary><pre class="qc"><code>value <span style="color: #666">=</span> <span style="color: #666">1000.0</span>
+years <span style="color: #666">=</span> <span style="color: #666">0</span>
+<span style="color: #008000; font-weight: bold">while</span> value <span style="color: #666">&lt;</span> <span style="color: #666">1500.0</span>:
+    value <span style="color: #666">*=</span> <span style="color: #666">1.03</span>
+    years <span style="color: #666">+=</span> <span style="color: #666">1</span>
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 10:"</span>, years, <span style="color: #008000">round</span>(value, <span style="color: #666">2</span>))
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 10: 14 1512.59</code></pre><p>The body must move the condition towards False (value grows), or the loop never ends. Counting in the same body gives the number of passes. 500 / 30 = 16.7 would be the answer without compounding.</p></details></article><h2 class="sect">★ Harder: classic puzzles</h2><article class="qq" id="running"><h3>★ Task 11 · Running total, and the worst moment</h3><p>Daily profit and loss of a portfolio, in CHF. Build the list of running totals after each day, and find the lowest the running total ever got.</p><details><summary>Show the solution</summary><pre class="qc"><code>pnl <span style="color: #666">=</span> [<span style="color: #666">120.0</span>, <span style="color: #666">-340.5</span>, <span style="color: #666">80.25</span>, <span style="color: #666">-60.0</span>, <span style="color: #666">410.0</span>, <span style="color: #666">-95.75</span>]
+running, worst <span style="color: #666">=</span> <span style="color: #666">0.0</span>, <span style="color: #666">0.0</span>
+totals <span style="color: #666">=</span> []
+<span style="color: #008000; font-weight: bold">for</span> x <span style="color: #A2F; font-weight: bold">in</span> pnl:
+    running <span style="color: #666">+=</span> x
+    totals<span style="color: #666">.</span>append(running)
+    <span style="color: #008000; font-weight: bold">if</span> running <span style="color: #666">&lt;</span> worst:
+        worst <span style="color: #666">=</span> running
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 11:"</span>, totals)
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 11: worst"</span>, worst)
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 11: [120.0, -220.5, -140.25, -200.25, 209.75, 114.0]
+Task 11: worst -220.5</code></pre><p>Two accumulators in one loop: a running sum, and a running minimum of that sum. The worst DAY (-340.5) is not the worst MOMENT (-220.5): the question asks about the balance, not the day.</p></details></article><article class="qq" id="duplicate"><h3>★ Task 12 · The trade that appears twice</h3><p>A list of trades in the order they arrived. Count how many times each ticker appears (a dict, with .get()), and print the FIRST ticker that shows up a second time.</p><details><summary>Show the solution</summary><pre class="qc"><code>trades <span style="color: #666">=</span> [<span style="color: #BA2121">"AAPL"</span>, <span style="color: #BA2121">"NESN"</span>, <span style="color: #BA2121">"VOO"</span>, <span style="color: #BA2121">"NESN"</span>, <span style="color: #BA2121">"AAPL"</span>]
+count <span style="color: #666">=</span> {}
+first_twice <span style="color: #666">=</span> <span style="color: #008000; font-weight: bold">None</span>
+<span style="color: #008000; font-weight: bold">for</span> t <span style="color: #A2F; font-weight: bold">in</span> trades:
+    count[t] <span style="color: #666">=</span> count<span style="color: #666">.</span>get(t, <span style="color: #666">0</span>) <span style="color: #666">+</span> <span style="color: #666">1</span>
+    <span style="color: #008000; font-weight: bold">if</span> count[t] <span style="color: #666">==</span> <span style="color: #666">2</span> <span style="color: #A2F; font-weight: bold">and</span> first_twice <span style="color: #A2F; font-weight: bold">is</span> <span style="color: #008000; font-weight: bold">None</span>:
+        first_twice <span style="color: #666">=</span> t
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 12:"</span>, count, first_twice)
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 12: {&#x27;AAPL&#x27;: 2, &#x27;NESN&#x27;: 2, &#x27;VOO&#x27;: 1} NESN</code></pre><p>count.get(t, 0) + 1 counts without a KeyError on the first sighting. The first ticker to reach 2 is NESN (position 3), even though AAPL came first in the list and also appears twice.</p></details></article><article class="qq" id="twosum"><h3>★ Task 13 · Two sum: spend the budget exactly</h3><p>One share each of two DIFFERENT stocks must cost exactly 614.30 CHF. Which two? Prices are in cents, so == is safe. Step 1: two loops, one inside the other, so that every pair is tried once. Step 2 (★★): one loop only, with enumerate(). Keep a dict of the prices already seen; for each price, ask &quot;have I seen the price that completes it?&quot;.</p><details><summary>Show the solution</summary><pre class="qc"><code>all_tickers <span style="color: #666">=</span> [<span style="color: #BA2121">"AAPL"</span>, <span style="color: #BA2121">"NESN"</span>, <span style="color: #BA2121">"VOO"</span>, <span style="color: #BA2121">"MSFT"</span>, <span style="color: #BA2121">"NOVN"</span>]
+all_prices_c <span style="color: #666">=</span> [<span style="color: #666">19050</span>, <span style="color: #666">10230</span>, <span style="color: #666">51200</span>, <span style="color: #666">41000</span>, <span style="color: #666">8870</span>]
+budget_c <span style="color: #666">=</span> <span style="color: #666">61430</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #A2F; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #008000">len</span>(all_prices_c)):
+    <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #A2F; font-weight: bold">in</span> <span style="color: #008000">range</span>(i <span style="color: #666">+</span> <span style="color: #666">1</span>, <span style="color: #008000">len</span>(all_prices_c)):
+        <span style="color: #008000; font-weight: bold">if</span> all_prices_c[i] <span style="color: #666">+</span> all_prices_c[j] <span style="color: #666">==</span> budget_c:
+            <span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 13:"</span>, all_tickers[i], all_tickers[j])
+seen <span style="color: #666">=</span> {}                          <span style="color: #3D7B7B; font-style: italic"># price -&gt; its position in the list</span>
+<span style="color: #008000; font-weight: bold">for</span> i, p <span style="color: #A2F; font-weight: bold">in</span> <span style="color: #008000">enumerate</span>(all_prices_c):
+    need <span style="color: #666">=</span> budget_c <span style="color: #666">-</span> p
+    <span style="color: #008000; font-weight: bold">if</span> need <span style="color: #A2F; font-weight: bold">in</span> seen:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 13:"</span>, all_tickers[seen[need]], all_tickers[i])
+    seen[p] <span style="color: #666">=</span> i
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 13: NESN VOO</code></pre><p>The nested loops try every pair: j starts at i + 1, so no pair twice and no stock with itself. The one-loop version remembers what it has seen: for 51200 it needs 10230, which is already in the dict. For 5 stocks both are instant; for a million, the dict version is the only one that finishes.</p></details></article><article class="qq" id="buysell"><h3>★ Task 14 · Best day to buy, best day to sell</h3><p>The daily closes of AAPL for a week (day 0 to day 6). You may buy once and sell once, later. What is the largest profit, and on which days? One loop with enumerate() is enough: remember the lowest price so far, and ask every day &quot;what if I sold today?&quot;.</p><details><summary>Show the solution</summary><pre class="qc"><code>low, low_day <span style="color: #666">=</span> closes[<span style="color: #666">0</span>], <span style="color: #666">0</span>
+best, buy, sell <span style="color: #666">=</span> <span style="color: #666">0.0</span>, <span style="color: #666">0</span>, <span style="color: #666">0</span>
+<span style="color: #008000; font-weight: bold">for</span> day, c <span style="color: #A2F; font-weight: bold">in</span> <span style="color: #008000">enumerate</span>(closes):
+    <span style="color: #008000; font-weight: bold">if</span> c <span style="color: #666">-</span> low <span style="color: #666">&gt;</span> best:
+        best, buy, sell <span style="color: #666">=</span> c <span style="color: #666">-</span> low, low_day, day
+    <span style="color: #008000; font-weight: bold">if</span> c <span style="color: #666">&lt;</span> low:
+        low, low_day <span style="color: #666">=</span> c, day
+<span style="color: #008000">print</span>(<span style="color: #BA2121">f"Task 14: buy day </span><span style="color: #A45A77; font-weight: bold">{</span>buy<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">, sell day </span><span style="color: #A45A77; font-weight: bold">{</span>sell<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">, profit </span><span style="color: #A45A77; font-weight: bold">{</span>best<span style="color: #A45A77; font-weight: bold">:</span><span style="color: #BA2121">.2f</span><span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">"</span>)
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 14: buy day 3, sell day 5, profit 13.50</code></pre><p>Buy at the lowest price BEFORE the sale, not the lowest of the week overall. The order of the two ifs matters: check &quot;sell today&quot; against the low so far, then update the low. Swapping them would let you buy and sell on the same day.</p></details></article><article class="qq" id="numpy2d"><h3>★ Task 15 · numpy: slicing in two directions</h3><p>Pavel&#x27;s slices.py showed a numpy table: one row per position, column 0 = shares, column 1 = price. With numpy, [rows, columns] slices both directions at once. On paper, predict all five lines, then run and check. What does the last line compute, and why does it not need a loop?</p><details><summary>Show the solution</summary><pre class="qc"><code><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">numpy</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">as</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">np</span>
+table <span style="color: #666">=</span> np<span style="color: #666">.</span>array([[<span style="color: #666">10</span>, <span style="color: #666">190.5</span>], [<span style="color: #666">4</span>, <span style="color: #666">102.3</span>], [<span style="color: #666">2</span>, <span style="color: #666">512.0</span>]])   <span style="color: #3D7B7B; font-style: italic"># rows: AAPL, NESN, VOO</span>
+
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 15:"</span>, table[<span style="color: #666">1</span>:, <span style="color: #666">0</span>])     <span style="color: #3D7B7B; font-style: italic"># shares of NESN and VOO</span>
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 15:"</span>, table[:<span style="color: #666">2</span>, <span style="color: #666">1</span>])     <span style="color: #3D7B7B; font-style: italic"># prices of AAPL and NESN</span>
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 15:"</span>, table[<span style="color: #666">-1</span>])        <span style="color: #3D7B7B; font-style: italic"># the whole VOO row</span>
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 15:"</span>, table[::<span style="color: #666">2</span>, <span style="color: #666">1</span>])    <span style="color: #3D7B7B; font-style: italic"># prices of every other row: AAPL, VOO</span>
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 15:"</span>, table[:, <span style="color: #666">0</span>] <span style="color: #666">*</span> table[:, <span style="color: #666">1</span>])   <span style="color: #3D7B7B; font-style: italic"># all values at once</span>
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 15: [4. 2.]
+Task 15: [190.5 102.3]
+Task 15: [  2. 512.]
+Task 15: [190.5 512. ]
+Task 15: [1905.   409.2 1024. ]</code></pre><p>Before the comma: which rows; after it: which columns; each part is an ordinary slice. The shares print as 4. and 2. because a numpy array holds one type, and one price is a float. The last line multiplies the two columns element by element: numpy does the loop for you, in fast code. Session 5 goes much further.</p></details></article><h2 class="sect">Extra practice</h2><article class="qq" id="hw_second"><h3>Practice 1 · The second-highest close, in one pass</h3><p>Find the highest and the second-highest close of the week in ONE loop, without sorted() or max(). Keep two names, best and second, and decide for each price which one it replaces.</p><details><summary>Show the solution</summary><pre class="qc"><code>best <span style="color: #666">=</span> second <span style="color: #666">=</span> <span style="color: #008000">float</span>(<span style="color: #BA2121">"-inf"</span>)
+<span style="color: #008000; font-weight: bold">for</span> c <span style="color: #A2F; font-weight: bold">in</span> closes:
+    <span style="color: #008000; font-weight: bold">if</span> c <span style="color: #666">&gt;</span> best:
+        best, second <span style="color: #666">=</span> c, best
+    <span style="color: #008000; font-weight: bold">elif</span> c <span style="color: #666">&gt;</span> second:
+        second <span style="color: #666">=</span> c
+<span style="color: #008000">print</span>(best, second)
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>198.6 194.0</code></pre><p>When a new best arrives, the old best becomes the second. float(&quot;-inf&quot;) is smaller than every number, a safe start. Sorting would work too, but it does far more work than needed.</p></details></article><article class="qq" id="hw_dedup"><h3>Practice 2 · Remove duplicates, keep the order</h3><p>Build a new list with each ticker once, in the order it FIRST appeared. Use a dict to remember what you have seen.</p><details><summary>Show the solution</summary><pre class="qc"><code>trades <span style="color: #666">=</span> [<span style="color: #BA2121">"AAPL"</span>, <span style="color: #BA2121">"NESN"</span>, <span style="color: #BA2121">"VOO"</span>, <span style="color: #BA2121">"NESN"</span>, <span style="color: #BA2121">"AAPL"</span>, <span style="color: #BA2121">"MSFT"</span>]
+seen <span style="color: #666">=</span> {}
+unique <span style="color: #666">=</span> []
+<span style="color: #008000; font-weight: bold">for</span> t <span style="color: #A2F; font-weight: bold">in</span> trades:
+    <span style="color: #008000; font-weight: bold">if</span> t <span style="color: #A2F; font-weight: bold">not</span> <span style="color: #A2F; font-weight: bold">in</span> seen:
+        seen[t] <span style="color: #666">=</span> <span style="color: #008000; font-weight: bold">True</span>
+        unique<span style="color: #666">.</span>append(t)
+<span style="color: #008000">print</span>(unique)
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>[&#x27;AAPL&#x27;, &#x27;NESN&#x27;, &#x27;VOO&#x27;, &#x27;MSFT&#x27;]</code></pre><p>Asking <code>t not in seen</code> on a dict is instant however long the list is; asking <code>t not in unique</code> would search the list every time. The order comes from the list, the memory from the dict.</p></details></article><article class="qq" id="hw_streak"><h3>Practice 3 · The longest rising streak</h3><p>A rising streak is a run of days where each close is higher than the day before. How many days long is the longest streak in closes (a single day counts as a streak of 1)?</p><details><summary>Show the solution</summary><pre class="qc"><code>run <span style="color: #666">=</span> longest <span style="color: #666">=</span> <span style="color: #666">1</span>
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #A2F; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666">1</span>, <span style="color: #008000">len</span>(closes)):
+    <span style="color: #008000; font-weight: bold">if</span> closes[i] <span style="color: #666">&gt;</span> closes[i <span style="color: #666">-</span> <span style="color: #666">1</span>]:
+        run <span style="color: #666">+=</span> <span style="color: #666">1</span>
+    <span style="color: #008000; font-weight: bold">else</span>:
+        run <span style="color: #666">=</span> <span style="color: #666">1</span>
+    <span style="color: #008000; font-weight: bold">if</span> run <span style="color: #666">&gt;</span> longest:
+        longest <span style="color: #666">=</span> run
+<span style="color: #008000">print</span>(longest)
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>3</code></pre><p>Compare each day with the one before, so the loop starts at 1. The current run resets on a fall; the longest run only grows. The streak is 185.1 → 191.4 → 198.6.</p></details></article><article class="qq" id="hw_merge"><h3>Practice 4 · Merge two holdings</h3><p>Two accounts hold shares: a = {&quot;AAPL&quot;: 10, &quot;NESN&quot;: 4} and b = {&quot;NESN&quot;: 6, &quot;VOO&quot;: 2}. Build ONE dict with the total shares per ticker, and leave a unchanged (check it at the end).</p><details><summary>Show the solution</summary><pre class="qc"><code>a <span style="color: #666">=</span> {<span style="color: #BA2121">"AAPL"</span>: <span style="color: #666">10</span>, <span style="color: #BA2121">"NESN"</span>: <span style="color: #666">4</span>}
+b <span style="color: #666">=</span> {<span style="color: #BA2121">"NESN"</span>: <span style="color: #666">6</span>, <span style="color: #BA2121">"VOO"</span>: <span style="color: #666">2</span>}
+merged <span style="color: #666">=</span> a<span style="color: #666">.</span>copy()
+<span style="color: #008000; font-weight: bold">for</span> ticker, n <span style="color: #A2F; font-weight: bold">in</span> b<span style="color: #666">.</span>items():
+    merged[ticker] <span style="color: #666">=</span> merged<span style="color: #666">.</span>get(ticker, <span style="color: #666">0</span>) <span style="color: #666">+</span> n
+<span style="color: #008000">print</span>(merged, a)
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>{&#x27;AAPL&#x27;: 10, &#x27;NESN&#x27;: 10, &#x27;VOO&#x27;: 2} {&#x27;AAPL&#x27;: 10, &#x27;NESN&#x27;: 4}</code></pre><p>Without .copy(), merged would be a second name for a, and a would change too (Task 2). .items() gives key and value together; .get(ticker, 0) handles tickers that only b has.</p></details></article>
+</div></main></body></html>
