@@ -1,0 +1,154 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session 4 solutions — Data Science and Advanced Programming, UNIL HEC Lausanne</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  .qq { border: 1px solid var(--hair); background: #fff; padding: 1rem 1.2rem; margin: 1rem 0; max-width: 52rem; }
+  .qq h3 { font-size: 1.05rem; margin-bottom: .5rem; }
+  .qq p { margin: .4rem 0; line-height: 1.5; }
+  .qc, .qo { background: #f4f6f8; border-left: 3px solid var(--hec); padding: .7rem .9rem; overflow-x: auto; font: 14px/1.45 Menlo, Consolas, monospace; margin: .6rem 0; }
+  .qo { border-left-color: #1d7a45; }
+  details summary { cursor: pointer; color: var(--accent); font-weight: 600; margin-top: .4rem; }
+  details[open] { background: var(--gold-tint); padding: .5rem .8rem; }
+  .ans { font-weight: 700; }
+  main .wrap > p.intro { max-width: 52rem; line-height: 1.55; }
+  main .wrap h2.sect { margin-top: 2rem; }
+</style></head><body>
+<div class="wk-mast"><div class="wrap"><p class="crumb"><a href="../../index.html">Data Science and Advanced Programming</a> · Session 4</p>
+<h1>Session 4: solutions</h1><p class="q">The writing tasks from <code>week-04/workshop/</code>, solved.</p></div></div>
+<main><div class="wrap">
+<p class="intro">Try each task in your workspace first. Open a solution only when your code runs, or when you have been stuck for a while. Your solution can be different and still right: compare what it prints. The reading tasks and their answers are on the <a href="questions.html">Questions</a> page.</p>
+<h2 class="sect">Writing tasks</h2><article class="qq" id="totalvalue"><h3>Task 6 · two functions for the ledger</h3><p>The ledger is a list of (ticker, shares, price) tuples. Write position_value(shares, price) that returns the value of one position, and total_value(positions) that loops over the tuples, unpacks each one, and returns the sum of position_value for all of them. Both need a one-line docstring. Print total_value(ledger).</p><details><summary>Show the solution</summary><pre class="qc"><code>ledger <span style="color: #666">=</span> [(<span style="color: #BA2121">"AAPL"</span>, <span style="color: #666">10</span>, <span style="color: #666">190.5</span>), (<span style="color: #BA2121">"NESN"</span>, <span style="color: #666">4</span>, <span style="color: #666">102.3</span>), (<span style="color: #BA2121">"VOO"</span>, <span style="color: #666">2</span>, <span style="color: #666">512.0</span>)]
+
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">position_value</span>(shares, price):
+<span style="color: #BBB">    </span><span style="color: #BA2121; font-style: italic">"""Value of one position, in CHF."""</span>
+    <span style="color: #008000; font-weight: bold">return</span> shares <span style="color: #666">*</span> price
+
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">total_value</span>(positions):
+<span style="color: #BBB">    </span><span style="color: #BA2121; font-style: italic">"""Sum of the values of (ticker, shares, price) tuples."""</span>
+    total <span style="color: #666">=</span> <span style="color: #666">0.0</span>
+    <span style="color: #008000; font-weight: bold">for</span> ticker, n, p <span style="color: #A2F; font-weight: bold">in</span> positions:
+        total <span style="color: #666">+=</span> position_value(n, p)
+    <span style="color: #008000; font-weight: bold">return</span> total
+
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 6:"</span>, total_value(ledger))
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 6: 3338.2</code></pre><p>One function per idea; the second one calls the first. The loop header unpacks each tuple into three names. return sits AFTER the loop, not inside it (Pavel&#x27;s &quot;Spot the lie&quot;).</p></details></article><article class="qq" id="feedefault"><h3>Task 7 · a fee with defaults</h3><p>Write fee(value, rate=0.001, minimum=5.0) that returns value × rate, but never less than minimum. Then print, on one line, fee(1000.0), fee(10000.0) and fee(10000.0, rate=0.002).</p><details><summary>Show the solution</summary><pre class="qc"><code><span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">fee</span>(value, rate<span style="color: #666">=0.001</span>, minimum<span style="color: #666">=5.0</span>):
+<span style="color: #BBB">    </span><span style="color: #BA2121; font-style: italic">"""Broker fee: a share of the value, with a minimum charge."""</span>
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000">max</span>(value <span style="color: #666">*</span> rate, minimum)
+
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 7:"</span>, fee(<span style="color: #666">1000.0</span>), fee(<span style="color: #666">10000.0</span>), fee(<span style="color: #666">10000.0</span>, rate<span style="color: #666">=0.002</span>))
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 7: 5.0 10.0 20.0</code></pre><p>Defaults make parameters optional. 1000 × 0.001 = 1.0 is below the minimum, so 5.0; 10000 × 0.001 = 10.0; the third call overrides rate by keyword and leaves minimum at its default. max() with two arguments picks the larger one.</p></details></article><article class="qq" id="yearsto"><h3>Task 8 · session 3&#x27;s while, as a function</h3><p>Write years_to_reach(start, target, rate=0.05) that returns how many whole years start needs to grow to at least target. Use while inside. Print years_to_reach(1000.0, 1500.0) and years_to_reach(1000.0, 1500.0, rate=0.03).</p><details><summary>Show the solution</summary><pre class="qc"><code><span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">years_to_reach</span>(start, target, rate<span style="color: #666">=0.05</span>):
+<span style="color: #BBB">    </span><span style="color: #BA2121; font-style: italic">"""Whole years until start, growing at rate, reaches target."""</span>
+    years <span style="color: #666">=</span> <span style="color: #666">0</span>
+    <span style="color: #008000; font-weight: bold">while</span> start <span style="color: #666">&lt;</span> target:
+        start <span style="color: #666">*=</span> <span style="color: #666">1</span> <span style="color: #666">+</span> rate
+        years <span style="color: #666">+=</span> <span style="color: #666">1</span>
+    <span style="color: #008000; font-weight: bold">return</span> years
+
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 8:"</span>, years_to_reach(<span style="color: #666">1000.0</span>, <span style="color: #666">1500.0</span>), years_to_reach(<span style="color: #666">1000.0</span>, <span style="color: #666">1500.0</span>, rate<span style="color: #666">=0.03</span>))
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 8: 9 14</code></pre><p>start is a local name: growing it inside the function does not touch the 1000.0 the caller passed (floats are immutable). Session 3&#x27;s 14 years at 3 % comes back, now as one call.</p></details></article><article class="qq" id="classbuy"><h3>Task 9 · teach Position a new method</h3><p>Here is Pavel&#x27;s Position class. Add a method buy(self, n) that increases the shares of THIS position by n. Then create aapl = Position(&quot;AAPL&quot;, 10, 190.5), call aapl.buy(5), and print aapl.shares and aapl.value().</p><details><summary>Show the solution</summary><pre class="qc"><code><span style="color: #008000; font-weight: bold">class</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">Position</span>:
+<span style="color: #BBB">    </span><span style="color: #BA2121; font-style: italic">"""One position: a ticker, a number of shares, a price."""</span>
+
+    <span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">__init__</span>(<span style="color: #008000">self</span>, ticker, shares, price):
+        <span style="color: #008000">self</span><span style="color: #666">.</span>ticker <span style="color: #666">=</span> ticker
+        <span style="color: #008000">self</span><span style="color: #666">.</span>shares <span style="color: #666">=</span> shares
+        <span style="color: #008000">self</span><span style="color: #666">.</span>price <span style="color: #666">=</span> price
+
+    <span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">value</span>(<span style="color: #008000">self</span>):
+        <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000">self</span><span style="color: #666">.</span>shares <span style="color: #666">*</span> <span style="color: #008000">self</span><span style="color: #666">.</span>price
+
+    <span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">buy</span>(<span style="color: #008000">self</span>, n):
+<span style="color: #BBB">        </span><span style="color: #BA2121; font-style: italic">"""Add n shares to this position."""</span>
+        <span style="color: #008000">self</span><span style="color: #666">.</span>shares <span style="color: #666">+=</span> n
+
+aapl <span style="color: #666">=</span> Position(<span style="color: #BA2121">"AAPL"</span>, <span style="color: #666">10</span>, <span style="color: #666">190.5</span>)
+aapl<span style="color: #666">.</span>buy(<span style="color: #666">5</span>)
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 9:"</span>, aapl<span style="color: #666">.</span>shares, aapl<span style="color: #666">.</span>value())
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 9: 15 2857.5</code></pre><p>self is the object before the dot: in aapl.buy(5), self is aapl, so self.shares += 5 changes aapl&#x27;s own attribute. buy changes the object and returns None, like list.append. value() then reads the new shares.</p></details></article><article class="qq" id="stats"><h3>Task 10 · a module instead of a loop</h3><p>import the standard-library module statistics. Print the mean (rounded to 2 decimals), the median and the standard deviation (rounded to 2) of the week&#x27;s closes. Look up the function names with help(statistics) or by typing statistics. and waiting.</p><details><summary>Show the solution</summary><pre class="qc"><code><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">statistics</span>
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 10:"</span>, <span style="color: #008000">round</span>(statistics<span style="color: #666">.</span>mean(closes), <span style="color: #666">2</span>), statistics<span style="color: #666">.</span>median(closes),
+      <span style="color: #008000">round</span>(statistics<span style="color: #666">.</span>stdev(closes), <span style="color: #666">2</span>))
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 10: 191.51 191.4 4.52</code></pre><p>import statistics loads the module once; statistics.mean means &quot;the function mean inside statistics&quot;. Finding the right function in a module you have never used is the everyday skill here, not the arithmetic.</p></details></article><h2 class="sect">★ Harder: classic puzzles</h2><article class="qq" id="movavg"><h3>★ Task 11 · Moving average</h3><p>Write moving_average(prices, k) that returns a list: the average of every run of k days in a row, each rounded to 2 decimals. Use a slice for each window. Print moving_average(closes, 3).</p><details><summary>Show the solution</summary><pre class="qc"><code><span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">moving_average</span>(prices, k):
+<span style="color: #BBB">    </span><span style="color: #BA2121; font-style: italic">"""Average of each run of k consecutive prices."""</span>
+    out <span style="color: #666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #A2F; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #008000">len</span>(prices) <span style="color: #666">-</span> k <span style="color: #666">+</span> <span style="color: #666">1</span>):
+        out<span style="color: #666">.</span>append(<span style="color: #008000">round</span>(<span style="color: #008000">sum</span>(prices[i:i <span style="color: #666">+</span> k]) <span style="color: #666">/</span> k, <span style="color: #666">2</span>))
+    <span style="color: #008000; font-weight: bold">return</span> out
+
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 11:"</span>, moving_average(closes, <span style="color: #666">3</span>))
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 11: [190.5, 188.7, 190.1, 191.7, 194.67]</code></pre><p>With 7 days and windows of 3 there are 7 - 3 + 1 = 5 windows. prices[i:i + k] is one window; the last one starts at index 4. Getting that + 1 right is the whole exercise.</p></details></article><article class="qq" id="netpos"><h3>★ Task 12 · Net positions from a list of trades</h3><p>Trades arrive as (ticker, quantity) tuples; a negative quantity is a sale. Write net_positions(trades) that returns a dict: ticker → shares held after all trades. Print it for the trades below.</p><details><summary>Show the solution</summary><pre class="qc"><code>trades <span style="color: #666">=</span> [(<span style="color: #BA2121">"AAPL"</span>, <span style="color: #666">10</span>), (<span style="color: #BA2121">"NESN"</span>, <span style="color: #666">4</span>), (<span style="color: #BA2121">"AAPL"</span>, <span style="color: #666">-3</span>), (<span style="color: #BA2121">"VOO"</span>, <span style="color: #666">2</span>), (<span style="color: #BA2121">"NESN"</span>, <span style="color: #666">-4</span>)]
+
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">net_positions</span>(trades):
+<span style="color: #BBB">    </span><span style="color: #BA2121; font-style: italic">"""Shares held per ticker after a list of (ticker, quantity) trades."""</span>
+    net <span style="color: #666">=</span> {}
+    <span style="color: #008000; font-weight: bold">for</span> ticker, q <span style="color: #A2F; font-weight: bold">in</span> trades:
+        net[ticker] <span style="color: #666">=</span> net<span style="color: #666">.</span>get(ticker, <span style="color: #666">0</span>) <span style="color: #666">+</span> q
+    <span style="color: #008000; font-weight: bold">return</span> net
+
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 12:"</span>, net_positions(trades))
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 12: {&#x27;AAPL&#x27;: 7, &#x27;NESN&#x27;: 0, &#x27;VOO&#x27;: 2}</code></pre><p>Session 3&#x27;s counting pattern, but adding a quantity instead of 1. NESN stays in the dict with 0: whether a closed position should be kept or removed is a decision, and a good docstring says which.</p></details></article><article class="qq" id="merge"><h3>★ Task 13 · Merge two sorted lists</h3><p>Two traders logged their trade times (HHMM as whole numbers), each list already sorted. Write merge_sorted(a, b) that returns one sorted list WITHOUT sorted() or .sort(): walk through both lists with two positions and always take the smaller front item.</p><details><summary>Show the solution</summary><pre class="qc"><code>times_a <span style="color: #666">=</span> [<span style="color: #666">930</span>, <span style="color: #666">1015</span>, <span style="color: #666">1340</span>, <span style="color: #666">1555</span>]
+times_b <span style="color: #666">=</span> [<span style="color: #666">945</span>, <span style="color: #666">1015</span>, <span style="color: #666">1200</span>]
+
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">merge_sorted</span>(a, b):
+<span style="color: #BBB">    </span><span style="color: #BA2121; font-style: italic">"""Merge two sorted lists into one sorted list."""</span>
+    i <span style="color: #666">=</span> j <span style="color: #666">=</span> <span style="color: #666">0</span>
+    out <span style="color: #666">=</span> []
+    <span style="color: #008000; font-weight: bold">while</span> i <span style="color: #666">&lt;</span> <span style="color: #008000">len</span>(a) <span style="color: #A2F; font-weight: bold">and</span> j <span style="color: #666">&lt;</span> <span style="color: #008000">len</span>(b):
+        <span style="color: #008000; font-weight: bold">if</span> a[i] <span style="color: #666">&lt;=</span> b[j]:
+            out<span style="color: #666">.</span>append(a[i])
+            i <span style="color: #666">+=</span> <span style="color: #666">1</span>
+        <span style="color: #008000; font-weight: bold">else</span>:
+            out<span style="color: #666">.</span>append(b[j])
+            j <span style="color: #666">+=</span> <span style="color: #666">1</span>
+    <span style="color: #008000; font-weight: bold">return</span> out <span style="color: #666">+</span> a[i:] <span style="color: #666">+</span> b[j:]
+
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 13:"</span>, merge_sorted(times_a, times_b))
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 13: [930, 945, 1015, 1015, 1200, 1340, 1555]</code></pre><p>Two positions, one per list; each step takes the smaller front item and moves that position on. When one list runs out, the rest of the other is already sorted: a slice past the end is empty, so a[i:] + b[j:] adds exactly the leftovers. This is the heart of merge sort.</p></details></article><article class="qq" id="drawdown"><h3>★ Task 14 · Maximum drawdown</h3><p>The drawdown on a day is how far the price is below the highest price seen so far, in percent. Write max_drawdown(prices) that returns the worst drawdown of the period (a negative number). Print it for closes as a percentage with 2 decimals.</p><details><summary>Show the solution</summary><pre class="qc"><code><span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">max_drawdown</span>(prices):
+<span style="color: #BBB">    </span><span style="color: #BA2121; font-style: italic">"""Worst fall from a running peak, as a fraction (negative)."""</span>
+    peak <span style="color: #666">=</span> prices[<span style="color: #666">0</span>]
+    worst <span style="color: #666">=</span> <span style="color: #666">0.0</span>
+    <span style="color: #008000; font-weight: bold">for</span> p <span style="color: #A2F; font-weight: bold">in</span> prices:
+        <span style="color: #008000; font-weight: bold">if</span> p <span style="color: #666">&gt;</span> peak:
+            peak <span style="color: #666">=</span> p
+        dd <span style="color: #666">=</span> (p <span style="color: #666">-</span> peak) <span style="color: #666">/</span> peak
+        <span style="color: #008000; font-weight: bold">if</span> dd <span style="color: #666">&lt;</span> worst:
+            worst <span style="color: #666">=</span> dd
+    <span style="color: #008000; font-weight: bold">return</span> worst
+
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 14:"</span>, <span style="color: #BA2121">f"</span><span style="color: #A45A77; font-weight: bold">{</span>max_drawdown(closes)<span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span><span style="color: #666">100</span><span style="color: #A45A77; font-weight: bold">:</span><span style="color: #BA2121">.2f</span><span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">%"</span>)
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 14: -4.49%</code></pre><p>Two running values: the peak so far, and the worst fall from it. The worst drawdown is 193.8 → 185.1, not the week&#x27;s highest to lowest price: the lowest price has to come AFTER the peak. It is the risk number every fund report shows.</p></details></article><h2 class="sect">Extra practice</h2><article class="qq" id="hw_bsearch"><h3>Practice 1 · Binary search</h3><p>Write binary_search(xs, target) for a SORTED list: look at the middle item; if it is too small, keep only the right half, if too big, the left half; repeat until found. Return the position, or -1 if the target is not there. Test it on the prices below with 410.0 and with 100.0.</p><details><summary>Show the solution</summary><pre class="qc"><code>prices <span style="color: #666">=</span> [<span style="color: #666">88.7</span>, <span style="color: #666">102.3</span>, <span style="color: #666">190.5</span>, <span style="color: #666">410.0</span>, <span style="color: #666">512.0</span>]
+
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">binary_search</span>(xs, target):
+<span style="color: #BBB">    </span><span style="color: #BA2121; font-style: italic">"""Position of target in the sorted list xs, or -1."""</span>
+    lo, hi <span style="color: #666">=</span> <span style="color: #666">0</span>, <span style="color: #008000">len</span>(xs) <span style="color: #666">-</span> <span style="color: #666">1</span>
+    <span style="color: #008000; font-weight: bold">while</span> lo <span style="color: #666">&lt;=</span> hi:
+        mid <span style="color: #666">=</span> (lo <span style="color: #666">+</span> hi) <span style="color: #666">//</span> <span style="color: #666">2</span>
+        <span style="color: #008000; font-weight: bold">if</span> xs[mid] <span style="color: #666">==</span> target:
+            <span style="color: #008000; font-weight: bold">return</span> mid
+        <span style="color: #008000; font-weight: bold">if</span> xs[mid] <span style="color: #666">&lt;</span> target:
+            lo <span style="color: #666">=</span> mid <span style="color: #666">+</span> <span style="color: #666">1</span>
+        <span style="color: #008000; font-weight: bold">else</span>:
+            hi <span style="color: #666">=</span> mid <span style="color: #666">-</span> <span style="color: #666">1</span>
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666">-1</span>
+
+<span style="color: #008000">print</span>(binary_search(prices, <span style="color: #666">410.0</span>), binary_search(prices, <span style="color: #666">100.0</span>))
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>3 -1</code></pre><p>Each step halves the part still to search: a million sorted items take about 20 steps instead of a million. The whole algorithm lives in the three index updates; lo &lt;= hi (not &lt;) is where most people go wrong.</p></details></article><article class="qq" id="hw_bubble"><h3>Practice 2 · Write your own sort</h3><p>Write bubble_sort(xs) that returns a NEW sorted list and leaves xs unchanged: walk through the list, swap every neighbour pair that is in the wrong order, and repeat until nothing is out of order. Print the result and the original list.</p><details><summary>Show the solution</summary><pre class="qc"><code>unsorted <span style="color: #666">=</span> [<span style="color: #666">512.0</span>, <span style="color: #666">102.3</span>, <span style="color: #666">410.0</span>, <span style="color: #666">88.7</span>, <span style="color: #666">190.5</span>]
+
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">bubble_sort</span>(xs):
+<span style="color: #BBB">    </span><span style="color: #BA2121; font-style: italic">"""A sorted copy of xs, by repeated neighbour swaps."""</span>
+    xs <span style="color: #666">=</span> xs<span style="color: #666">.</span>copy()
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #A2F; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #008000">len</span>(xs)):
+        <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #A2F; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #008000">len</span>(xs) <span style="color: #666">-</span> <span style="color: #666">1</span> <span style="color: #666">-</span> i):
+            <span style="color: #008000; font-weight: bold">if</span> xs[j] <span style="color: #666">&gt;</span> xs[j <span style="color: #666">+</span> <span style="color: #666">1</span>]:
+                xs[j], xs[j <span style="color: #666">+</span> <span style="color: #666">1</span>] <span style="color: #666">=</span> xs[j <span style="color: #666">+</span> <span style="color: #666">1</span>], xs[j]
+    <span style="color: #008000; font-weight: bold">return</span> xs
+
+<span style="color: #008000">print</span>(bubble_sort(unsorted), unsorted)
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>[88.7, 102.3, 190.5, 410.0, 512.0] [512.0, 102.3, 410.0, 88.7, 190.5]</code></pre><p>After each pass the largest remaining item has bubbled to the end, so the inner loop can stop 1 + i early. xs.copy() first: otherwise the function would change the caller&#x27;s list (Task 3). sorted() is far faster; the point is to see what a sort has to do.</p></details></article><article class="qq" id="hw_gcd"><h3>Practice 3 · Euclid: identical baskets</h3><p>You want to split 8 AAPL and 12 NESN shares into identical baskets, as many baskets as possible, each with the same number of AAPL and of NESN. That number of baskets is the greatest common divisor. Write gcd(a, b) with Euclid&#x27;s rule: replace (a, b) by (b, a % b) until b is 0; then a is the answer. Print gcd(8, 12), gcd(10, 4) and gcd(9, 4).</p><details><summary>Show the solution</summary><pre class="qc"><code><span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">gcd</span>(a, b):
+<span style="color: #BBB">    </span><span style="color: #BA2121; font-style: italic">"""Greatest common divisor, by Euclid's algorithm."""</span>
+    <span style="color: #008000; font-weight: bold">while</span> b <span style="color: #666">!=</span> <span style="color: #666">0</span>:
+        a, b <span style="color: #666">=</span> b, a <span style="color: #666">%</span> b
+    <span style="color: #008000; font-weight: bold">return</span> a
+
+<span style="color: #008000">print</span>(gcd(<span style="color: #666">8</span>, <span style="color: #666">12</span>), gcd(<span style="color: #666">10</span>, <span style="color: #666">4</span>), gcd(<span style="color: #666">9</span>, <span style="color: #666">4</span>))
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>4 2 1</code></pre><p>Four baskets of 2 AAPL and 3 NESN. Euclid&#x27;s algorithm is over 2000 years old and still the fastest way: each step the numbers shrink quickly. a, b = b, a % b updates both at once; two separate lines would use the new a by mistake.</p></details></article>
+</div></main></body></html>
