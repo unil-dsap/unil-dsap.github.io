@@ -1,0 +1,223 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Midterm review — Data Science and Advanced Programming, UNIL HEC Lausanne</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  .qq { border: 1px solid var(--hair); background: #fff; padding: 1rem 1.2rem; margin: 1rem 0; max-width: 52rem; }
+  .qq h3 { font-size: 1.05rem; margin-bottom: .5rem; }
+  .qq p { margin: .4rem 0; line-height: 1.5; }
+  .qc, .qo { background: #f4f6f8; border-left: 3px solid var(--hec); padding: .7rem .9rem; overflow-x: auto; font: 14px/1.45 Menlo, Consolas, monospace; margin: .6rem 0; }
+  .qo { border-left-color: #1d7a45; }
+  details summary { cursor: pointer; color: var(--accent); font-weight: 600; margin-top: .4rem; }
+  details[open] { background: var(--gold-tint); padding: .5rem .8rem; }
+  details.setup { max-width: 52rem; }
+  .ans { font-weight: 700; }
+  .jump { display: flex; flex-wrap: wrap; gap: .8rem; margin: 1rem 0; }
+  main .wrap > p.intro { max-width: 52rem; line-height: 1.55; }
+  main .wrap h2.sect { margin-top: 2rem; }
+</style></head><body>
+<div class="wk-mast"><div class="wrap"><p class="crumb"><a href="../../index.html">Data Science and Advanced Programming</a> · Midterm</p>
+<h1>Midterm review: the workshop tasks</h1><p class="q">The core tasks of sessions 2–5, with their answers.</p></div></div>
+<main><div class="wrap">
+<p class="intro">The midterm asks the same kind of questions as these tasks: read code, then say what it prints, which line is wrong, or which error it raises. For each task, answer on paper first, without running anything. Then open the answer. If you were wrong, run the code in your workspace and find the line where your prediction and Python part ways.</p>
+<nav class="jump"><a href="#s2">Session 2</a><a href="#s3">Session 3</a><a href="#s4">Session 4</a><a href="#s5">Session 5</a></nav>
+<h2 class="sect" id="s2">Session 2: values, names, types</h2><article class="qq" id="s2-names"><h3>Task 1 · names are labels, not formulas</h3><p>On paper, fill in a table: after each line, what is every name, and what is its type? Then predict what the print shows. Question: price changed on line 5. Why did old_price and value not change with it?</p><pre class="qc"><code>price <span style="color: #666">=</span> <span style="color: #666">102.3</span>
+old_price <span style="color: #666">=</span> price
+shares <span style="color: #666">=</span> <span style="color: #666">4</span>
+value <span style="color: #666">=</span> shares <span style="color: #666">*</span> price
+price <span style="color: #666">=</span> <span style="color: #666">105.0</span>
+shares <span style="color: #666">+=</span> <span style="color: #666">6</span>
+<span style="color: #008000">print</span>(old_price, price, shares, value)
+</code></pre><p class="qn"><b>What does the print show?</b></p><details><summary>Show the answer</summary><p class="ans"><code>102.3 105.0 10 409.2</code></p><p>Assignment binds a name to a value once. old_price got the value 102.3, not &quot;whatever price is&quot;. value was computed on line 4 with the numbers of that moment; nothing is ever recomputed.</p></details></article><article class="qq" id="s2-invariant"><h3>Task 2 · the money disappeared</h3><p>Buying shares at the market price does not make you richer or poorer: shares × price + cash is the same before and after a purchase. This code runs without an error, but it breaks that rule. Find the line, say in one sentence what it does wrong, and fix it.</p><pre class="qc"><code>shares <span style="color: #666">=</span> <span style="color: #666">4</span>
+price <span style="color: #666">=</span> <span style="color: #666">102.3</span>
+cash <span style="color: #666">=</span> <span style="color: #666">1000.0</span>
+wealth_before <span style="color: #666">=</span> shares <span style="color: #666">*</span> price <span style="color: #666">+</span> cash
+
+shares <span style="color: #666">=</span> shares <span style="color: #666">+</span> <span style="color: #666">6</span>
+cash <span style="color: #666">=</span> cash <span style="color: #666">-</span> shares <span style="color: #666">*</span> price
+
+wealth_after <span style="color: #666">=</span> shares <span style="color: #666">*</span> price <span style="color: #666">+</span> cash
+<span style="color: #008000">print</span>(wealth_before, wealth_after)
+</code></pre><p class="qn"><b>Which line breaks the rule?</b></p><details><summary>Show the answer</summary><p class="ans"><code>cash = cash - shares * price</code></p><pre class="qc"><code>shares <span style="color: #666">=</span> <span style="color: #666">4</span>
+price <span style="color: #666">=</span> <span style="color: #666">102.3</span>
+cash <span style="color: #666">=</span> <span style="color: #666">1000.0</span>
+wealth_before <span style="color: #666">=</span> shares <span style="color: #666">*</span> price <span style="color: #666">+</span> cash
+
+bought <span style="color: #666">=</span> <span style="color: #666">6</span>
+shares <span style="color: #666">=</span> shares <span style="color: #666">+</span> bought
+cash <span style="color: #666">=</span> cash <span style="color: #666">-</span> bought <span style="color: #666">*</span> price
+
+wealth_after <span style="color: #666">=</span> shares <span style="color: #666">*</span> price <span style="color: #666">+</span> cash
+<span style="color: #008000">print</span>(wealth_before, wealth_after, <span style="color: #008000">abs</span>(wealth_after <span style="color: #666">-</span> wealth_before) <span style="color: #666">&lt;</span> <span style="color: #666">0.01</span>)
+</code></pre><p>The buggy version prints 1409.2 1000.0. Cash is charged AFTER shares was raised to 10, so all 10 shares are paid for, not the 6 bought. The order of lines is state. Charge for what you buy, and check the rule with a tolerance, not ==.</p></details></article><article class="qq" id="s2-purchase"><h3>Task 6 · a purchase with a rule</h3><p>You hold 2 VOO at 512.00 CHF and have 3000.00 CHF cash. Rule: spend at most 40 % of your cash, and buy whole shares only. Write the lines that work out how many shares you buy, update shares and cash, check that wealth did not change (with a tolerance, not ==), and print one line with an f-string.</p><pre class="qc"><code>ticker <span style="color: #666">=</span> <span style="color: #BA2121">"VOO"</span>
+shares <span style="color: #666">=</span> <span style="color: #666">2</span>
+price <span style="color: #666">=</span> <span style="color: #666">512.0</span>
+cash <span style="color: #666">=</span> <span style="color: #666">3000.0</span>
+
+<span style="color: #3D7B7B; font-style: italic"># your code here</span>
+</code></pre><details><summary>Show the solution</summary><pre class="qc"><code>ticker <span style="color: #666">=</span> <span style="color: #BA2121">"VOO"</span>
+shares <span style="color: #666">=</span> <span style="color: #666">2</span>
+price <span style="color: #666">=</span> <span style="color: #666">512.0</span>
+cash <span style="color: #666">=</span> <span style="color: #666">3000.0</span>
+
+wealth_before <span style="color: #666">=</span> shares <span style="color: #666">*</span> price <span style="color: #666">+</span> cash
+bought <span style="color: #666">=</span> <span style="color: #008000">int</span>(cash <span style="color: #666">*</span> <span style="color: #666">0.4</span> <span style="color: #666">//</span> price)
+shares <span style="color: #666">+=</span> bought
+cash <span style="color: #666">-=</span> bought <span style="color: #666">*</span> price
+<span style="color: #008000">print</span>(<span style="color: #BA2121">f"</span><span style="color: #A45A77; font-weight: bold">{</span>ticker<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">: bought </span><span style="color: #A45A77; font-weight: bold">{</span>bought<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">, now </span><span style="color: #A45A77; font-weight: bold">{</span>shares<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121"> shares, cash </span><span style="color: #A45A77; font-weight: bold">{</span>cash<span style="color: #A45A77; font-weight: bold">:</span><span style="color: #BA2121">.2f</span><span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121"> CHF"</span>)
+<span style="color: #008000">print</span>(<span style="color: #008000">abs</span>(shares <span style="color: #666">*</span> price <span style="color: #666">+</span> cash <span style="color: #666">-</span> wealth_before) <span style="color: #666">&lt;</span> <span style="color: #666">0.01</span>)
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>VOO: bought 2, now 4 shares, cash 1976.00 CHF
+True</code></pre><p>40 % of 3000 is 1200; 1200 // 512 is 2 whole shares. Update shares and cash from the same <code>bought</code>, so the invariant holds. int() turns the float result of // into a whole number for printing.</p></details></article><article class="qq" id="s2-cents"><h3>Task 7 · the same purchase in cents</h3><p>Floats cannot store most prices exactly. Money is safer as whole cents. Redo Task 6 with integers only: 512.00 CHF is 51200 cents, 3000.00 CHF is 300000 cents. At the end, print the cash as CHF, built from // and % (no division, no float).</p><pre class="qc"><code>shares <span style="color: #666">=</span> <span style="color: #666">2</span>
+price_c <span style="color: #666">=</span> <span style="color: #666">51200</span>
+cash_c <span style="color: #666">=</span> <span style="color: #666">300000</span>
+
+<span style="color: #3D7B7B; font-style: italic"># your code here</span>
+</code></pre><details><summary>Show the solution</summary><pre class="qc"><code>shares <span style="color: #666">=</span> <span style="color: #666">2</span>
+price_c <span style="color: #666">=</span> <span style="color: #666">51200</span>
+cash_c <span style="color: #666">=</span> <span style="color: #666">300000</span>
+
+bought <span style="color: #666">=</span> cash_c <span style="color: #666">*</span> <span style="color: #666">40</span> <span style="color: #666">//</span> <span style="color: #666">100</span> <span style="color: #666">//</span> price_c
+shares <span style="color: #666">+=</span> bought
+cash_c <span style="color: #666">-=</span> bought <span style="color: #666">*</span> price_c
+<span style="color: #008000">print</span>(<span style="color: #BA2121">f"CHF </span><span style="color: #A45A77; font-weight: bold">{</span>cash_c<span style="color: #BBB"> </span><span style="color: #666">//</span><span style="color: #BBB"> </span><span style="color: #666">100</span><span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">.</span><span style="color: #A45A77; font-weight: bold">{</span>cash_c<span style="color: #BBB"> </span><span style="color: #666">%</span><span style="color: #BBB"> </span><span style="color: #666">100</span><span style="color: #A45A77; font-weight: bold">:</span><span style="color: #BA2121">02d</span><span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">"</span>)
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>CHF 1976.00</code></pre><p>cash_c // 100 is the francs, cash_c % 100 the cents; :02d pads 0 to &quot;00&quot;. Everything stays an int, so nothing is ever rounded. Choosing the representation of the data is a decision the programmer makes.</p></details></article><h2 class="sect" id="s3">Session 3: lists, loops, decisions, dicts</h2><details class="setup"><summary>The data these tasks start from</summary><pre class="qc"><code>tickers <span style="color: #666">=</span> [<span style="color: #BA2121">"AAPL"</span>, <span style="color: #BA2121">"NESN"</span>, <span style="color: #BA2121">"VOO"</span>]
+shares <span style="color: #666">=</span> [<span style="color: #666">10</span>, <span style="color: #666">4</span>, <span style="color: #666">2</span>]
+price <span style="color: #666">=</span> {<span style="color: #BA2121">"AAPL"</span>: <span style="color: #666">190.5</span>, <span style="color: #BA2121">"NESN"</span>: <span style="color: #666">102.3</span>, <span style="color: #BA2121">"VOO"</span>: <span style="color: #666">512.0</span>}
+closes <span style="color: #666">=</span> [<span style="color: #666">190.5</span>, <span style="color: #666">187.2</span>, <span style="color: #666">193.8</span>, <span style="color: #666">185.1</span>, <span style="color: #666">191.4</span>, <span style="color: #666">198.6</span>, <span style="color: #666">194.0</span>]   <span style="color: #3D7B7B; font-style: italic"># AAPL, day 0 to day 6</span>
+</code></pre></details><article class="qq" id="s3-slices"><h3>Task 1 · slices</h3><p>On paper, predict what each line prints. Then run and compare. Remember: positions start at 0, the stop is not included, and a slice never crashes.</p><pre class="qc"><code><span style="color: #008000">print</span>(closes[<span style="color: #666">1</span>:<span style="color: #666">4</span>])
+<span style="color: #008000">print</span>(closes[::<span style="color: #666">3</span>])
+<span style="color: #008000">print</span>(closes[::<span style="color: #666">-1</span>][:<span style="color: #666">2</span>])
+<span style="color: #008000">print</span>(closes[<span style="color: #666">5</span>:<span style="color: #666">100</span>])
+<span style="color: #008000">print</span>(tickers[<span style="color: #666">3</span>:])
+</code></pre><p class="qn"><b>What is closes[::-1][:2]?</b></p><details><summary>Show the answer</summary><p class="ans"><code>[194.0, 198.6]</code></p><p>[1:4] is positions 1, 2, 3. [::3] takes every third item from the start. [::-1] reverses, then [:2] keeps the first two of the reversed list: the last two days, newest first. [5:100] stops at the end instead of crashing. tickers[3:] is empty, while tickers[3] would be an IndexError.</p></details></article><article class="qq" id="s3-alias"><h3>Task 2 · a copy, or a second name?</h3><p>Predict both lines. Then say in one sentence what <code>backup = shares</code> creates, and what <code>shares.copy()</code> creates.</p><pre class="qc"><code>backup <span style="color: #666">=</span> shares
+backup<span style="color: #666">.</span>append(<span style="color: #666">5</span>)
+<span style="color: #008000">print</span>(shares)
+
+shares <span style="color: #666">=</span> [<span style="color: #666">10</span>, <span style="color: #666">4</span>, <span style="color: #666">2</span>]
+backup <span style="color: #666">=</span> shares<span style="color: #666">.</span>copy()
+backup[<span style="color: #666">1</span>] <span style="color: #666">=</span> <span style="color: #666">10</span>
+<span style="color: #008000">print</span>(shares, backup)
+</code></pre><p class="qn"><b>What does Task 2a print?</b></p><details><summary>Show the answer</summary><p class="ans"><code>[10, 4, 2, 5]</code></p><p><code>backup = shares</code> puts a second name on the SAME list, so append through one name shows through the other. <code>shares.copy()</code> builds a NEW list; changing the copy leaves the original alone. Numbers and text never surprise you like this, because they cannot change; lists and dicts can.</p></details></article><article class="qq" id="s3-zipsorted"><h3>Task 3 · the zip that lies</h3><p>The total of the ledger is 3338.2. Someone wanted the positions &quot;in order&quot; and put sorted(shares) inside the zip. It runs, and prints a total that looks like money. First fill in an iteration table ON PAPER (ticker, shares, value, running total), then explain what went wrong and fix it.</p><pre class="qc"><code>total <span style="color: #666">=</span> <span style="color: #666">0.0</span>
+<span style="color: #008000; font-weight: bold">for</span> t, n <span style="color: #A2F; font-weight: bold">in</span> <span style="color: #008000">zip</span>(tickers, <span style="color: #008000">sorted</span>(shares)):
+    total <span style="color: #666">+=</span> n <span style="color: #666">*</span> price[t]
+<span style="color: #008000">print</span>(total)
+</code></pre><p class="qn"><b>What total does the buggy loop print?</b></p><details><summary>Show the answer</summary><p class="ans"><code>5910.2</code></p><pre class="qc"><code>total <span style="color: #666">=</span> <span style="color: #666">0.0</span>
+<span style="color: #008000; font-weight: bold">for</span> t, n <span style="color: #A2F; font-weight: bold">in</span> <span style="color: #008000">zip</span>(tickers, shares):
+    total <span style="color: #666">+=</span> n <span style="color: #666">*</span> price[t]
+<span style="color: #008000">print</span>(total)
+</code></pre><p>The buggy version prints 5910.2. sorted(shares) is [2, 4, 10], and zip pairs by position, so AAPL gets 2 shares and VOO gets 10. Two lists that describe the same rows must stay in the same order. Rough check: VOO alone (5120.0) cannot be worth more than the whole ledger.</p></details></article><article class="qq" id="s3-texttotal"><h3>Task 6 · from text to a total</h3><p>A ledger file arrives as lines of text. Loop over the lines, cut each one at the commas with .split(&quot;,&quot;), convert the pieces, and add up the value.</p><pre class="qc"><code>lines <span style="color: #666">=</span> [<span style="color: #BA2121">"AAPL,10,190.50"</span>, <span style="color: #BA2121">"NESN,4,102.30"</span>, <span style="color: #BA2121">"VOO,2,512.00"</span>]
+
+<span style="color: #3D7B7B; font-style: italic"># your code here</span>
+</code></pre><details><summary>Show the solution</summary><pre class="qc"><code>lines <span style="color: #666">=</span> [<span style="color: #BA2121">"AAPL,10,190.50"</span>, <span style="color: #BA2121">"NESN,4,102.30"</span>, <span style="color: #BA2121">"VOO,2,512.00"</span>]
+total <span style="color: #666">=</span> <span style="color: #666">0.0</span>
+<span style="color: #008000; font-weight: bold">for</span> line <span style="color: #A2F; font-weight: bold">in</span> lines:
+    parts <span style="color: #666">=</span> line<span style="color: #666">.</span>split(<span style="color: #BA2121">","</span>)
+    total <span style="color: #666">+=</span> <span style="color: #008000">int</span>(parts[<span style="color: #666">1</span>]) <span style="color: #666">*</span> <span style="color: #008000">float</span>(parts[<span style="color: #666">2</span>])
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 6:"</span>, total)
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 6: 3338.2</code></pre><p>split gives a list of three strings. They are text, so &quot;10&quot; * &quot;190.50&quot; would fail and &quot;10&quot; + &quot;4&quot; would join: convert with int() and float() first (session 2: data from files arrives as text).</p></details></article><article class="qq" id="s3-largest"><h3>Task 7 · the largest position, without max()</h3><p>Find which position is worth the most, and print its ticker and value. Do not use max(): keep &quot;the best so far&quot; in two names and update them. Loop with zip(tickers, shares).</p><details><summary>Show the solution</summary><pre class="qc"><code>best_ticker, best_value <span style="color: #666">=</span> <span style="color: #BA2121">""</span>, <span style="color: #666">0.0</span>
+<span style="color: #008000; font-weight: bold">for</span> t, n <span style="color: #A2F; font-weight: bold">in</span> <span style="color: #008000">zip</span>(tickers, shares):
+    v <span style="color: #666">=</span> n <span style="color: #666">*</span> price[t]
+    <span style="color: #008000; font-weight: bold">if</span> v <span style="color: #666">&gt;</span> best_value:
+        best_ticker, best_value <span style="color: #666">=</span> t, v
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 7:"</span>, best_ticker, <span style="color: #BA2121">f"</span><span style="color: #A45A77; font-weight: bold">{</span>best_value<span style="color: #A45A77; font-weight: bold">:</span><span style="color: #BA2121">.2f</span><span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">"</span>)
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 7: AAPL 1905.00</code></pre><p>The pattern &quot;best so far&quot;: start below any possible value, look at each item once, replace the best when something beats it. This is what max() does inside; now you can also keep WHICH item was best.</p></details></article><h2 class="sect" id="s4">Session 4: functions, methods, modules, classes</h2><details class="setup"><summary>The data these tasks start from</summary><pre class="qc"><code>closes <span style="color: #666">=</span> [<span style="color: #666">190.5</span>, <span style="color: #666">187.2</span>, <span style="color: #666">193.8</span>, <span style="color: #666">185.1</span>, <span style="color: #666">191.4</span>, <span style="color: #666">198.6</span>, <span style="color: #666">194.0</span>]   <span style="color: #3D7B7B; font-style: italic"># AAPL, day 0 to day 6</span>
+</code></pre></details><article class="qq" id="s4-printreturn"><h3>Task 1 · print is not return</h3><p>Two functions that look almost the same. Predict EVERYTHING the program shows, line by line, in order. Then say what a and b hold.</p><pre class="qc"><code><span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">value_p</span>(shares, price):
+    <span style="color: #008000">print</span>(shares <span style="color: #666">*</span> price)
+
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">value_r</span>(shares, price):
+    <span style="color: #008000; font-weight: bold">return</span> shares <span style="color: #666">*</span> price
+
+a <span style="color: #666">=</span> value_p(<span style="color: #666">4</span>, <span style="color: #666">102.3</span>)
+b <span style="color: #666">=</span> value_r(<span style="color: #666">4</span>, <span style="color: #666">102.3</span>)
+<span style="color: #008000">print</span>(a, b)
+</code></pre><p class="qn"><b>What does the last line print?</b></p><details><summary>Show the answer</summary><p class="ans"><code>Task 1: None 409.2</code></p><p>value_p SHOWS 409.2 on the screen while it runs, then gives back nothing: every function without return returns None, so a is None. value_r shows nothing and hands 409.2 back to the program. A value on the screen is not a value in a variable (session 1&#x27;s round, again).</p></details></article><article class="qq" id="s4-scope"><h3>Task 2 · two variables called total</h3><p>Predict the print. Then explain: the function assigns to total. Why is the total outside still 100.0?</p><pre class="qc"><code>total <span style="color: #666">=</span> <span style="color: #666">100.0</span>
+
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">add_fee</span>(amount):
+    total <span style="color: #666">=</span> amount <span style="color: #666">+</span> <span style="color: #666">2.5</span>
+    <span style="color: #008000; font-weight: bold">return</span> total
+
+x <span style="color: #666">=</span> add_fee(<span style="color: #666">40.0</span>)
+<span style="color: #008000">print</span>(x, total)
+</code></pre><p class="qn"><b>What does the print show?</b></p><details><summary>Show the answer</summary><p class="ans"><code>42.5 100.0</code></p><p>Assigning inside a function creates a LOCAL name. The total inside add_fee is a different variable that happens to share the name; it disappears when the call ends. The only way out of a function is return.</p></details></article><article class="qq" id="s4-mutable"><h3>Task 3 · what the function changed</h3><p>Two functions, each changes its parameter. Predict both prints. Why does the list outside change, and the number outside not?</p><pre class="qc"><code><span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">add_position</span>(shares, n):
+    shares<span style="color: #666">.</span>append(n)
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000">len</span>(shares)
+
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">add_one</span>(n):
+    n <span style="color: #666">=</span> n <span style="color: #666">+</span> <span style="color: #666">1</span>
+    <span style="color: #008000; font-weight: bold">return</span> n
+
+shares <span style="color: #666">=</span> [<span style="color: #666">10</span>, <span style="color: #666">4</span>, <span style="color: #666">2</span>]
+k <span style="color: #666">=</span> add_position(shares, <span style="color: #666">7</span>)
+<span style="color: #008000">print</span>(k, shares)
+
+m <span style="color: #666">=</span> <span style="color: #666">5</span>
+y <span style="color: #666">=</span> add_one(m)
+<span style="color: #008000">print</span>(m, y)
+</code></pre><p class="qn"><b>What does Task 3a print?</b></p><details><summary>Show the answer</summary><p class="ans"><code>4 [10, 4, 2, 7]</code></p><p>Inside add_position, shares is a second name for the caller&#x27;s list (session 3: two names, one list), and append changes that list in place. In add_one, n = n + 1 builds a NEW number and moves the local label n to it; the caller&#x27;s 5 cannot change, because ints are immutable. Lists are mutable.</p></details></article><article class="qq" id="s4-totalvalue"><h3>Task 6 · two functions for the ledger</h3><p>The ledger is a list of (ticker, shares, price) tuples. Write position_value(shares, price) that returns the value of one position, and total_value(positions) that loops over the tuples, unpacks each one, and returns the sum of position_value for all of them. Both need a one-line docstring. Print total_value(ledger).</p><pre class="qc"><code>ledger <span style="color: #666">=</span> [(<span style="color: #BA2121">"AAPL"</span>, <span style="color: #666">10</span>, <span style="color: #666">190.5</span>), (<span style="color: #BA2121">"NESN"</span>, <span style="color: #666">4</span>, <span style="color: #666">102.3</span>), (<span style="color: #BA2121">"VOO"</span>, <span style="color: #666">2</span>, <span style="color: #666">512.0</span>)]
+
+<span style="color: #3D7B7B; font-style: italic"># your code here</span>
+</code></pre><details><summary>Show the solution</summary><pre class="qc"><code>ledger <span style="color: #666">=</span> [(<span style="color: #BA2121">"AAPL"</span>, <span style="color: #666">10</span>, <span style="color: #666">190.5</span>), (<span style="color: #BA2121">"NESN"</span>, <span style="color: #666">4</span>, <span style="color: #666">102.3</span>), (<span style="color: #BA2121">"VOO"</span>, <span style="color: #666">2</span>, <span style="color: #666">512.0</span>)]
+
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">position_value</span>(shares, price):
+<span style="color: #BBB">    </span><span style="color: #BA2121; font-style: italic">"""Value of one position, in CHF."""</span>
+    <span style="color: #008000; font-weight: bold">return</span> shares <span style="color: #666">*</span> price
+
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">total_value</span>(positions):
+<span style="color: #BBB">    </span><span style="color: #BA2121; font-style: italic">"""Sum of the values of (ticker, shares, price) tuples."""</span>
+    total <span style="color: #666">=</span> <span style="color: #666">0.0</span>
+    <span style="color: #008000; font-weight: bold">for</span> ticker, n, p <span style="color: #A2F; font-weight: bold">in</span> positions:
+        total <span style="color: #666">+=</span> position_value(n, p)
+    <span style="color: #008000; font-weight: bold">return</span> total
+
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 6:"</span>, total_value(ledger))
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 6: 3338.2</code></pre><p>One function per idea; the second one calls the first. The loop header unpacks each tuple into three names. return sits AFTER the loop, not inside it (Pavel&#x27;s &quot;Spot the lie&quot;).</p></details></article><article class="qq" id="s4-feedefault"><h3>Task 7 · a fee with defaults</h3><p>Write fee(value, rate=0.001, minimum=5.0) that returns value × rate, but never less than minimum. Then print, on one line, fee(1000.0), fee(10000.0) and fee(10000.0, rate=0.002).</p><details><summary>Show the solution</summary><pre class="qc"><code><span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">fee</span>(value, rate<span style="color: #666">=0.001</span>, minimum<span style="color: #666">=5.0</span>):
+<span style="color: #BBB">    </span><span style="color: #BA2121; font-style: italic">"""Broker fee: a share of the value, with a minimum charge."""</span>
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000">max</span>(value <span style="color: #666">*</span> rate, minimum)
+
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 7:"</span>, fee(<span style="color: #666">1000.0</span>), fee(<span style="color: #666">10000.0</span>), fee(<span style="color: #666">10000.0</span>, rate<span style="color: #666">=0.002</span>))
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 7: 5.0 10.0 20.0</code></pre><p>Defaults make parameters optional. 1000 × 0.001 = 1.0 is below the minimum, so 5.0; 10000 × 0.001 = 10.0; the third call overrides rate by keyword and leaves minimum at its default. max() with two arguments picks the larger one.</p></details></article><h2 class="sect" id="s5">Session 5: nested data, comprehensions, numpy, pandas</h2><details class="setup"><summary>The data these tasks start from</summary><pre class="qc"><code><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">numpy</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">as</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">pandas</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">as</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">pd</span>
+
+ledger <span style="color: #666">=</span> {
+    <span style="color: #BA2121">"AAPL"</span>: {<span style="color: #BA2121">"shares"</span>: <span style="color: #666">10</span>, <span style="color: #BA2121">"prices"</span>: [<span style="color: #666">185.0</span>, <span style="color: #666">188.2</span>, <span style="color: #666">190.5</span>]},
+    <span style="color: #BA2121">"NESN"</span>: {<span style="color: #BA2121">"shares"</span>: <span style="color: #666">4</span>, <span style="color: #BA2121">"prices"</span>: [<span style="color: #666">104.1</span>, <span style="color: #666">103.0</span>, <span style="color: #666">102.3</span>]},
+    <span style="color: #BA2121">"VOO"</span>: {<span style="color: #BA2121">"shares"</span>: <span style="color: #666">2</span>, <span style="color: #BA2121">"prices"</span>: [<span style="color: #666">505.0</span>, <span style="color: #666">509.9</span>, <span style="color: #666">512.0</span>]},
+}
+tickers <span style="color: #666">=</span> np<span style="color: #666">.</span>array([<span style="color: #BA2121">"AAPL"</span>, <span style="color: #BA2121">"NESN"</span>, <span style="color: #BA2121">"VOO"</span>])
+shares <span style="color: #666">=</span> np<span style="color: #666">.</span>array([<span style="color: #666">10</span>, <span style="color: #666">4</span>, <span style="color: #666">2</span>])
+prices <span style="color: #666">=</span> np<span style="color: #666">.</span>array([[<span style="color: #666">185.0</span>, <span style="color: #666">188.2</span>, <span style="color: #666">190.5</span>],
+                   [<span style="color: #666">104.1</span>, <span style="color: #666">103.0</span>, <span style="color: #666">102.3</span>],
+                   [<span style="color: #666">505.0</span>, <span style="color: #666">509.9</span>, <span style="color: #666">512.0</span>]])
+df <span style="color: #666">=</span> pd<span style="color: #666">.</span>DataFrame({<span style="color: #BA2121">"ticker"</span>: [<span style="color: #BA2121">"AAPL"</span>, <span style="color: #BA2121">"MSFT"</span>, <span style="color: #BA2121">"NESN"</span>, <span style="color: #BA2121">"VOO"</span>],
+                   <span style="color: #BA2121">"sector"</span>: [<span style="color: #BA2121">"tech"</span>, <span style="color: #BA2121">"tech"</span>, <span style="color: #BA2121">"food"</span>, <span style="color: #BA2121">"fund"</span>],
+                   <span style="color: #BA2121">"shares"</span>: [<span style="color: #666">10</span>, <span style="color: #666">3</span>, <span style="color: #666">4</span>, <span style="color: #666">2</span>],
+                   <span style="color: #BA2121">"price"</span>: [<span style="color: #666">190.5</span>, <span style="color: #666">410.0</span>, <span style="color: #666">102.3</span>, <span style="color: #666">512.0</span>]})
+df[<span style="color: #BA2121">"value"</span>] <span style="color: #666">=</span> df[<span style="color: #BA2121">"shares"</span>] <span style="color: #666">*</span> df[<span style="color: #BA2121">"price"</span>]
+</code></pre></details><article class="qq" id="s5-chains"><h3>Task 1 · chains of look-ups</h3><p>Read each chain from left to right. After every bracket, say what TYPE you have. Then predict the three printed values.</p><pre class="qc"><code><span style="color: #008000">print</span>(ledger[<span style="color: #BA2121">"VOO"</span>][<span style="color: #BA2121">"prices"</span>][::<span style="color: #666">-1</span>][<span style="color: #666">0</span>])
+<span style="color: #008000">print</span>(<span style="color: #008000">len</span>(ledger[<span style="color: #BA2121">"AAPL"</span>]))
+<span style="color: #008000">print</span>(ledger[<span style="color: #BA2121">"NESN"</span>][<span style="color: #BA2121">"shares"</span>]
+      <span style="color: #666">*</span> ledger[<span style="color: #BA2121">"NESN"</span>][<span style="color: #BA2121">"prices"</span>][<span style="color: #666">-1</span>])
+</code></pre><p class="qn"><b>What is len(ledger[&quot;AAPL&quot;])?</b></p><details><summary>Show the answer</summary><p class="ans"><code>2</code></p><p>Line 1: dict → dict → list → reversed list → its first item, the last price. Line 2 is the trap: ledger[&quot;AAPL&quot;] is the inner DICT, with two keys (shares, prices), so len is 2, not 3. Line 3: a number times a number.</p></details></article><article class="qq" id="s5-comps"><h3>Task 2 · say it in one sentence</h3><p>For each comprehension: first say it in one English sentence (&quot;the tickers whose…&quot;), then predict what it prints. Check the brackets first: list, dict, or neither?</p><pre class="qc"><code>big <span style="color: #666">=</span> [t <span style="color: #008000; font-weight: bold">for</span> t, d <span style="color: #A2F; font-weight: bold">in</span> ledger<span style="color: #666">.</span>items()
+       <span style="color: #008000; font-weight: bold">if</span> d[<span style="color: #BA2121">"shares"</span>] <span style="color: #666">*</span> d[<span style="color: #BA2121">"prices"</span>][<span style="color: #666">-1</span>] <span style="color: #666">&gt;</span> <span style="color: #666">1000</span>]
+total <span style="color: #666">=</span> <span style="color: #008000">sum</span>(d[<span style="color: #BA2121">"shares"</span>] <span style="color: #008000; font-weight: bold">for</span> d <span style="color: #A2F; font-weight: bold">in</span> ledger<span style="color: #666">.</span>values())
+counts <span style="color: #666">=</span> {t: <span style="color: #008000">len</span>(d[<span style="color: #BA2121">"prices"</span>])
+          <span style="color: #008000; font-weight: bold">for</span> t, d <span style="color: #A2F; font-weight: bold">in</span> ledger<span style="color: #666">.</span>items()}
+<span style="color: #008000">print</span>(big)
+<span style="color: #008000">print</span>(total)
+<span style="color: #008000">print</span>(counts)
+</code></pre><p class="qn"><b>Which sentence describes the first comprehension?</b></p><details><summary>Show the answer</summary><p class="ans"><code>The tickers whose position is worth more than 1000</code></p><p>1: &quot;the tickers whose position is worth more than 1000&quot;, a list. 2: &quot;the total number of shares&quot;, no brackets of its own, fed straight into sum. 3: &quot;each ticker with how many prices it has&quot;, curly brackets with key: value, a dict.</p></details></article><article class="qq" id="s5-shapes"><h3>Task 3 · count the scalars, get the shape</h3><p>Pavel&#x27;s rule: every single number inside the brackets removes a dimension; a : or a slice keeps it. Predict the four shapes without running anything.</p><pre class="qc"><code><span style="color: #008000">print</span>(prices[<span style="color: #666">1</span>]<span style="color: #666">.</span>shape)
+<span style="color: #008000">print</span>(prices[:, [<span style="color: #666">0</span>, <span style="color: #666">2</span>]]<span style="color: #666">.</span>shape)
+<span style="color: #008000">print</span>(prices[:<span style="color: #666">2</span>, <span style="color: #666">1</span>:]<span style="color: #666">.</span>shape)
+<span style="color: #008000">print</span>(shares[:, <span style="color: #008000; font-weight: bold">None</span>]<span style="color: #666">.</span>shape)
+</code></pre><p class="qn"><b>What is prices[:, [0, 2]].shape?</b></p><details><summary>Show the answer</summary><p class="ans"><code>(3, 2)</code></p><p>prices[1]: one number (row 1) → one dimension left, 3 long. [:, [0, 2]]: all rows, a LIST of two columns → (3, 2). [:2, 1:]: two rows, two columns. shares[:, None] keeps the 3 and adds a new direction of length 1: a column. When numpy surprises you, print .shape first.</p></details></article><article class="qq" id="s5-pctchange"><h3>Task 6 · a dict comprehension</h3><p>In ONE dict comprehension over ledger.items(), build: each ticker → its change from the first to the last price, in percent, rounded to 2 decimals. Print it.</p><details><summary>Show the solution</summary><pre class="qc"><code>change <span style="color: #666">=</span> {t: <span style="color: #008000">round</span>((d[<span style="color: #BA2121">"prices"</span>][<span style="color: #666">-1</span>] <span style="color: #666">-</span> d[<span style="color: #BA2121">"prices"</span>][<span style="color: #666">0</span>]) <span style="color: #666">/</span> d[<span style="color: #BA2121">"prices"</span>][<span style="color: #666">0</span>] <span style="color: #666">*</span> <span style="color: #666">100</span>, <span style="color: #666">2</span>)
+          <span style="color: #008000; font-weight: bold">for</span> t, d <span style="color: #A2F; font-weight: bold">in</span> ledger<span style="color: #666">.</span>items()}
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 6:"</span>, change)
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 6: {&#x27;AAPL&#x27;: 2.97, &#x27;NESN&#x27;: -1.73, &#x27;VOO&#x27;: 1.39}</code></pre><p>Loop part first (for t, d in ledger.items()), then the key: value you keep. Write it as a loop first if the one-liner does not come; both are fine.</p></details></article><article class="qq" id="s5-sortkey"><h3>Task 7 · sort by yesterday&#x27;s return</h3><p>Sort the tickers of ledger by their LAST daily return (last price / the price before it − 1), largest first. Use sorted with key= and a lambda.</p><details><summary>Show the solution</summary><pre class="qc"><code>order <span style="color: #666">=</span> <span style="color: #008000">sorted</span>(ledger, reverse<span style="color: #666">=</span><span style="color: #008000; font-weight: bold">True</span>,
+               key<span style="color: #666">=</span><span style="color: #008000; font-weight: bold">lambda</span> t: ledger[t][<span style="color: #BA2121">"prices"</span>][<span style="color: #666">-1</span>] <span style="color: #666">/</span> ledger[t][<span style="color: #BA2121">"prices"</span>][<span style="color: #666">-2</span>] <span style="color: #666">-</span> <span style="color: #666">1</span>)
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 7:"</span>, order)
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 7: [&#x27;AAPL&#x27;, &#x27;VOO&#x27;, &#x27;NESN&#x27;]</code></pre><p>sorted(ledger) goes over the keys, the tickers. key= says what to compare for each ticker: here its last return (AAPL +1.22 %, VOO +0.41 %, NESN −0.68 %). reverse=True puts the largest first.</p></details></article><article class="qq" id="s5-history"><h3>Task 8 · the portfolio on every day, no loop</h3><p>With broadcasting: compute the value of every position on every day (a 3 × 3 array), then the portfolio total per day (one number per day), then the portfolio&#x27;s daily return in percent, rounded to 2. No loops. Check one number by hand: AAPL on day 0 is 10 × 185 = 1850.</p><details><summary>Show the solution</summary><pre class="qc"><code>history <span style="color: #666">=</span> shares[:, <span style="color: #008000; font-weight: bold">None</span>] <span style="color: #666">*</span> prices          <span style="color: #3D7B7B; font-style: italic"># (3, 1) × (3, 3): shares stretched across the days</span>
+per_day <span style="color: #666">=</span> history<span style="color: #666">.</span>sum(axis<span style="color: #666">=0</span>)               <span style="color: #3D7B7B; font-style: italic"># collapse the rows: one total per day</span>
+daily_return <span style="color: #666">=</span> (per_day[<span style="color: #666">1</span>:] <span style="color: #666">/</span> per_day[:<span style="color: #666">-1</span>] <span style="color: #666">-</span> <span style="color: #666">1</span>) <span style="color: #666">*</span> <span style="color: #666">100</span>
+<span style="color: #008000">print</span>(<span style="color: #BA2121">"Task 8:"</span>, per_day, daily_return<span style="color: #666">.</span>round(<span style="color: #666">2</span>))
+</code></pre><p class="ans">It prints:</p><pre class="qo"><code>Task 8: [3276.4 3313.8 3338.2] [1.14 0.74]</code></pre><p>shares[:, None] makes shares a column, so it multiplies each ROW (position). axis=0 squeezes the rows away: one number per day. The two shifted slices per_day[1:] / per_day[:-1] give each day over the day before. Without [:, None], the shares would multiply the columns (days) instead, silently.</p></details></article>
+</div></main></body></html>

@@ -1,0 +1,4 @@
+Apple      1,905.00
+Nestlé       409.20
+Vanguard   1,024.00
+total      3,338.20
