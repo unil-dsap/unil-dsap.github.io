@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 420" width="1100" height="420" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif">
+  <!-- Stylized VS Code Source Control (Light Modern) on Nuvolos, after the
+       laptop pushed "add a README" and before "git pull". Hashes and
+       messages are the real ones from transcript.txt. -->
+  <style>
+    .win { fill: #f8f8f8; stroke: #d0d0d0; stroke-width: 1.5; }
+    .head { font-size: 13px; font-weight: 700; fill: #3b3b3b; letter-spacing: 0.06em; }
+    .btn { fill: #005fb8; }
+    .btnt { font-size: 16px; fill: #fff; font-weight: 600; }
+    .row { font-size: 16px; fill: #1f1f1f; }
+    .hash { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 14px; fill: #6b6b6b; }
+    .line { stroke: #005fb8; stroke-width: 3; }
+    .dot { fill: #fff; stroke: #005fb8; stroke-width: 3; }
+    .inc { fill: #fff; stroke: #8250df; stroke-width: 3; stroke-dasharray: 3 3; }
+    .lab { font-size: 13px; font-weight: 700; fill: #fff; }
+    .loc { fill: #005fb8; }
+    .rem { fill: #8250df; }
+    .status { fill: #005fb8; }
+    .statust { font-size: 15px; fill: #fff; }
+    .call { fill: #fab52a; }
+    .callt { font-size: 16px; font-weight: 700; fill: #14181d; font-family: ui-monospace, Menlo, Consolas, monospace; }
+    .note { font-size: 15px; fill: #4b5563; font-family: Unil Sans, Arial, sans-serif; }
+  </style>
+
+  <rect class="win" x="10" y="10" width="640" height="380"/>
+  <text class="head" x="28" y="38">SOURCE CONTROL</text>
+  <rect class="btn" x="28" y="52" width="604" height="36" rx="2"/>
+  <g transform="translate(252,60)" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5,6.5 A7,7 0 0 0 3.5,8"/><path d="M15.8,2.5 V6.8 H11.5"/><path d="M2.5,11.5 A7,7 0 0 0 14.5,10"/><path d="M2.2,15.5 V11.2 H6.5"/></g><text class="btnt" x="342" y="76" text-anchor="middle">Sync Changes 1↓</text>
+
+  <text class="head" x="28" y="120">⌄ GRAPH</text>
+
+  <!-- graph rail -->
+  <line class="line" x1="46" y1="146" x2="46" y2="352" />
+  <circle class="inc" cx="46" cy="146" r="8"/>
+  <text class="row" x="70" y="152">add a README</text>
+  <rect class="rem" x="330" y="136" width="96" height="22" rx="11"/><text class="lab" x="378" y="152" text-anchor="middle">origin/main</text>
+  <text class="hash" x="560" y="152">11573a5</text>
+
+  <circle class="dot" cx="46" cy="180" r="8" style="fill:#005fb8"/>
+  <text class="row" x="70" y="186">session 6: read csv, write report</text>
+  <rect class="loc" x="330" y="170" width="56" height="22" rx="11"/><text class="lab" x="358" y="186" text-anchor="middle">main</text>
+  <text class="hash" x="560" y="186">cd81ebf</text>
+
+  <circle class="dot" cx="46" cy="214" r="8"/><text class="row" x="70" y="220">session 5: positions as dicts</text><text class="hash" x="560" y="220">3c6342e</text>
+  <circle class="dot" cx="46" cy="248" r="8"/><text class="row" x="70" y="254">session 4: functions</text><text class="hash" x="560" y="254">003891f</text>
+  <circle class="dot" cx="46" cy="282" r="8"/><text class="row" x="70" y="288">session 3: loop and total</text><text class="hash" x="560" y="288">9de8ebc</text>
+  <circle class="dot" cx="46" cy="316" r="8"/><text class="row" x="70" y="322">session 2: value one position</text><text class="hash" x="560" y="322">ee7054a</text>
+  <circle class="dot" cx="46" cy="350" r="8"/><text class="row" x="70" y="356">session 1: first run</text><text class="hash" x="560" y="356">916acb4</text>
+
+  <!-- status bar -->
+  <rect class="status" x="10" y="390" width="640" height="26"/>
+  <g transform="translate(20,395)" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"><circle cx="4" cy="3" r="2"/><circle cx="4" cy="15" r="2"/><circle cx="12" cy="6" r="2"/><path d="M4,5 V13 M12,8 C12,11 5,10 4,13"/></g><text class="statust" x="40" y="408">main    ↓1 ↑0</text>
+
+  <!-- callouts -->
+  <rect class="call" x="690" y="54" width="400" height="32"/>
+  <text class="callt" x="890" y="76" text-anchor="middle">Sync = git pull, then git push</text>
+  <line x1="690" y1="70" x2="634" y2="70" stroke="#fab52a" stroke-width="3"/>
+
+  <rect class="call" x="690" y="136" width="400" height="32"/>
+  <text class="callt" x="890" y="158" text-anchor="middle">GitHub has one commit you don't</text>
+  <line x1="690" y1="152" x2="652" y2="147" stroke="#fab52a" stroke-width="3"/>
+
+  <rect class="call" x="690" y="176" width="400" height="32"/>
+  <text class="callt" x="890" y="198" text-anchor="middle">your folder stands here</text>
+  <line x1="690" y1="192" x2="652" y2="182" stroke="#fab52a" stroke-width="3"/>
+
+  <rect class="call" x="690" y="386" width="400" height="32"/>
+  <text class="callt" x="890" y="408" text-anchor="middle">↓1: one to pull · ↑0: none to push</text>
+  <line x1="690" y1="402" x2="170" y2="402" stroke="#fab52a" stroke-width="3"/>
+
+  <text class="note" x="690" y="250">No remote yet? The same button reads</text>
+  <text class="note" x="690" y="272"><tspan font-weight="700">Publish Branch</tspan> — that is the first push.</text>
+  <text class="note" x="690" y="310">To copy a repository to a new machine:</text>
+  <text class="note" x="690" y="332">Command Palette → <tspan font-weight="700">Git: Clone</tspan>.</text>
+</svg>

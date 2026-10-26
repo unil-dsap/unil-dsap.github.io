@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 300" width="1100" height="300" font-family="Unil Sans, Arial, sans-serif">
+  <!-- What a diff is: two versions in, one colored comparison out.
+       Lines are the real fee rule from ledger.py and the assistant's edit. -->
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1e2b3e"/>
+    </marker>
+  </defs>
+  <style>
+    .box { fill: #fff; stroke: #395b8c; stroke-width: 2; }
+    .cap { font-size: 16px; font-weight: 700; fill: #1e2b3e; }
+    .code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 16px; fill: #14181d; white-space: pre; }
+    .mark { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 16px; font-weight: 700; white-space: pre; }
+    .del { fill: #fde2e1; }
+    .add { fill: #dcf5e3; }
+    .arrow { stroke: #1e2b3e; stroke-width: 3; fill: none; }
+    .note { font-size: 15px; fill: #4b5563; }
+  </style>
+
+  <!-- the two versions -->
+  <text class="cap" x="10" y="22">last commit</text>
+  <rect class="box" x="10" y="32" width="340" height="104"/>
+  <text class="code" x="26" y="62">def fee(value):</text>
+  <text class="code" x="26" y="90">    if value &gt;= 1000:</text>
+  <text class="code" x="26" y="118">        return 0</text>
+
+  <text class="cap" x="10" y="172">your folder now</text>
+  <rect class="box" x="10" y="182" width="340" height="104"/>
+  <text class="code" x="26" y="212">def fee(value):</text>
+  <text class="code" x="26" y="240">    if value &gt; 1000:</text>
+  <text class="code" x="26" y="268">        return 0</text>
+
+  <!-- compare -->
+  <path class="arrow" d="M360,84 C420,84 420,150 468,150" marker-end="url(#a)"/>
+  <path class="arrow" d="M360,234 C420,234 420,150 468,150" marker-end="url(#a)"/>
+  <text class="note" x="366" y="30">compare,</text>
+  <text class="note" x="366" y="48">line by line</text>
+
+  <!-- the diff -->
+  <text class="cap" x="480" y="52">the diff</text>
+  <rect class="box" x="480" y="62" width="400" height="140" style="stroke:#1e2b3e;stroke-width:2.5"/>
+  <text class="code" x="496" y="92">  def fee(value):</text>
+  <rect class="del" x="482" y="102" width="396" height="30"/>
+  <text class="mark" x="496" y="122" fill="#b91c1c">-</text><text class="code" x="514" y="122">    if value &gt;= 1000:</text>
+  <rect class="add" x="482" y="132" width="396" height="30"/>
+  <text class="mark" x="496" y="152" fill="#15803d">+</text><text class="code" x="514" y="152">    if value &gt; 1000:</text>
+  <text class="code" x="496" y="184">          return 0</text>
+
+  <!-- legend -->
+  <rect class="del" x="900" y="92" width="22" height="22"/><text class="note" x="932" y="109"><tspan font-weight="700">red</tspan>: removed</text>
+  <rect class="add" x="900" y="130" width="22" height="22"/><text class="note" x="932" y="147"><tspan font-weight="700">green</tspan>: added</text>
+  <rect x="900" y="168" width="22" height="22" fill="#fff" stroke="#d9dee5"/><text class="note" x="932" y="185"><tspan font-weight="700">plain</tspan>: unchanged</text>
+  <text class="note" x="480" y="236">One changed line = one red line + one green line.</text>
+  <text class="note" x="480" y="258">The plain lines are only there so you can find the place.</text>
+</svg>

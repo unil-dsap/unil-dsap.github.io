@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 250" width="1100" height="250" font-family="Unil Sans, Arial, sans-serif">
+  <!-- The everyday loop, left to right, then back to the start. -->
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1e2b3e"/>
+    </marker>
+  </defs>
+  <style>
+    .step { fill: #fff; stroke: #395b8c; stroke-width: 2; }
+    .git { fill: #eef4fb; stroke: #1e2b3e; stroke-width: 2.5; }
+    .name { font-size: 22px; font-weight: 700; fill: #1e2b3e; }
+    .cmd { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13.5px; fill: #395b8c; }
+    .q { font-size: 15px; fill: #4b5563; }
+    .arrow { stroke: #1e2b3e; stroke-width: 3; fill: none; }
+  </style>
+
+  <rect class="step" x="10" y="30" width="160" height="120"/>
+  <text class="name" x="90" y="72" text-anchor="middle">edit</text>
+  <text class="q" x="90" y="100" text-anchor="middle">change a file,</text>
+  <text class="q" x="90" y="120" text-anchor="middle">save it</text>
+
+  <rect class="step" x="196" y="30" width="160" height="120"/>
+  <text class="name" x="276" y="72" text-anchor="middle">run</text>
+  <text class="cmd" x="276" y="100" text-anchor="middle">python ledger.py</text>
+  <text class="q" x="276" y="124" text-anchor="middle">does it work?</text>
+
+  <rect class="git" x="382" y="30" width="160" height="120"/>
+  <text class="name" x="462" y="72" text-anchor="middle">status</text>
+  <text class="cmd" x="462" y="100" text-anchor="middle">git status</text>
+  <text class="q" x="462" y="124" text-anchor="middle">what changed?</text>
+
+  <rect class="git" x="568" y="30" width="160" height="120"/>
+  <text class="name" x="648" y="72" text-anchor="middle">diff</text>
+  <text class="cmd" x="648" y="100" text-anchor="middle">git diff</text>
+  <text class="q" x="648" y="124" text-anchor="middle">is it what I meant?</text>
+
+  <rect class="git" x="754" y="30" width="160" height="120"/>
+  <text class="name" x="834" y="72" text-anchor="middle">add</text>
+  <text class="cmd" x="834" y="100" text-anchor="middle">git add ledger.py</text>
+  <text class="q" x="834" y="124" text-anchor="middle">choose</text>
+
+  <rect class="git" x="940" y="30" width="150" height="120"/>
+  <text class="name" x="1015" y="72" text-anchor="middle">commit</text>
+  <text class="cmd" x="1015" y="100" text-anchor="middle">git commit -m</text>
+  <text class="q" x="1015" y="124" text-anchor="middle">keep, with a why</text>
+
+  <line class="arrow" x1="172" y1="90" x2="193" y2="90" marker-end="url(#a)"/>
+  <line class="arrow" x1="358" y1="90" x2="379" y2="90" marker-end="url(#a)"/>
+  <line class="arrow" x1="544" y1="90" x2="565" y2="90" marker-end="url(#a)"/>
+  <line class="arrow" x1="730" y1="90" x2="751" y2="90" marker-end="url(#a)"/>
+  <line class="arrow" x1="916" y1="90" x2="937" y2="90" marker-end="url(#a)"/>
+  <path class="arrow" d="M1015,152 V188 Q1015,202 1001,202 H104 Q90,202 90,188 V156" marker-end="url(#a)"/>
+  <text class="q" x="550" y="240" text-anchor="middle">and again — one small commit for each thing that works</text>
+</svg>

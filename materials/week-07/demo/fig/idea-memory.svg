@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 560" width="480" height="560" font-family="Unil Sans, Arial, sans-serif">
+  <!-- Visual hook for "Git is your project's memory": you forget, the
+       history keeps, an agent reads all of it. Log lines are the real
+       ledger history (transcript.txt), newest first. -->
+  <defs>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0066ff" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#0066ff" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9aa5b1" stop-opacity="1"/>
+      <stop offset="1" stop-color="#9aa5b1" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .cap { font-size: 17px; font-weight: 700; fill: #1e2b3e; }
+    .hash { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 14px; fill: #395b8c; }
+    .msg { font-size: 14.5px; fill: #14181d; }
+    .dot { fill: #395b8c; }
+    .rail { stroke: #395b8c; stroke-width: 3; }
+  </style>
+
+  <!-- the agent's reading beam, drawn first so everything sits on top -->
+  <path d="M396,98 L424,98 L478,168 L478,556 L92,556 L92,212 Z" fill="url(#beam)"/>
+
+  <!-- you: a person, and a thought bubble that fades out -->
+  <circle cx="58" cy="52" r="22" fill="#1e2b3e"/>
+  <path d="M20,122 C20,90 96,90 96,122 Z" fill="#1e2b3e"/>
+  <circle cx="104" cy="44" r="4" fill="#c3cad3"/>
+  <circle cx="116" cy="32" r="6" fill="#c3cad3"/>
+  <rect x="124" y="4" width="160" height="50" rx="25" fill="#f1f3f6" stroke="#c3cad3" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="140" y="36" font-size="17" fill="url(#fade)" font-style="italic">why &gt;= …? ???</text>
+  <text class="cap" x="58" y="148" text-anchor="middle">you forget</text>
+
+  <!-- the agent -->
+  <rect x="368" y="30" width="84" height="66" rx="14" fill="#0066ff"/>
+  <line x1="410" y1="30" x2="410" y2="14" stroke="#0066ff" stroke-width="4"/>
+  <circle cx="410" cy="11" r="6" fill="#0066ff"/>
+  <circle cx="392" cy="60" r="8" fill="#fff"/><circle cx="428" cy="60" r="8" fill="#fff"/>
+  <circle cx="394" cy="61" r="3.5" fill="#1e2b3e"/><circle cx="430" cy="61" r="3.5" fill="#1e2b3e"/>
+  <rect x="394" y="78" width="32" height="5" rx="2.5" fill="#fff"/>
+  <text class="cap" x="410" y="128" text-anchor="middle">your agent</text>
+  <text class="cap" x="410" y="148" text-anchor="middle">reads it all</text>
+
+  <!-- the history: git log, every line kept -->
+  <text class="cap" x="110" y="196">the history keeps</text>
+  <line class="rail" x1="120" y1="222" x2="120" y2="522"/>
+  <g>
+    <circle class="dot" cx="120" cy="222" r="8"/><text class="hash" x="140" y="227">18a82e7</text><text class="msg" x="214" y="227">add git notes</text>
+    <circle class="dot" cx="120" cy="272" r="8"/><text class="hash" x="140" y="277">11573a5</text><text class="msg" x="214" y="277">add a README</text>
+    <circle class="dot" cx="120" cy="322" r="8"/><text class="hash" x="140" y="327">cd81ebf</text><text class="msg" x="214" y="327">read csv, write report</text>
+    <circle class="dot" cx="120" cy="372" r="8"/><text class="hash" x="140" y="377">3c6342e</text><text class="msg" x="214" y="377">positions as dicts</text>
+    <circle class="dot" cx="120" cy="422" r="8"/><text class="hash" x="140" y="427">003891f</text><text class="msg" x="214" y="427">functions</text>
+    <circle class="dot" cx="120" cy="472" r="8"/><text class="hash" x="140" y="477">9de8ebc</text><text class="msg" x="214" y="477">loop and total</text>
+    <circle class="dot" cx="120" cy="522" r="8"/><text class="hash" x="140" y="527">916acb4</text><text class="msg" x="214" y="527">first run</text>
+  </g>
+</svg>

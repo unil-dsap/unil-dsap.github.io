@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 500" width="470" height="500" font-family="Unil Sans, Arial, sans-serif">
+  <!-- .gitignore as a filter: what git sees, and what it never sees.
+       Illustrative: a fuller .gitignore than the demo's one-line file. -->
+  <style>
+    .card { fill: #fff; stroke: #1e2b3e; stroke-width: 2.5; }
+    .cardh { fill: #1e2b3e; }
+    .cardt { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 16px; font-weight: 700; fill: #fff; }
+    .rule { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 16px; fill: #14181d; }
+    .icon { fill: #f4f6f8; stroke: #9aa5b1; stroke-width: 1.5; }
+    .file { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 16px; fill: #14181d; }
+    .gone { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 16px; fill: #9aa5b1; }
+    .cap { font-size: 16px; font-weight: 700; fill: #1e2b3e; }
+    .capg { font-size: 16px; font-weight: 700; fill: #7b8794; }
+    .tag { font-size: 13px; fill: #fff; font-weight: 700; }
+    .note { font-size: 13px; fill: #4b5563; font-style: italic; }
+  </style>
+
+  <!-- the .gitignore card -->
+  <rect class="card" x="10" y="10" width="250" height="132" rx="4"/>
+  <rect class="cardh" x="10" y="10" width="250" height="32" rx="4"/>
+  <text class="cardt" x="24" y="32">.gitignore</text>
+  <text class="rule" x="26" y="70">report.txt</text>
+  <text class="rule" x="26" y="96">data/raw/</text>
+  <text class="rule" x="26" y="122">.env</text>
+  <text class="note" x="276" y="70">a typical one:</text>
+  <text class="note" x="276" y="88">one name or folder</text>
+  <text class="note" x="276" y="106">per line</text>
+
+  <!-- what git sees -->
+  <text class="cap" x="10" y="186">git sees</text>
+  <path class="icon" d="M20,200 h18 l6,6 v22 h-24 z"/><text class="file" x="58" y="221">ledger.py</text>
+  <path class="icon" d="M20,238 h18 l6,6 v22 h-24 z"/><text class="file" x="58" y="259">ledger.csv</text>
+  <path class="icon" d="M20,276 h18 l6,6 v22 h-24 z"/><text class="file" x="58" y="297">.gitignore</text>
+  <text class="note" x="210" y="259">tracked and committed</text>
+
+  <!-- the filter line -->
+  <line x1="10" y1="326" x2="460" y2="326" stroke="#1e2b3e" stroke-width="2" stroke-dasharray="8 6"/>
+
+  <!-- what git never sees -->
+  <g opacity="0.95">
+    <text class="capg" x="10" y="358">git never sees</text>
+    <!-- eye with a slash -->
+    <path d="M160,352 Q176,338 192,352 Q176,366 160,352 Z" fill="none" stroke="#7b8794" stroke-width="2"/>
+    <circle cx="176" cy="352" r="4" fill="#7b8794"/>
+    <line x1="162" y1="364" x2="190" y2="340" stroke="#7b8794" stroke-width="2.5"/>
+
+    <path class="icon" d="M20,372 h18 l6,6 v22 h-24 z" style="opacity:0.5"/><text class="gone" x="58" y="393">report.txt</text>
+    <rect x="250" y="377" width="84" height="22" rx="11" fill="#9aa5b1"/><text class="tag" x="292" y="393" text-anchor="middle">output</text>
+
+    <path class="icon" d="M20,412 h24 v22 h-24 z M20,408 h10 l3,4" style="opacity:0.5"/><text class="gone" x="58" y="431">data/raw/</text>
+    <rect x="250" y="415" width="84" height="22" rx="11" fill="#9aa5b1"/><text class="tag" x="292" y="431" text-anchor="middle">big data</text>
+
+    <path class="icon" d="M20,448 h18 l6,6 v22 h-24 z" style="opacity:0.5"/><text class="gone" x="58" y="469">.env</text>
+    <rect x="250" y="453" width="84" height="22" rx="11" fill="#b91c1c"/><text class="tag" x="292" y="469" text-anchor="middle">secret</text>
+    <!-- key -->
+    <circle cx="352" cy="464" r="7" fill="none" stroke="#b91c1c" stroke-width="2.5"/>
+    <line x1="359" y1="464" x2="378" y2="464" stroke="#b91c1c" stroke-width="2.5"/>
+    <line x1="372" y1="464" x2="372" y2="471" stroke="#b91c1c" stroke-width="2.5"/>
+  </g>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 300" width="1100" height="300" font-family="Unil Sans, Arial, sans-serif">
+  <!-- Why a push is rejected. Hashes from transcript.txt:
+       11573a5 add a README; 18a82e7 add git notes (pushed from Nuvolos);
+       006986c README edit (made on the laptop without pulling first). -->
+  <style>
+    .dot { fill: #395b8c; }
+    .theirs { fill: #0066ff; }
+    .mine { fill: #b45309; }
+    .link { stroke: #395b8c; stroke-width: 3; }
+    .title { font-size: 20px; font-weight: 700; fill: #1e2b3e; }
+    .hash { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 16px; fill: #14181d; }
+    .msg { font-size: 15px; fill: #4b5563; }
+    .box { fill: #fff; stroke: #d9dee5; stroke-width: 2; }
+    .x { stroke: #b91c1c; stroke-width: 5; }
+    .bad { font-size: 17px; font-weight: 700; fill: #b91c1c; }
+  </style>
+
+  <!-- GitHub -->
+  <rect class="box" x="10" y="10" width="1080" height="120" style="fill:#eef4fb;stroke:#1e2b3e"/>
+  <text class="title" x="30" y="40">GitHub</text>
+  <circle class="dot" cx="80" cy="85" r="10"/><circle class="dot" cx="160" cy="85" r="10"/><circle class="dot" cx="240" cy="85" r="10"/>
+  <line class="link" x1="90" y1="85" x2="150" y2="85"/><line class="link" x1="170" y1="85" x2="230" y2="85"/>
+  <text class="hash" x="222" y="115">11573a5</text>
+  <line class="link" x1="250" y1="85" x2="410" y2="85"/><circle class="theirs" cx="420" cy="85" r="12"/>
+  <text class="hash" x="440" y="80">18a82e7</text><text class="msg" x="440" y="100">add git notes — pushed from Nuvolos</text>
+
+  <!-- laptop -->
+  <rect class="box" x="10" y="160" width="1080" height="130"/>
+  <text class="title" x="30" y="190">Your laptop (forgot to pull)</text>
+  <circle class="dot" cx="80" cy="235" r="10"/><circle class="dot" cx="160" cy="235" r="10"/><circle class="dot" cx="240" cy="235" r="10"/>
+  <line class="link" x1="90" y1="235" x2="150" y2="235"/><line class="link" x1="170" y1="235" x2="230" y2="235"/>
+  <text class="hash" x="222" y="268">11573a5</text>
+  <line class="link" x1="250" y1="235" x2="410" y2="235"/><circle class="mine" cx="420" cy="235" r="12"/>
+  <text class="hash" x="440" y="230">006986c</text><text class="msg" x="440" y="250">README edit — made on the laptop</text>
+
+  <!-- the rejected push -->
+  <line x1="760" y1="220" x2="760" y2="110" stroke="#1e2b3e" stroke-width="3" stroke-dasharray="6 5"/>
+  <line class="x" x1="742" y1="150" x2="778" y2="186"/><line class="x" x1="778" y1="150" x2="742" y2="186"/>
+  <text class="bad" x="796" y="164">push rejected:</text>
+  <text class="msg" x="796" y="186">both copies grew a different</text>
+  <text class="msg" x="796" y="206">next commit after 11573a5</text>
+</svg>

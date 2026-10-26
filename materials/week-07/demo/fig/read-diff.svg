@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 360" width="1100" height="360" font-family="Unil Sans, Arial, sans-serif">
+  <!-- A colored diff as VS Code, GitHub and most agents show it, with the
+       scan order numbered. Lines are the real edit (transcript.txt). -->
+  <style>
+    .frame { fill: #fff; stroke: #d0d0d0; stroke-width: 1.5; }
+    .fhead { fill: #f6f8fa; }
+    .file { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 16px; font-weight: 700; fill: #1f1f1f; }
+    .code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 16px; fill: #1f1f1f; white-space: pre; }
+    .num { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 14px; fill: #8a8a8a; }
+    .del { fill: #fde2e1; }
+    .add { fill: #dcf5e3; }
+    .delw { fill: #f5a3a0; }
+    .addw { fill: #8fdca7; }
+    .fold { fill: #f1f3f6; }
+    .foldt { font-size: 13px; fill: #6b6b6b; }
+    .plus { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 15px; fill: #388a34; font-weight: 700; }
+    .minus { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 15px; fill: #c4314b; font-weight: 700; }
+    .step { fill: #fab52a; }
+    .stept { font-size: 16px; font-weight: 700; fill: #14181d; }
+    .say { font-size: 16px; fill: #14181d; }
+  </style>
+
+  <rect class="frame" x="10" y="10" width="660" height="340" rx="6"/>
+  <rect class="fhead" x="11" y="11" width="658" height="40" rx="6"/>
+  <text class="file" x="28" y="37">ledger.py</text>
+  <text class="plus" x="590" y="37">+2</text><text class="minus" x="624" y="37">−2</text>
+
+  <text class="num" x="52" y="80" text-anchor="end">7</text><text class="code" x="68" y="80">def fee(value):</text>
+  <rect class="del" x="11" y="88" width="658" height="28"/>
+  <rect class="delw" x="202" y="91" width="20" height="22"/>
+  <text class="num" x="52" y="107" text-anchor="end">8</text><text class="code" x="68" y="107">-    if value &gt;= 1000:</text>
+  <rect class="add" x="11" y="116" width="658" height="28"/>
+  <rect class="addw" x="202" y="119" width="11" height="22"/>
+  <text class="num" x="52" y="135" text-anchor="end">8</text><text class="code" x="68" y="135">+    if value &gt; 1000:</text>
+  <text class="num" x="52" y="163" text-anchor="end">9</text><text class="code" x="68" y="163">         return 0</text>
+
+  <rect class="fold" x="11" y="174" width="658" height="26"/>
+  <text class="foldt" x="68" y="192">⋯ 7 unchanged lines</text>
+
+  <text class="num" x="52" y="226" text-anchor="end">17</text><text class="code" x="68" y="226">     value = position_value(…)</text>
+  <rect class="del" x="11" y="234" width="658" height="28"/>
+  <text class="num" x="52" y="253" text-anchor="end">18</text><text class="code" x="68" y="253">-    total = total + value</text>
+  <rect class="add" x="11" y="262" width="658" height="28"/>
+  <text class="num" x="52" y="281" text-anchor="end">18</text><text class="code" x="68" y="281">+    total = round(total + value, 2)</text>
+  <text class="num" x="52" y="309" text-anchor="end">19</text><text class="code" x="68" y="309">     fees = fees + fee(value)</text>
+
+  <!-- scan order -->
+  <circle class="step" cx="700" cy="31" r="15"/><text class="stept" x="700" y="37" text-anchor="middle">1</text>
+  <text class="say" x="726" y="30"><tspan font-weight="700">Which file?</tspan> And how much:</text>
+  <text class="say" x="726" y="50">+2 −2 is small. +200 is not.</text>
+
+  <circle class="step" cx="700" cy="118" r="15"/><text class="stept" x="700" y="124" text-anchor="middle">2</text>
+  <text class="say" x="726" y="112"><tspan font-weight="700">How many colored blocks?</tspan></text>
+  <text class="say" x="726" y="132">Two here. You asked for one change.</text>
+
+  <circle class="step" cx="700" cy="262" r="15"/><text class="stept" x="700" y="268" text-anchor="middle">3</text>
+  <text class="say" x="726" y="248"><tspan font-weight="700">Each red–green pair:</tspan> what</text>
+  <text class="say" x="726" y="268">changed — and did I ask for it?</text>
+  <text class="say" x="726" y="288">Line 18: yes. Line 8: <tspan font-weight="700" fill="#b91c1c">no.</tspan></text>
+</svg>

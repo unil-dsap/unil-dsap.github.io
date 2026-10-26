@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 500" width="470" height="500" font-family="Unil Sans, Arial, sans-serif">
+  <!-- Why a staging area: you choose what the next snapshot holds.
+       ledger.py goes in; the scratch file notes.txt stays out. -->
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1e2b3e"/>
+    </marker>
+  </defs>
+  <style>
+    .place { fill: #fff; stroke: #395b8c; stroke-width: 2; }
+    .stage { fill: #fff; stroke: #395b8c; stroke-width: 2; stroke-dasharray: 8 5; }
+    .hist { fill: #eef4fb; stroke: #1e2b3e; stroke-width: 3; }
+    .title { font-size: 18px; font-weight: 700; fill: #1e2b3e; }
+    .sub { font-size: 14px; fill: #4b5563; }
+    .chip { fill: #f4f6f8; stroke: #9aa5b1; stroke-width: 1.5; }
+    .chipout { fill: #f4f6f8; stroke: #c3cad3; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .file { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 16px; fill: #14181d; }
+    .fileout { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 16px; fill: #9aa5b1; }
+    .cmd { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 15px; font-weight: 700; fill: #1e2b3e; }
+    .arrow { stroke: #1e2b3e; stroke-width: 3; fill: none; }
+    .ok { font-size: 14px; font-weight: 700; fill: #15803d; }
+    .no { font-size: 14px; font-weight: 700; fill: #b45309; }
+    .msg { font-size: 15px; fill: #14181d; }
+  </style>
+
+  <!-- working folder -->
+  <rect class="place" x="10" y="10" width="450" height="112"/>
+  <text class="title" x="26" y="36">Working folder</text>
+  <rect class="chip" x="26" y="52" width="170" height="34"/><text class="file" x="40" y="75">ledger.py</text>
+  <text class="ok" x="40" y="108">✓ works</text>
+  <rect class="chipout" x="262" y="52" width="170" height="34"/><text class="fileout" x="276" y="75">notes.txt</text>
+  <text class="sub" x="276" y="108">a scratch file</text>
+
+  <!-- add: only ledger.py goes down -->
+  <path class="arrow" d="M111,124 V190" marker-end="url(#a)"/>
+  <text class="cmd" x="124" y="163">git add ledger.py</text>
+  <path d="M347,124 V146" stroke="#c3cad3" stroke-width="2.5" stroke-dasharray="4 3" fill="none"/>
+  <text class="no" x="347" y="166" text-anchor="middle">✗ stays out</text>
+
+  <!-- staging area -->
+  <rect class="stage" x="10" y="196" width="450" height="100"/>
+  <text class="title" x="26" y="222">Staging area</text>
+  <text class="sub" x="160" y="222">the next commit, being packed</text>
+  <rect class="chip" x="26" y="240" width="170" height="34"/><text class="file" x="40" y="263">ledger.py</text>
+
+  <!-- commit -->
+  <path class="arrow" d="M111,298 V364" marker-end="url(#a)"/>
+  <text class="cmd" x="124" y="337">git commit -m "…"</text>
+
+  <!-- the new snapshot -->
+  <rect class="hist" x="10" y="370" width="450" height="118"/>
+  <text class="title" x="26" y="396">History: one new snapshot</text>
+  <text class="msg" x="26" y="426">holds ledger.py as it is now,</text>
+  <text class="msg" x="26" y="448">plus every unchanged file</text>
+  <text class="ok" x="26" y="476" style="fill:#1e2b3e">one commit = one idea</text>
+</svg>

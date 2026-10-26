@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 390" width="1100" height="390" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif">
+  <!-- Stylized VS Code diff editor (Light Modern): the assistant's edit to
+       ledger.py, as in the "git diff" of transcript.txt. Left = last commit,
+       right = working folder. Line numbers are the real ones. -->
+  <defs>
+    <clipPath id="L"><rect x="0" y="0" width="535" height="390"/></clipPath>
+    <clipPath id="R"><rect x="555" y="0" width="535" height="390"/></clipPath>
+  </defs>
+  <style>
+    .frame { fill: #fff; stroke: #d0d0d0; stroke-width: 1.5; }
+    .tabs { fill: #f8f8f8; }
+    .tab { fill: #fff; }
+    .tabt { font-size: 15px; fill: #1f1f1f; }
+    .it { font-style: italic; fill: #6b6b6b; }
+    .code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 16px; fill: #1f1f1f; white-space: pre; }
+    .num { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 14px; fill: #8a8a8a; }
+    .del { fill: #fde2e1; }
+    .delw { fill: #f5a3a0; }
+    .add { fill: #dcf5e3; }
+    .addw { fill: #8fdca7; }
+    .fold { fill: #f3f3f3; }
+    .foldt { font-size: 13px; fill: #6b6b6b; }
+    .call { fill: #fab52a; }
+    .callt { font-size: 16px; font-weight: 700; fill: #14181d; font-family: Unil Sans, Arial, sans-serif; }
+    .kw { fill: #0000ff; }
+  </style>
+
+  <rect class="frame" x="0" y="0" width="1100" height="300"/>
+  <rect class="tabs" x="1" y="1" width="1098" height="38"/>
+  <rect class="tab" x="1" y="1" width="300" height="38"/>
+  <text class="tabt" x="18" y="26">ledger.py <tspan class="it">(Working Tree)</tspan></text>
+  <line x1="550" y1="40" x2="550" y2="299" stroke="#e5e5e5" stroke-width="2"/>
+
+  <!-- ===== left: HEAD ===== -->
+  <g clip-path="url(#L)">
+    <text class="num" x="30" y="70" text-anchor="end">7</text><text class="code" x="44" y="70"><tspan class="kw">def</tspan> fee(value):</text>
+    <rect class="del" x="0" y="80" width="549" height="26"/>
+    <rect class="delw" x="168" y="82" width="20" height="22"/>
+    <text class="num" x="30" y="99" text-anchor="end">8</text><text class="code" x="44" y="99">    <tspan class="kw">if</tspan> value &gt;= 1000:</text>
+    <text class="num" x="30" y="128" text-anchor="end">9</text><text class="code" x="44" y="128">        <tspan class="kw">return</tspan> 0</text>
+    <text class="num" x="30" y="157" text-anchor="end">10</text><text class="code" x="44" y="157">    <tspan class="kw">return</tspan> 5</text>
+
+    <rect class="fold" x="0" y="168" width="549" height="24"/>
+    <text class="foldt" x="44" y="185">⋯ 6 unchanged lines</text>
+
+    <text class="num" x="30" y="216" text-anchor="end">17</text><text class="code" x="44" y="216">    value = position_value(int(p["shares"]), float(p["price"]))</text>
+    <rect class="del" x="0" y="226" width="549" height="26"/>
+    <text class="num" x="30" y="245" text-anchor="end">18</text><text class="code" x="44" y="245">    total = total + value</text>
+    <text class="num" x="30" y="274" text-anchor="end">19</text><text class="code" x="44" y="274">    fees = fees + fee(value)</text>
+  </g>
+
+  <!-- ===== right: working folder ===== -->
+  <g clip-path="url(#R)">
+    <text class="num" x="585" y="70" text-anchor="end">7</text><text class="code" x="599" y="70"><tspan class="kw">def</tspan> fee(value):</text>
+    <rect class="add" x="551" y="80" width="548" height="26"/>
+    <rect class="addw" x="723" y="82" width="11" height="22"/>
+    <text class="num" x="585" y="99" text-anchor="end">8</text><text class="code" x="599" y="99">    <tspan class="kw">if</tspan> value &gt; 1000:</text>
+    <text class="num" x="585" y="128" text-anchor="end">9</text><text class="code" x="599" y="128">        <tspan class="kw">return</tspan> 0</text>
+    <text class="num" x="585" y="157" text-anchor="end">10</text><text class="code" x="599" y="157">    <tspan class="kw">return</tspan> 5</text>
+
+    <rect class="fold" x="551" y="168" width="548" height="24"/>
+    <text class="foldt" x="599" y="185">⋯ 6 unchanged lines</text>
+
+    <text class="num" x="585" y="216" text-anchor="end">17</text><text class="code" x="599" y="216">    value = position_value(int(p["shares"]), float(p["price"]))</text>
+    <rect class="add" x="551" y="226" width="548" height="26"/>
+    <text class="num" x="585" y="245" text-anchor="end">18</text><text class="code" x="599" y="245">    total = round(total + value, 2)</text>
+    <text class="num" x="585" y="274" text-anchor="end">19</text><text class="code" x="599" y="274">    fees = fees + fee(value)</text>
+  </g>
+
+  <!-- callouts -->
+  <rect class="call" x="700" y="316" width="390" height="34"/>
+  <text class="callt" x="895" y="339" text-anchor="middle">line 8: asked for? no. The fee rule moved.</text>
+  <line x1="820" y1="316" x2="760" y2="106" stroke="#fab52a" stroke-width="3"/>
+  <rect class="call" x="10" y="316" width="400" height="34"/>
+  <text class="callt" x="210" y="339" text-anchor="middle">line 18: asked for — rounding the total.</text>
+  <line x1="300" y1="316" x2="300" y2="252" stroke="#fab52a" stroke-width="3"/>
+  <text x="550" y="378" text-anchor="middle" font-size="15" fill="#4b5563" font-family="Unil Sans, Arial, sans-serif">Red = the last commit. Green = the file in your folder now. Click the file in Source Control to open this view.</text>
+</svg>

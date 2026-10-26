@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 250" width="1100" height="250" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif">
+  <!-- Stylized VS Code (Light Modern): Command Palette -> Git: Clone. -->
+  <style>
+    .pick { fill: #fff; stroke: #c8c8c8; stroke-width: 1.5; }
+    .input { fill: #fff; stroke: #005fb8; stroke-width: 1.5; }
+    .typed { font-size: 16px; fill: #1f1f1f; }
+    .ph { font-size: 15px; fill: #8a8a8a; }
+    .row { font-size: 16px; fill: #1f1f1f; }
+    .sel { fill: #e4e6f1; }
+    .call { fill: #fab52a; }
+    .callt { font-size: 15px; font-weight: 700; fill: #14181d; font-family: ui-monospace, Menlo, Consolas, monospace; }
+    .cap { font-size: 18px; font-weight: 700; fill: #1e2b3e; font-family: Unil Sans, Arial, sans-serif; }
+  </style>
+
+  <text class="cap" x="10" y="24">① Ctrl+Shift+P (Cmd+Shift+P on a Mac), type “clone”</text>
+  <g transform="translate(10,36)">
+    <rect class="pick" width="520" height="104"/>
+    <rect class="input" x="12" y="12" width="496" height="34"/>
+    <text class="typed" x="24" y="35">&gt;clone</text>
+    <rect class="sel" x="1" y="56" width="518" height="40"/>
+    <text class="row" x="24" y="82">Git: Clone</text>
+  </g>
+
+  <text class="cap" x="570" y="24">② Paste the address from GitHub</text>
+  <g transform="translate(570,36)">
+    <rect class="pick" width="520" height="104"/>
+    <rect class="input" x="12" y="12" width="496" height="34"/>
+    <text class="ph" x="24" y="35">Provide repository URL or pick a repository source.</text>
+    <rect class="sel" x="1" y="56" width="518" height="40"/>
+    <text class="row" x="24" y="82">Clone from GitHub</text>
+  </g>
+
+  <rect class="call" x="10" y="170" width="1080" height="34"/>
+  <text class="callt" x="550" y="192" text-anchor="middle">Git: Clone = git clone https://github.com/&lt;you&gt;/ledger.git — then choose the folder it goes in</text>
+  <text x="550" y="236" text-anchor="middle" font-size="15" fill="#4b5563" font-family="Unil Sans, Arial, sans-serif">Clone once per machine. After that, you pull.</text>
+</svg>

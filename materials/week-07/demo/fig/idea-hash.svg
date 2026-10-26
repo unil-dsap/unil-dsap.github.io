@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 150" width="1100" height="150" font-family="Unil Sans, Arial, sans-serif">
+  <!-- A hash function: any input in, a fixed-length name out.
+       Output is the real hash of ledger.csv (transcript.txt). -->
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1e2b3e"/>
+    </marker>
+  </defs>
+  <style>
+    .in { fill: #fff; stroke: #395b8c; stroke-width: 2; }
+    .fn { fill: #1e2b3e; }
+    .out { fill: #eef4fb; stroke: #1e2b3e; stroke-width: 2.5; }
+    .t { font-size: 18px; fill: #14181d; }
+    .s { font-size: 14px; fill: #4b5563; }
+    .w { font-size: 20px; font-weight: 700; fill: #fff; }
+    .mono { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 15px; fill: #14181d; }
+    .arrow { stroke: #1e2b3e; stroke-width: 3; fill: none; }
+  </style>
+
+  <path class="in" d="M20,30 h150 l24,24 v70 h-174 z"/>
+  <text class="t" x="36" y="72">any file</text>
+  <text class="s" x="36" y="96">5 bytes or 5 GB</text>
+
+  <line class="arrow" x1="202" y1="77" x2="262" y2="77" marker-end="url(#a)"/>
+
+  <rect class="fn" x="270" y="37" width="190" height="80" rx="8"/>
+  <text class="w" x="365" y="72" text-anchor="middle">hash function</text>
+  <text x="365" y="97" text-anchor="middle" font-size="15" fill="#c9d4e3">SHA-1</text>
+
+  <line class="arrow" x1="468" y1="77" x2="528" y2="77" marker-end="url(#a)"/>
+
+  <rect class="out" x="536" y="47" width="544" height="60"/>
+  <text class="mono" x="808" y="83" text-anchor="middle">2a91be0ae7cb31885b8e24f8c7aafeba30a0f522</text>
+  <text class="s" x="808" y="134" text-anchor="middle">always 40 characters, each one of 0–9 or a–f</text>
+</svg>

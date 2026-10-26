@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 340" width="1100" height="340" font-family="Unil Sans, Arial, sans-serif">
+  <!-- Left: versions kept by copying files. Right: one file, and a history. -->
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#395b8c"/>
+    </marker>
+  </defs>
+  <style>
+    .panel { fill: #fff; stroke: #d9dee5; stroke-width: 2; }
+    .title { font-size: 22px; font-weight: 700; fill: #1e2b3e; }
+    .file { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 17px; fill: #14181d; }
+    .q { font-size: 16px; fill: #b45309; font-style: italic; }
+    .icon { fill: #f4f6f8; stroke: #9aa5b1; stroke-width: 1.5; }
+    .dot { fill: #395b8c; }
+    .msg { font-size: 16px; fill: #14181d; }
+    .hash { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 15px; fill: #4b5563; }
+  </style>
+
+  <rect class="panel" x="10" y="10" width="520" height="320"/>
+  <text class="title" x="30" y="44">Versions by copying</text>
+  <g>
+    <path class="icon" d="M30,62 h18 l6,6 v20 h-24 z"/><text class="file" x="64" y="82">ledger.py</text>
+    <path class="icon" d="M30,98 h18 l6,6 v20 h-24 z"/><text class="file" x="64" y="118">ledger_v2.py</text>
+    <path class="icon" d="M30,134 h18 l6,6 v20 h-24 z"/><text class="file" x="64" y="154">ledger_v2_fixed.py</text>
+    <path class="icon" d="M30,170 h18 l6,6 v20 h-24 z"/><text class="file" x="64" y="190">ledger_final.py</text>
+    <path class="icon" d="M30,206 h18 l6,6 v20 h-24 z"/><text class="file" x="64" y="226">ledger_final_REAL.py</text>
+    <path class="icon" d="M30,242 h18 l6,6 v20 h-24 z"/><text class="file" x="64" y="262">ledger_final_REAL (1).py</text>
+  </g>
+  <text class="q" x="30" y="298">Which one works? What changed between them? Why?</text>
+  <text class="q" x="30" y="320">The names cannot tell you.</text>
+
+  <rect class="panel" x="570" y="10" width="520" height="320" style="stroke:#395b8c"/>
+  <text class="title" x="590" y="44">Versions with git</text>
+  <path class="icon" d="M590,62 h18 l6,6 v20 h-24 z"/><text class="file" x="624" y="82">ledger.py</text>
+  <text class="msg" x="590" y="120" fill="#4b5563">one file — and its history:</text>
+  <line x1="606" y1="144" x2="606" y2="300" stroke="#395b8c" stroke-width="3"/>
+  <circle class="dot" cx="606" cy="144" r="8"/><text class="hash" x="626" y="149">cd81ebf</text><text class="msg" x="706" y="149">session 6: read csv, write report</text>
+  <circle class="dot" cx="606" cy="176" r="8"/><text class="hash" x="626" y="181">3c6342e</text><text class="msg" x="706" y="181">session 5: positions as dicts</text>
+  <circle class="dot" cx="606" cy="208" r="8"/><text class="hash" x="626" y="213">003891f</text><text class="msg" x="706" y="213">session 4: functions</text>
+  <circle class="dot" cx="606" cy="240" r="8"/><text class="hash" x="626" y="245">9de8ebc</text><text class="msg" x="706" y="245">session 3: loop and total</text>
+  <circle class="dot" cx="606" cy="272" r="8"/><text class="hash" x="626" y="277">ee7054a</text><text class="msg" x="706" y="277">session 2: value one position</text>
+  <circle class="dot" cx="606" cy="304" r="8"/><text class="hash" x="626" y="309">916acb4</text><text class="msg" x="706" y="309">session 1: first run</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 478" width="1100" height="478">
+  <!-- Generated from transcript.txt: the short git status and the
+       one-line-context git diff of the planted lie, the same text,
+       colored the way git colors it in a terminal. -->
+  <rect x="0" y="0" width="1100" height="478" rx="6" fill="#1e2b3e"/>
+  <rect x="0" y="0" width="4" height="478" fill="#fab52a"/>
+  <text x="22" y="40" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" font-weight="normal" fill="#e8edf3" xml:space="preserve">$ git status --short</text>
+  <text x="22" y="66" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" font-weight="normal" fill="#ff6b6b" xml:space="preserve"> M ledger.py</text>
+  <text x="22" y="92" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" font-weight="normal" fill="#e8edf3" xml:space="preserve">$ git diff -U1</text>
+  <text x="22" y="118" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" font-weight="bold" fill="#e8edf3" xml:space="preserve">diff --git a/ledger.py b/ledger.py</text>
+  <text x="22" y="144" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" font-weight="bold" fill="#e8edf3" xml:space="preserve">index dc19e8c..5ab8f57 100644</text>
+  <text x="22" y="170" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" font-weight="bold" fill="#e8edf3" xml:space="preserve">--- a/ledger.py</text>
+  <text x="22" y="196" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" font-weight="bold" fill="#e8edf3" xml:space="preserve">+++ b/ledger.py</text>
+  <text x="22" y="222" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" font-weight="normal" fill="#5fd7e6" xml:space="preserve">@@ -7,3 +7,3 @@ def position_value(shares, price):</text>
+  <text x="22" y="248" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" font-weight="normal" fill="#e8edf3" xml:space="preserve"> def fee(value):</text>
+  <text x="22" y="274" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" font-weight="normal" fill="#ff6b6b" xml:space="preserve">-    if value &gt;= 1000:</text>
+  <text x="22" y="300" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" font-weight="normal" fill="#6fdc8c" xml:space="preserve">+    if value &gt; 1000:</text>
+  <text x="22" y="326" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" font-weight="normal" fill="#e8edf3" xml:space="preserve">         return 0</text>
+  <text x="22" y="352" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" font-weight="normal" fill="#5fd7e6" xml:space="preserve">@@ -17,3 +17,3 @@ for p in positions:</text>
+  <text x="22" y="378" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" font-weight="normal" fill="#e8edf3" xml:space="preserve">     value = position_value(int(p[&quot;shares&quot;]), float(p[&quot;price&quot;]))</text>
+  <text x="22" y="404" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" font-weight="normal" fill="#ff6b6b" xml:space="preserve">-    total = total + value</text>
+  <text x="22" y="430" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" font-weight="normal" fill="#6fdc8c" xml:space="preserve">+    total = round(total + value, 2)</text>
+  <text x="22" y="456" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" font-weight="normal" fill="#e8edf3" xml:space="preserve">     fees = fees + fee(value)</text>
+</svg>

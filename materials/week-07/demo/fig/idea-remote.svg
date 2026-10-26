@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 360" width="1100" height="360" font-family="Unil Sans, Arial, sans-serif">
+  <!-- One history, three copies. 11573a5 = "add a README", made on the
+       laptop (transcript.txt). Arrows: nested elbows, so none cross. -->
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1e2b3e"/>
+    </marker>
+  </defs>
+  <style>
+    .place { fill: #fff; stroke: #395b8c; stroke-width: 2; }
+    .hub { fill: #eef4fb; stroke: #1e2b3e; stroke-width: 3; }
+    .title { font-size: 22px; font-weight: 700; fill: #1e2b3e; }
+    .sub { font-size: 15px; fill: #4b5563; }
+    .hash { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 15px; fill: #14181d; }
+    .new { fill: #0066ff; }
+    .old { fill: #395b8c; }
+    .link { stroke: #395b8c; stroke-width: 3; }
+    .arrow { stroke: #1e2b3e; stroke-width: 3; fill: none; }
+    .cmd { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 19px; font-weight: 700; fill: #1e2b3e; }
+    .step { font-size: 15px; fill: #fff; font-weight: 700; }
+    .stepc { fill: #fab52a; }
+  </style>
+
+  <!-- GitHub, the shared copy -->
+  <rect class="hub" x="390" y="10" width="320" height="130"/>
+  <text class="title" x="550" y="42" text-anchor="middle">GitHub</text>
+  <text class="sub" x="550" y="62" text-anchor="middle">the copy everyone can reach</text>
+  <circle class="old" cx="470" cy="105" r="9"/><circle class="old" cx="510" cy="105" r="9"/><circle class="old" cx="550" cy="105" r="9"/>
+  <line class="link" x1="479" y1="105" x2="501" y2="105"/><line class="link" x1="519" y1="105" x2="541" y2="105"/>
+  <line class="link" x1="559" y1="105" x2="581" y2="105"/><circle class="new" cx="590" cy="105" r="9"/>
+  <text class="hash" x="612" y="110">11573a5</text>
+
+  <!-- Nuvolos -->
+  <rect class="place" x="10" y="220" width="330" height="130"/>
+  <text class="title" x="30" y="254">Nuvolos</text>
+  <text class="sub" x="30" y="276">your course workspace</text>
+  <circle class="old" cx="50" cy="315" r="9"/><circle class="old" cx="90" cy="315" r="9"/><circle class="old" cx="130" cy="315" r="9"/>
+  <line class="link" x1="59" y1="315" x2="81" y2="315"/><line class="link" x1="99" y1="315" x2="121" y2="315"/>
+  <line class="link" x1="139" y1="315" x2="161" y2="315"/><circle class="new" cx="170" cy="315" r="9"/>
+  <text class="hash" x="195" y="320">11573a5</text>
+
+  <!-- laptop -->
+  <rect class="place" x="760" y="220" width="330" height="130"/>
+  <text class="title" x="780" y="254">Your laptop</text>
+  <text class="sub" x="780" y="276">any second machine</text>
+  <circle class="old" cx="800" cy="315" r="9"/><circle class="old" cx="840" cy="315" r="9"/><circle class="old" cx="880" cy="315" r="9"/>
+  <line class="link" x1="809" y1="315" x2="831" y2="315"/><line class="link" x1="849" y1="315" x2="871" y2="315"/>
+  <line class="link" x1="889" y1="315" x2="911" y2="315"/><circle class="new" cx="920" cy="315" r="9"/>
+  <text class="hash" x="945" y="320">11573a5</text>
+
+  <!-- left pair: 1 push (outer), 4 pull (inner) -->
+  <path class="arrow" d="M200,218 V84 Q200,70 214,70 H386" marker-end="url(#a)"/>
+  <circle class="stepc" cx="264" cy="48" r="13"/><text class="step" x="264" y="53" text-anchor="middle">1</text>
+  <text class="cmd" x="284" y="55">push</text>
+  <path class="arrow" d="M388,118 H254 Q240,118 240,132 V216" marker-end="url(#a)"/>
+  <circle class="stepc" cx="266" cy="166" r="13"/><text class="step" x="266" y="171" text-anchor="middle">4</text>
+  <text class="cmd" x="286" y="173">pull</text>
+
+  <!-- right pair: 2 clone (outer), 3 push (inner) -->
+  <path class="arrow" d="M714,70 H886 Q900,70 900,84 V216" marker-end="url(#a)"/>
+  <circle class="stepc" cx="770" cy="48" r="13"/><text class="step" x="770" y="53" text-anchor="middle">2</text>
+  <text class="cmd" x="790" y="55">clone</text>
+  <path class="arrow" d="M860,218 V132 Q860,118 846,118 H716" marker-end="url(#a)"/>
+  <circle class="stepc" cx="768" cy="166" r="13"/><text class="step" x="768" y="171" text-anchor="middle">3</text>
+  <text class="cmd" x="788" y="173">push</text>
+
+  <text class="sub" x="550" y="200" text-anchor="middle">Same chain, same hashes, three copies.</text>
+</svg>

@@ -1,0 +1,340 @@
+#### the fingerprint: same content, same hash; one character, new hash
+$ git hash-object ledger.csv
+2a91be0ae7cb31885b8e24f8c7aafeba30a0f522
+$ git hash-object ledger.csv
+2a91be0ae7cb31885b8e24f8c7aafeba30a0f522
+(changed 190.50 to 190.51 — one character)
+$ git hash-object ledger.csv
+622dfe9e846e9d2a3eba69995072c2508adb86c2
+
+#### outside a repository
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+#### session 1: a folder becomes a repository
+$ git --version
+git version 2.55.0
+$ git init
+Initialized empty Git repository in /files/dsap/.git/
+$ ls -a
+.
+..
+.git
+ledger.csv
+ledger.py
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	ledger.csv
+	ledger.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+$ git add ledger.py ledger.csv
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   ledger.csv
+	new file:   ledger.py
+
+#### first commit on a fresh machine: who are you?
+$ git commit -m "session 1: first run"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: no email was given and auto-detection is disabled
+$ git config --global user.name "Student"
+$ git config --global user.email "student@unil.ch"
+$ git commit -m "session 1: first run"
+[main (root-commit) 916acb4] session 1: first run
+ 2 files changed, 9 insertions(+)
+ create mode 100644 ledger.csv
+ create mode 100644 ledger.py
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+#### session 2: the everyday loop
+$ git status --short
+ M ledger.py
+$ git diff --stat
+ ledger.py | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+$ git add ledger.py
+$ git commit -m "session 2: value one position"
+[main ee7054a] session 2: value one position
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+
+#### sessions 3-5: the same loop, three more times
+$ git status --short
+ M ledger.csv
+ M ledger.py
+$ git add .
+$ git commit -m "session 3: loop and total"
+[main 9de8ebc] session 3: loop and total
+ 2 files changed, 15 insertions(+), 6 deletions(-)
+$ git status --short
+ M ledger.py
+$ git add .
+$ git commit -m "session 4: functions"
+[main 003891f] session 4: functions
+ 1 file changed, 11 insertions(+), 7 deletions(-)
+$ git status --short
+ M ledger.py
+$ git add .
+$ git commit -m "session 5: positions as dicts"
+[main 3c6342e] session 5: positions as dicts
+ 1 file changed, 9 insertions(+), 5 deletions(-)
+
+#### session 6: three places, and choosing what goes in
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   ledger.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+	notes.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+$ git add .
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .gitignore
+	modified:   ledger.py
+	new file:   notes.txt
+$ git restore --staged notes.txt
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .gitignore
+	modified:   ledger.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	notes.txt
+$ git commit -m "session 6: read csv, write report"
+[main cd81ebf] session 6: read csv, write report
+ 2 files changed, 12 insertions(+), 9 deletions(-)
+ create mode 100644 .gitignore
+$ python ledger.py
+wrote report.txt
+$ cat report.txt
+positions: 4
+total: 4338.20 CHF
+fees: 5 CHF
+$ git status --short
+?? notes.txt
+$ rm notes.txt
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+#### reading history
+$ git log --oneline
+cd81ebf session 6: read csv, write report
+3c6342e session 5: positions as dicts
+003891f session 4: functions
+9de8ebc session 3: loop and total
+ee7054a session 2: value one position
+916acb4 session 1: first run
+$ git log -2
+commit cd81ebf36c22047fb80d81739bf2a97b8c25b27b
+Author: Student <student@unil.ch>
+Date:   Mon Oct 26 16:30:00 2026 +0100
+
+    session 6: read csv, write report
+
+commit 3c6342ebc8ca710d70a7508fc130c53e1d2a7b61
+Author: Student <student@unil.ch>
+Date:   Mon Oct 19 16:30:00 2026 +0200
+
+    session 5: positions as dicts
+$ git show --stat 9de8ebc
+commit 9de8ebc472b5b34ae55fe9b4197f011f712d1813
+Author: Student <student@unil.ch>
+Date:   Mon Oct 5 16:30:00 2026 +0200
+
+    session 3: loop and total
+
+ ledger.csv |  1 +
+ ledger.py  | 20 ++++++++++++++------
+ 2 files changed, 15 insertions(+), 6 deletions(-)
+$ git diff 916acb4 9de8ebc -- ledger.csv
+diff --git a/ledger.csv b/ledger.csv
+index 2a91be0..20f1eb8 100644
+--- a/ledger.csv
++++ b/ledger.csv
+@@ -2,3 +2,4 @@ ticker,shares,price
+ AAPL,10,190.50
+ NESN,4,102.30
+ VOO,2,512.00
++UBSG,40,25.00
+$ git log --oneline -- ledger.csv
+9de8ebc session 3: loop and total
+916acb4 session 1: first run
+
+#### snapshots are cheap: an unchanged file is stored once
+$ git ls-tree 003891f
+100644 blob 20f1eb8b0e01ae8bc56fa5fc40ce28da00d9ef84	ledger.csv
+100644 blob 02e38a143a3c07d96d850ff3ce0d93ab8def9a1d	ledger.py
+$ git ls-tree cd81ebf
+100644 blob 32d27f60b3c8e086b33e79c7da8c71db031a7406	.gitignore
+100644 blob 20f1eb8b0e01ae8bc56fa5fc40ce28da00d9ef84	ledger.csv
+100644 blob dc19e8c87d97f4e38147a3aa8df78e0f6cadf299	ledger.py
+
+#### the planted lie: the assistant edits ledger.py
+$ git status --short
+ M ledger.py
+$ git diff
+diff --git a/ledger.py b/ledger.py
+index dc19e8c..5ab8f57 100644
+--- a/ledger.py
++++ b/ledger.py
+@@ -5,7 +5,7 @@ def position_value(shares, price):
+     return shares * price
+ 
+ def fee(value):
+-    if value >= 1000:
++    if value > 1000:
+         return 0
+     return 5
+ 
+@@ -15,7 +15,7 @@ total = 0
+ fees = 0
+ for p in positions:
+     value = position_value(int(p["shares"]), float(p["price"]))
+-    total = total + value
++    total = round(total + value, 2)
+     fees = fees + fee(value)
+ with open("report.txt", "w") as out:
+     out.write(f"positions: {len(positions)}\n")
+$ git diff -U1
+diff --git a/ledger.py b/ledger.py
+index dc19e8c..5ab8f57 100644
+--- a/ledger.py
++++ b/ledger.py
+@@ -7,3 +7,3 @@ def position_value(shares, price):
+ def fee(value):
+-    if value >= 1000:
++    if value > 1000:
+         return 0
+@@ -17,3 +17,3 @@ for p in positions:
+     value = position_value(int(p["shares"]), float(p["price"]))
+-    total = total + value
++    total = round(total + value, 2)
+     fees = fees + fee(value)
+$ python ledger.py
+wrote report.txt
+$ cat report.txt
+positions: 4
+total: 4338.20 CHF
+fees: 10 CHF
+$ git restore ledger.py
+$ git status --short
+$ python ledger.py
+wrote report.txt
+$ cat report.txt
+positions: 4
+total: 4338.20 CHF
+fees: 5 CHF
+
+#### remote: push to GitHub (a bare repository stands in for it)
+$ git remote add origin ../github/ledger.git
+$ git remote -v
+origin	../github/ledger.git (fetch)
+origin	../github/ledger.git (push)
+$ git push -u origin main
+To ../github/ledger.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+#### remote: clone on a second machine, change, push
+$ git clone github/ledger.git laptop
+Cloning into 'laptop'...
+done.
+$ git log --oneline -1
+cd81ebf session 6: read csv, write report
+$ git add README.md
+$ git commit -m "add a README"
+[main 11573a5] add a README
+ 1 file changed, 3 insertions(+)
+ create mode 100644 README.md
+$ git push
+To /files/github/ledger.git
+   cd81ebf..11573a5  main -> main
+
+#### remote: fetch the news, then pull the change back on Nuvolos
+$ git fetch
+From ../github/ledger
+   cd81ebf..11573a5  main       -> origin/main
+$ git status
+On branch main
+Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean
+$ git pull
+Updating cd81ebf..11573a5
+Fast-forward
+ README.md | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 README.md
+$ git log --oneline
+11573a5 add a README
+cd81ebf session 6: read csv, write report
+3c6342e session 5: positions as dicts
+003891f session 4: functions
+9de8ebc session 3: loop and total
+ee7054a session 2: value one position
+916acb4 session 1: first run
+
+#### remote: Nuvolos pushes; the laptop forgot to pull
+$ git add notes.txt
+$ git commit -m "add git notes"
+[main 18a82e7] add git notes
+ 1 file changed, 1 insertion(+)
+ create mode 100644 notes.txt
+$ git push
+To ../github/ledger.git
+   11573a5..18a82e7  main -> main
+$ git add README.md
+$ git commit -m "README: say where the output goes"
+[main 006986c] README: say where the output goes
+ 1 file changed, 2 insertions(+)
+$ git push
+To /files/github/ledger.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to '/files/github/ledger.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.

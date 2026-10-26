@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 250" width="1100" height="250" font-family="Unil Sans, Arial, sans-serif">
+  <!-- The ledger history as a chain of snapshots. Hashes from transcript.txt. -->
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#395b8c"/>
+    </marker>
+  </defs>
+  <style>
+    .box { fill: #fff; stroke: #395b8c; stroke-width: 2; }
+    .last { fill: #eef4fb; stroke: #1e2b3e; stroke-width: 3; }
+    .hash { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 20px; font-weight: 700; fill: #1e2b3e; }
+    .msg { font-size: 17px; fill: #14181d; }
+    .file { fill: #f4f6f8; stroke: #d9dee5; }
+    .fname { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; fill: #4b5563; }
+    .arrow { stroke: #395b8c; stroke-width: 2.5; fill: none; }
+    .note { font-size: 17px; fill: #4b5563; }
+    .tag { fill: #0066ff; }
+    .tagt { font-size: 15px; font-weight: 700; fill: #fff; }
+  </style>
+
+  <!-- six snapshots: x = 20 + i*180 -->
+  <g>
+    <rect class="box" x="20" y="60" width="150" height="130"/>
+    <text class="hash" x="95" y="92" text-anchor="middle">916acb4</text>
+    <text class="msg" x="95" y="118" text-anchor="middle">session 1</text>
+    <text class="msg" x="95" y="140" text-anchor="middle">first run</text>
+    <rect class="file" x="38" y="155" width="114" height="22"/><text class="fname" x="95" y="171" text-anchor="middle">2 files</text>
+  </g>
+  <g>
+    <rect class="box" x="200" y="60" width="150" height="130"/>
+    <text class="hash" x="275" y="92" text-anchor="middle">ee7054a</text>
+    <text class="msg" x="275" y="118" text-anchor="middle">session 2</text>
+    <text class="msg" x="275" y="140" text-anchor="middle">one position</text>
+    <rect class="file" x="218" y="155" width="114" height="22"/><text class="fname" x="275" y="171" text-anchor="middle">2 files</text>
+  </g>
+  <g>
+    <rect class="box" x="380" y="60" width="150" height="130"/>
+    <text class="hash" x="455" y="92" text-anchor="middle">9de8ebc</text>
+    <text class="msg" x="455" y="118" text-anchor="middle">session 3</text>
+    <text class="msg" x="455" y="140" text-anchor="middle">loop and total</text>
+    <rect class="file" x="398" y="155" width="114" height="22"/><text class="fname" x="455" y="171" text-anchor="middle">2 files</text>
+  </g>
+  <g>
+    <rect class="box" x="560" y="60" width="150" height="130"/>
+    <text class="hash" x="635" y="92" text-anchor="middle">003891f</text>
+    <text class="msg" x="635" y="118" text-anchor="middle">session 4</text>
+    <text class="msg" x="635" y="140" text-anchor="middle">functions</text>
+    <rect class="file" x="578" y="155" width="114" height="22"/><text class="fname" x="635" y="171" text-anchor="middle">2 files</text>
+  </g>
+  <g>
+    <rect class="box" x="740" y="60" width="150" height="130"/>
+    <text class="hash" x="815" y="92" text-anchor="middle">3c6342e</text>
+    <text class="msg" x="815" y="118" text-anchor="middle">session 5</text>
+    <text class="msg" x="815" y="140" text-anchor="middle">dicts</text>
+    <rect class="file" x="758" y="155" width="114" height="22"/><text class="fname" x="815" y="171" text-anchor="middle">2 files</text>
+  </g>
+  <g>
+    <rect class="last" x="920" y="60" width="160" height="130"/>
+    <text class="hash" x="1000" y="92" text-anchor="middle">cd81ebf</text>
+    <text class="msg" x="1000" y="118" text-anchor="middle">session 6</text>
+    <text class="msg" x="1000" y="140" text-anchor="middle">csv → report</text>
+    <rect class="file" x="943" y="155" width="114" height="22"/><text class="fname" x="1000" y="171" text-anchor="middle">3 files</text>
+  </g>
+
+  <!-- parent arrows: each commit points back to the one before -->
+  <line class="arrow" x1="198" y1="125" x2="174" y2="125" marker-end="url(#a)"/>
+  <line class="arrow" x1="378" y1="125" x2="354" y2="125" marker-end="url(#a)"/>
+  <line class="arrow" x1="558" y1="125" x2="534" y2="125" marker-end="url(#a)"/>
+  <line class="arrow" x1="738" y1="125" x2="714" y2="125" marker-end="url(#a)"/>
+  <line class="arrow" x1="918" y1="125" x2="894" y2="125" marker-end="url(#a)"/>
+
+  <!-- the branch name points at the newest commit -->
+  <rect class="tag" x="962" y="14" width="76" height="30" rx="4"/>
+  <text class="tagt" x="1000" y="35" text-anchor="middle">main</text>
+  <path d="M990,43 L1010,43 L1000,56 z" fill="#0066ff"/>
+
+  <text class="note" x="20" y="232">Each box is the whole folder, frozen. Each arrow says "I came after this one". The name on top is the hash.</text>
+</svg>

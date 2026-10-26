@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 400" width="1100" height="400" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif">
+  <!-- Stylized VS Code Source Control view (Light Modern), session 6 state.
+       Left: before staging. Right: after pressing + on both files. -->
+  <style>
+    .win { fill: #f8f8f8; stroke: #d0d0d0; stroke-width: 1.5; }
+    .act { fill: #ececec; }
+    .ico { fill: none; stroke: #6b6b6b; stroke-width: 2; }
+    .icoOn { fill: none; stroke: #1f1f1f; stroke-width: 2.2; }
+    .head { font-size: 13px; font-weight: 700; fill: #3b3b3b; letter-spacing: 0.06em; }
+    .input { fill: #fff; stroke: #cecece; }
+    .ph { font-size: 14px; fill: #8a8a8a; }
+    .btn { fill: #005fb8; }
+    .btnt { font-size: 16px; fill: #fff; font-weight: 600; }
+    .sec { font-size: 14px; font-weight: 700; fill: #3b3b3b; }
+    .count { fill: #d8d8d8; }
+    .countt { font-size: 12px; fill: #3b3b3b; }
+    .row { font-size: 16px; fill: #1f1f1f; }
+    .hover { fill: #e4e6f1; }
+    .M { font-size: 15px; font-weight: 700; fill: #895503; }
+    .U { font-size: 15px; font-weight: 700; fill: #388a34; }
+    .A { font-size: 15px; font-weight: 700; fill: #388a34; }
+    .rico { font-size: 18px; fill: #3b3b3b; }
+    .call { fill: #fab52a; }
+    .callt { font-size: 15px; font-weight: 700; fill: #14181d; font-family: ui-monospace, Menlo, Consolas, monospace; }
+    .cap { font-size: 18px; font-weight: 700; fill: #1e2b3e; font-family: Unil Sans, Arial, sans-serif; }
+    .badge { fill: #005fb8; }
+    .badget { font-size: 11px; fill: #fff; font-weight: 700; }
+  </style>
+
+  <text class="cap" x="10" y="24">① Three changes, nothing staged yet</text>
+  <text class="cap" x="570" y="24">② After pressing + on two of them</text>
+
+  <!-- ===== panel 1 ===== -->
+  <g transform="translate(10,40)">
+    <rect class="win" width="520" height="350"/>
+    <rect class="act" width="48" height="350"/>
+    <rect x="12" y="16" width="22" height="26" class="ico"/>
+    <circle cx="23" cy="78" r="9" class="ico"/><line x1="30" y1="85" x2="36" y2="91" class="ico"/>
+    <!-- source control icon (selected) -->
+    <rect x="0" y="108" width="3" height="40" fill="#005fb8"/>
+    <circle cx="17" cy="118" r="4" class="icoOn"/><circle cx="17" cy="140" r="4" class="icoOn"/><circle cx="31" cy="124" r="4" class="icoOn"/>
+    <line x1="17" y1="122" x2="17" y2="136" class="icoOn"/><path d="M31,128 C31,136 22,134 19,138" class="icoOn"/>
+    <circle cx="36" cy="143" r="8" class="badge"/><text class="badget" x="36" y="147" text-anchor="middle">3</text>
+
+    <text class="head" x="64" y="30">SOURCE CONTROL</text>
+    <rect class="input" x="64" y="46" width="440" height="34" rx="2"/>
+    <text class="ph" x="74" y="68">Message (Ctrl+Enter to commit on 'main')</text>
+    <rect class="btn" x="64" y="90" width="440" height="34" rx="2"/>
+    <text class="btnt" x="284" y="113" text-anchor="middle">✓ Commit</text>
+
+    <text class="sec" x="64" y="158">⌄  Changes</text>
+    <rect class="count" x="470" y="145" width="22" height="18" rx="9"/><text class="countt" x="481" y="158" text-anchor="middle">3</text>
+
+    <rect class="hover" x="52" y="170" width="468" height="32"/>
+    <text class="row" x="84" y="192">ledger.py</text>
+    <g transform="translate(410,178)" fill="none" stroke="#3b3b3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4,6 H11 A4.5,4.5 0 0 1 11,15 H6"/><path d="M7,2.5 L3.5,6 L7,9.5"/></g>
+    <text class="rico" x="440" y="193" font-weight="700">+</text>
+    <text class="M" x="478" y="192">M</text>
+
+    <text class="row" x="84" y="228">.gitignore</text>
+    <text class="U" x="478" y="228">U</text>
+    <text class="row" x="84" y="262">notes.txt</text>
+    <text class="U" x="478" y="262">U</text>
+
+    <!-- callouts -->
+    <rect class="call" x="150" y="282" width="210" height="30"/>
+    <text class="callt" x="255" y="302" text-anchor="middle">Discard = git restore</text>
+    <line x1="360" y1="297" x2="418" y2="297" stroke="#fab52a" stroke-width="3"/>
+    <line x1="418" y1="297" x2="418" y2="200" stroke="#fab52a" stroke-width="3"/>
+    <rect class="call" x="350" y="314" width="160" height="30"/>
+    <text class="callt" x="430" y="334" text-anchor="middle">+  = git add</text>
+    <line x1="446" y1="314" x2="446" y2="200" stroke="#fab52a" stroke-width="3"/>
+  </g>
+
+  <!-- ===== panel 2 ===== -->
+  <g transform="translate(570,40)">
+    <rect class="win" width="520" height="350"/>
+    <rect class="act" width="48" height="350"/>
+    <rect x="12" y="16" width="22" height="26" class="ico"/>
+    <circle cx="23" cy="78" r="9" class="ico"/><line x1="30" y1="85" x2="36" y2="91" class="ico"/>
+    <rect x="0" y="108" width="3" height="40" fill="#005fb8"/>
+    <circle cx="17" cy="118" r="4" class="icoOn"/><circle cx="17" cy="140" r="4" class="icoOn"/><circle cx="31" cy="124" r="4" class="icoOn"/>
+    <line x1="17" y1="122" x2="17" y2="136" class="icoOn"/><path d="M31,128 C31,136 22,134 19,138" class="icoOn"/>
+    <circle cx="36" cy="143" r="8" class="badge"/><text class="badget" x="36" y="147" text-anchor="middle">3</text>
+
+    <text class="head" x="64" y="30">SOURCE CONTROL</text>
+    <rect class="input" x="64" y="46" width="440" height="34" rx="2"/>
+    <text x="74" y="68" font-size="14" fill="#1f1f1f">session 6: read csv, write report</text>
+    <rect class="btn" x="64" y="90" width="440" height="34" rx="2"/>
+    <text class="btnt" x="284" y="113" text-anchor="middle">✓ Commit</text>
+
+    <text class="sec" x="64" y="158">⌄  Staged Changes</text>
+    <rect class="count" x="470" y="145" width="22" height="18" rx="9"/><text class="countt" x="481" y="158" text-anchor="middle">2</text>
+    <text class="row" x="84" y="192">.gitignore</text>
+    <text class="A" x="478" y="192">A</text>
+    <text class="row" x="84" y="228">ledger.py</text>
+    <text class="M" x="478" y="228">M</text>
+
+    <text class="sec" x="64" y="266">⌄  Changes</text>
+    <rect class="count" x="470" y="253" width="22" height="18" rx="9"/><text class="countt" x="481" y="266" text-anchor="middle">1</text>
+    <text class="row" x="84" y="298">notes.txt</text>
+    <text class="U" x="478" y="298">U</text>
+
+    <rect class="call" x="236" y="314" width="276" height="30"/>
+    <text class="callt" x="374" y="334" text-anchor="middle">✓ Commit takes the staged two</text>
+    <line x1="236" y1="329" x2="225" y2="329" stroke="#fab52a" stroke-width="3"/>
+    <line x1="225" y1="329" x2="225" y2="126" stroke="#fab52a" stroke-width="3"/>
+  </g>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 480" width="470" height="480" font-family="Unil Sans, Arial, sans-serif">
+  <!-- A repository: a normal folder (the files you edit) plus a hidden
+       .git folder (every commit). Hashes are the real ledger history. -->
+  <style>
+    .folder { fill: #fff; stroke: #395b8c; stroke-width: 2.5; }
+    .tab { fill: #395b8c; }
+    .tabt { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 17px; font-weight: 700; fill: #fff; }
+    .icon { fill: #f4f6f8; stroke: #9aa5b1; stroke-width: 1.5; }
+    .file { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 16px; fill: #14181d; }
+    .note { font-size: 14px; fill: #4b5563; font-style: italic; }
+    .git { fill: #f1f3f6; stroke: #7b8794; stroke-width: 2; stroke-dasharray: 7 5; }
+    .gitt { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 16px; font-weight: 700; fill: #4b5563; }
+    .card { fill: #fff; stroke: #395b8c; stroke-width: 1.8; }
+    .top { fill: #eef4fb; stroke: #1e2b3e; stroke-width: 2.5; }
+    .hash { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 14px; fill: #1e2b3e; font-weight: 700; }
+    .msg { font-size: 13px; fill: #4b5563; }
+  </style>
+
+  <!-- the folder -->
+  <path class="tab" d="M10,18 h120 l16,20 h-136 z"/>
+  <text class="tabt" x="22" y="34">dsap/</text>
+  <rect class="folder" x="10" y="38" width="450" height="432" rx="4"/>
+
+  <!-- the files you see -->
+  <path class="icon" d="M34,62 h20 l7,7 v24 h-27 z"/><text class="file" x="72" y="84">ledger.csv</text>
+  <path class="icon" d="M34,104 h20 l7,7 v24 h-27 z"/><text class="file" x="72" y="126">ledger.py</text>
+  <text class="note" x="250" y="100">your files —</text>
+  <text class="note" x="250" y="118">you edit these</text>
+
+  <!-- the hidden .git folder -->
+  <rect class="git" x="34" y="160" width="402" height="290" rx="4"/>
+  <text class="gitt" x="50" y="188">.git</text>
+  <text class="note" x="100" y="188">hidden — git writes here, you don't</text>
+
+  <!-- a stack of snapshots, oldest at the back -->
+  <g>
+    <rect class="card" x="110" y="208" width="250" height="44" rx="4"/>
+    <text class="hash" x="124" y="235">916acb4</text><text class="msg" x="200" y="235">session 1</text>
+    <rect class="card" x="100" y="238" width="250" height="44" rx="4"/>
+    <text class="hash" x="114" y="265">ee7054a</text><text class="msg" x="190" y="265">session 2</text>
+    <rect class="card" x="90" y="268" width="250" height="44" rx="4"/>
+    <text class="hash" x="104" y="295">9de8ebc</text><text class="msg" x="180" y="295">session 3</text>
+    <rect class="card" x="80" y="298" width="250" height="44" rx="4"/>
+    <text class="hash" x="94" y="325">003891f</text><text class="msg" x="170" y="325">session 4</text>
+    <rect class="card" x="70" y="328" width="250" height="44" rx="4"/>
+    <text class="hash" x="84" y="355">3c6342e</text><text class="msg" x="160" y="355">session 5</text>
+    <rect class="top" x="60" y="358" width="250" height="60" rx="4"/>
+    <text class="hash" x="74" y="385">cd81ebf</text><text class="msg" x="150" y="385">session 6 — newest</text>
+    <text class="msg" x="74" y="405">every file, as it was</text>
+  </g>
+  <text class="note" x="330" y="400">every commit,</text>
+  <text class="note" x="330" y="418">kept for good</text>
+</svg>

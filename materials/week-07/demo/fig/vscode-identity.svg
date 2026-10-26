@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 140" width="1100" height="140" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif">
+  <!-- Stylized VS Code notifications (Light Modern): the button-side
+       versions of the terminal error in transcript.txt. Wording differs
+       slightly between VS Code versions. -->
+  <style>
+    .toast { fill: #fff; stroke: #c8c8c8; stroke-width: 1.5; }
+    .err { fill: #e51400; }
+    .msg { font-size: 16px; fill: #1f1f1f; }
+    .btn { fill: #005fb8; }
+    .btnt { font-size: 15px; fill: #fff; }
+    .cap { font-size: 18px; font-weight: 700; fill: #1e2b3e; font-family: Unil Sans, Arial, sans-serif; }
+    .same { font-size: 15px; fill: #4b5563; font-family: ui-monospace, Menlo, Consolas, monospace; }
+  </style>
+
+    <text class="cap" x="10" y="24">First commit on a new machine</text>
+  <rect class="toast" x="10" y="40" width="1080" height="64"/>
+  <circle class="err" cx="38" cy="72" r="11"/><text x="38" y="78" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">!</text>
+  <text class="msg" x="62" y="78">Make sure you configure your "user.name" and "user.email" in git.</text>
+  <text class="same" x="10" y="130">terminal: *** Please tell me who you are.</text>
+</svg>

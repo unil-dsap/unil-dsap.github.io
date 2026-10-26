@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 330" width="1100" height="330" font-family="Unil Sans, Arial, sans-serif">
+  <!-- What one commit holds. Values are the real session-6 commit
+       (git log -2 in transcript.txt). -->
+  <style>
+    .card { fill: #fff; stroke: #1e2b3e; stroke-width: 3; }
+    .head { fill: #1e2b3e; }
+    .headt { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 20px; font-weight: 700; fill: #fff; }
+    .k { font-size: 18px; font-weight: 700; fill: #395b8c; }
+    .v { font-size: 18px; fill: #14181d; }
+    .mono { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 17px; fill: #14181d; }
+    .note { font-size: 16px; fill: #4b5563; }
+    .file { fill: #f4f6f8; stroke: #d9dee5; }
+    .sep { stroke: #d9dee5; stroke-width: 1.5; }
+  </style>
+
+  <rect class="card" x="10" y="10" width="700" height="310"/>
+  <rect class="head" x="10" y="10" width="700" height="44"/>
+  <text class="headt" x="30" y="40">commit cd81ebf36c22047fb80d81739bf2a97b8c25b27b</text>
+
+  <text class="k" x="30" y="92">snapshot</text>
+  <rect class="file" x="160" y="72" width="130" height="30"/><text class="mono" x="172" y="93">ledger.py</text>
+  <rect class="file" x="300" y="72" width="130" height="30"/><text class="mono" x="312" y="93">ledger.csv</text>
+  <rect class="file" x="440" y="72" width="130" height="30"/><text class="mono" x="452" y="93">.gitignore</text>
+  <line class="sep" x1="30" y1="118" x2="690" y2="118"/>
+
+  <text class="k" x="30" y="150">message</text><text class="v" x="160" y="150">session 6: read csv, write report</text>
+  <text class="k" x="30" y="186">author</text><text class="v" x="160" y="186">Student &lt;student@unil.ch&gt;</text>
+  <text class="k" x="30" y="222">date</text><text class="v" x="160" y="222">Mon Oct 26 16:30:00 2026 +0100</text>
+  <text class="k" x="30" y="258">parent</text><text class="mono" x="160" y="258">3c6342e</text><text class="v" x="250" y="258">(session 5: positions as dicts)</text>
+  <line class="sep" x1="30" y1="278" x2="690" y2="278"/>
+  <text class="note" x="30" y="306">The name on top is computed from everything below it.</text>
+
+  <text class="note" x="740" y="60">The <tspan font-weight="700">snapshot</tspan> is every file in the</text>
+  <text class="note" x="740" y="82">folder, as it was — not just the changes.</text>
+  <text class="note" x="740" y="128">The <tspan font-weight="700">message</tspan> says why. You write it.</text>
+  <text class="note" x="740" y="174">The <tspan font-weight="700">author</tspan> comes from git config</text>
+  <text class="note" x="740" y="196">(you set it once per machine).</text>
+  <text class="note" x="740" y="242">The <tspan font-weight="700">parent</tspan> is the commit before.</text>
+  <text class="note" x="740" y="264">That link makes the chain.</text>
+</svg>

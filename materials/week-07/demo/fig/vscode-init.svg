@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 360" width="1100" height="360" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif">
+  <!-- Stylized VS Code (Light Modern). Left: Explorer after git init —
+       .git exists (ls -a shows it) but VS Code hides it. Right: Source
+       Control before git init. -->
+  <style>
+    .win { fill: #f8f8f8; stroke: #d0d0d0; stroke-width: 1.5; }
+    .head { font-size: 13px; font-weight: 700; fill: #3b3b3b; letter-spacing: 0.06em; }
+    .row { font-size: 16px; fill: #1f1f1f; }
+    .dim { font-size: 15px; fill: #616161; }
+    .btn { fill: #005fb8; }
+    .btnt { font-size: 16px; fill: #fff; font-weight: 600; }
+    .btn2 { fill: #e5e5e5; }
+    .btn2t { font-size: 16px; fill: #1f1f1f; }
+    .icon { fill: #f4f6f8; stroke: #9aa5b1; stroke-width: 1.2; }
+    .ghost { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 16px; fill: #b0b7c0; }
+    .call { fill: #fab52a; }
+    .callt { font-size: 15px; font-weight: 700; fill: #14181d; font-family: ui-monospace, Menlo, Consolas, monospace; }
+    .cap { font-size: 18px; font-weight: 700; fill: #1e2b3e; font-family: Unil Sans, Arial, sans-serif; }
+  </style>
+
+  <text class="cap" x="10" y="24">Explorer: the files you see</text>
+  <g transform="translate(10,36)">
+    <rect class="win" width="420" height="300"/>
+    <text class="head" x="20" y="30">EXPLORER</text>
+    <text class="head" x="20" y="64">⌄ DSAP</text>
+    <path class="icon" d="M36,82 h13 l5,5 v15 h-18 z"/><text class="row" x="64" y="98">ledger.csv</text>
+    <path class="icon" d="M36,114 h13 l5,5 v15 h-18 z"/><text class="row" x="64" y="130">ledger.py</text>
+    <text class="ghost" x="36" y="176">.git   ← on disk, not shown</text>
+    <rect class="call" x="20" y="222" width="380" height="54"/>
+    <text class="callt" x="210" y="244" text-anchor="middle">VS Code hides .git on purpose:</text>
+    <text class="callt" x="210" y="266" text-anchor="middle">you never edit it by hand</text>
+  </g>
+
+  <text class="cap" x="470" y="24">Source Control, before the first git init</text>
+  <g transform="translate(470,36)">
+    <rect class="win" width="620" height="300"/>
+    <text class="head" x="20" y="30">SOURCE CONTROL</text>
+    <text class="dim" x="20" y="72">The folder currently open doesn't have a git</text>
+    <text class="dim" x="20" y="94">repository. You can initialize a repository which will</text>
+    <text class="dim" x="20" y="116">enable source control features powered by git.</text>
+    <rect class="btn" x="20" y="136" width="580" height="36" rx="2"/>
+    <text class="btnt" x="310" y="160" text-anchor="middle">Initialize Repository</text>
+    <rect class="btn2" x="20" y="184" width="580" height="36" rx="2"/>
+    <text class="btn2t" x="310" y="208" text-anchor="middle">Publish to GitHub</text>
+    <rect class="call" x="300" y="240" width="300" height="34"/>
+    <text class="callt" x="450" y="262" text-anchor="middle">Initialize = git init</text>
+    <line x1="450" y1="240" x2="450" y2="174" stroke="#fab52a" stroke-width="3"/>
+  </g>
+</svg>
