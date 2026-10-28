@@ -1,0 +1,200 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mock midterm answers — Data Science and Advanced Programming</title>
+<style>
+:root { --bg:#f6f7f9; --panel:#fff; --ink:#1b2233; --muted:#5b6478; --line:#d9dee6; --navy:#002664; --ok:#1d7a45; --okbg:#eaf6ee; --no:#a3392a; --code:#f0f2f5; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0f1420; --panel:#161c2a; --ink:#e8ecf3; --muted:#9aa5b8; --line:#2a3345; --navy:#8ce0ff; --ok:#7bd39a; --okbg:#12261a; --no:#f0a08f; --code:#0b1018; } }
+:root[data-theme="dark"] { --bg:#0f1420; --panel:#161c2a; --ink:#e8ecf3; --muted:#9aa5b8; --line:#2a3345; --navy:#8ce0ff; --ok:#7bd39a; --okbg:#12261a; --no:#f0a08f; --code:#0b1018; }
+* { box-sizing:border-box }
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 -apple-system,"Helvetica Neue",Arial,sans-serif; padding:0 16px 60px }
+.wrap { max-width:72ch; margin:0 auto }
+h1 { color:var(--navy); font-size:28px; margin:28px 0 4px } .lede { color:var(--muted) }
+nav { display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 } nav a { font-size:13px; color:var(--navy); text-decoration:none; border:1px solid var(--line); border-radius:999px; padding:2px 9px }
+article { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:14px 18px; margin:14px 0 }
+header { display:flex; gap:10px; align-items:baseline; flex-wrap:wrap } h2 { font-size:18px; margin:0 }
+.tag { font-size:12px; font-weight:700; color:var(--muted); border:1px solid var(--line); border-radius:4px; padding:1px 6px }
+pre { font:13.5px/1.45 Menlo,Consolas,monospace; overflow-x:auto } pre.code { background:var(--code); border-left:3px solid var(--navy); padding:8px 12px }
+pre.opt { display:inline-block; vertical-align:top; margin:0; background:var(--code); padding:2px 8px }
+.ln { color:#9aa3b2 } .lab { margin:8px 0 0; font-size:14px; color:var(--muted) }
+.ans ul { list-style:none; padding:0; margin:8px 0 } .ans li { margin:4px 0 }
+li.ok { color:var(--ok); background:var(--okbg); padding:2px 8px; border-radius:4px } li.no { color:var(--ink) }
+.why { color:var(--no); font-size:14px } .say { border-top:1px dashed var(--line); padding-top:8px } .twin { color:var(--muted); font-size:14px; margin:0 }
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.hl .hll { background-color: #ffffcc }
+.hl { background: #f8f8f8; }
+.hl .c { color: #3D7B7B; font-style: italic } /* Comment */
+.hl .err { border: 1px solid #F00 } /* Error */
+.hl .k { color: #008000; font-weight: bold } /* Keyword */
+.hl .o { color: #666 } /* Operator */
+.hl .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.hl .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.hl .cp { color: #9C6500 } /* Comment.Preproc */
+.hl .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.hl .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.hl .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.hl .gd { color: #A00000 } /* Generic.Deleted */
+.hl .ge { font-style: italic } /* Generic.Emph */
+.hl .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.hl .gr { color: #E40000 } /* Generic.Error */
+.hl .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.hl .gi { color: #008400 } /* Generic.Inserted */
+.hl .go { color: #717171 } /* Generic.Output */
+.hl .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.hl .gs { font-weight: bold } /* Generic.Strong */
+.hl .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.hl .gt { color: #04D } /* Generic.Traceback */
+.hl .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.hl .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.hl .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.hl .kp { color: #008000 } /* Keyword.Pseudo */
+.hl .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.hl .kt { color: #B00040 } /* Keyword.Type */
+.hl .m { color: #666 } /* Literal.Number */
+.hl .s { color: #BA2121 } /* Literal.String */
+.hl .na { color: #687822 } /* Name.Attribute */
+.hl .nb { color: #008000 } /* Name.Builtin */
+.hl .nc { color: #00F; font-weight: bold } /* Name.Class */
+.hl .no { color: #800 } /* Name.Constant */
+.hl .nd { color: #A2F } /* Name.Decorator */
+.hl .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.hl .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.hl .nf { color: #00F } /* Name.Function */
+.hl .nl { color: #767600 } /* Name.Label */
+.hl .nn { color: #00F; font-weight: bold } /* Name.Namespace */
+.hl .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.hl .nv { color: #19177C } /* Name.Variable */
+.hl .ow { color: #A2F; font-weight: bold } /* Operator.Word */
+.hl .w { color: #BBB } /* Text.Whitespace */
+.hl .mb { color: #666 } /* Literal.Number.Bin */
+.hl .mf { color: #666 } /* Literal.Number.Float */
+.hl .mh { color: #666 } /* Literal.Number.Hex */
+.hl .mi { color: #666 } /* Literal.Number.Integer */
+.hl .mo { color: #666 } /* Literal.Number.Oct */
+.hl .sa { color: #BA2121 } /* Literal.String.Affix */
+.hl .sb { color: #BA2121 } /* Literal.String.Backtick */
+.hl .sc { color: #BA2121 } /* Literal.String.Char */
+.hl .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.hl .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.hl .s2 { color: #BA2121 } /* Literal.String.Double */
+.hl .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.hl .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.hl .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.hl .sx { color: #008000 } /* Literal.String.Other */
+.hl .sr { color: #A45A77 } /* Literal.String.Regex */
+.hl .s1 { color: #BA2121 } /* Literal.String.Single */
+.hl .ss { color: #19177C } /* Literal.String.Symbol */
+.hl .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.hl .fm { color: #00F } /* Name.Function.Magic */
+.hl .vc { color: #19177C } /* Name.Variable.Class */
+.hl .vg { color: #19177C } /* Name.Variable.Global */
+.hl .vi { color: #19177C } /* Name.Variable.Instance */
+.hl .vm { color: #19177C } /* Name.Variable.Magic */
+.hl .il { color: #666 } /* Literal.Number.Integer.Long */
+details summary { cursor:pointer; color:var(--navy); font-weight:700; margin-top:8px }
+body { font-size:20px } pre { font-size:17px } h2 { font-size:22px } .why { font-size:17px } .wrap { max-width:80ch }
+@media (prefers-color-scheme: dark) { .hl span { filter:brightness(1.6) } }
+</style></head><body><div class="wrap">
+<h1>Mock midterm: the answers</h1>
+<p class="lede">Think about each question first, then open the answer. Next to each wrong option: the mistake that leads to it.</p>
+<nav><a href="#L1">L1</a><a href="#M5">M5</a><a href="#L6">L6</a><a href="#M4">M4</a><a href="#K3">K3</a><a href="#L4">L4</a><a href="#M1">M1</a><a href="#M2">M2</a><a href="#M6">M6</a><a href="#K4">K4</a></nav>
+<article id="L1"><header><span class="tag">L1 · 2 pt</span>
+<h2>Slicing a list</h2></header><p>Choose the value of each expression. Choose <i>crashes</i> if the expression stops the program.</p><pre class="code hl"><span class="ln">1</span>  <span class="n">closes</span> <span class="o">=</span> <span class="p">[</span><span class="mf">190.5</span><span class="p">,</span> <span class="mf">187.2</span><span class="p">,</span> <span class="mf">193.8</span><span class="p">,</span> <span class="mf">185.1</span><span class="p">,</span> <span class="mf">191.4</span><span class="p">,</span> <span class="mf">198.6</span><span class="p">]</span></pre>
+<details><summary>Show the answer</summary><div class="ans"><ul><li class="ok"><code>closes[-2:]</code> → <code>[191.4, 198.6]</code></li><li class="ok"><code>closes[1:4]</code> → <code>[187.2, 193.8, 185.1]</code></li><li class="ok"><code>closes[6]</code> → <code>crashes</code></li><li class="ok"><code>closes[::2]</code> → <code>[190.5, 193.8, 191.4]</code></li></ul></div>
+<p class="say"><b>Key idea:</b> Start and stop are cuts between the boxes; the stop is not included; a too-big index crashes, a too-big slice does not.</p></details></article><article id="M5"><header><span class="tag">M5 · 3 pt</span>
+<h2>Is this output plausible?</h2></header><p>A colleague computes the average daily return of a price series, in percent. The program prints <code>2.5</code>. Answer the three questions.</p><pre class="code hl"><span class="ln">1</span>  <span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">110.0</span><span class="p">,</span> <span class="mf">99.0</span><span class="p">,</span> <span class="mf">108.9</span><span class="p">]</span>
+<span class="ln">2</span>  <span class="n">total</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="ln">3</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">)):</span>
+<span class="ln">4</span>      <span class="n">change</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="ln">5</span>      <span class="n">total</span> <span class="o">+=</span> <span class="n">change</span>
+<span class="ln">6</span>  <span class="n">average</span> <span class="o">=</span> <span class="n">total</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
+<span class="ln">7</span>  <span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">average</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span></pre>
+<details><summary>Show the answer</summary><div class="ans"><ul><li class="ok">The daily returns are +10%, -10% and +10%. Is <code>2.5</code> a plausible average? → <code>No</code></li><li class="ok">Why? → <code>It divides by the number of prices (4), not the number of returns (3)</code></li><li class="ok">Which line causes it? → <code>Line 6</code></li></ul></div>
+<p class="say"><b>Key idea:</b> Do a rough check first: +10, -10, +10 average about 3.3, so 2.5 is too low. 3 returns, not 4 prices.</p><p class="twin">Also in the session 7 review: Item 2</p></details></article><article id="L6"><header><span class="tag">L6 · 2 pt</span>
+<h2>From a line of text to fields</h2></header><p>One line read from a CSV file is split into fields. Choose the value of each expression.</p><pre class="code hl"><span class="ln">1</span>  <span class="n">line</span> <span class="o">=</span> <span class="s2">"NESN,Nestlé,4,102.30</span><span class="se">\n</span><span class="s2">"</span>
+<span class="ln">2</span>  <span class="n">parts</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span></pre>
+<details><summary>Show the answer</summary><div class="ans"><ul><li class="ok"><code>len(parts)</code> → <code>4</code></li><li class="ok"><code>parts[2] * 2</code> → <code>&#x27;44&#x27;</code></li><li class="ok"><code>float(parts[3])</code> → <code>102.3</code></li><li class="ok"><code>parts[0] + parts[2]</code> → <code>&#x27;NESN4&#x27;</code></li></ul></div>
+<p class="say"><b>Key idea:</b> <code>split</code> gives STRINGS: <code>&quot;4&quot; * 2</code> is <code>&quot;44&quot;</code>. Convert with int()/float() before computing.</p></details></article><article id="M4"><header><span class="tag">M4 · 4 pt</span>
+<h2>Read a whole program: trades in, positions out</h2></header><p>Read the file <code>trades.csv</code> and the program, then answer the four questions.</p><p class="lab">File <code>trades.csv</code></p><pre class="code">ticker,qty,price
+AAPL,10,190.50
+NESN,,102.30
+VOO,2,512.00
+AAPL,-3,191.00</pre><pre class="code hl"><span class="ln"> 1</span>  <span class="k">def</span><span class="w"> </span><span class="nf">load</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="ln"> 2</span>      <span class="n">trades</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ln"> 3</span>      <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="ln"> 4</span>          <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="ln"> 5</span>          <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+<span class="ln"> 6</span>              <span class="n">ticker</span><span class="p">,</span> <span class="n">qty</span><span class="p">,</span> <span class="n">price</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span>
+<span class="ln"> 7</span>              <span class="k">try</span><span class="p">:</span>
+<span class="ln"> 8</span>                  <span class="n">trades</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">ticker</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">qty</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">price</span><span class="p">)))</span>
+<span class="ln"> 9</span>              <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+<span class="ln">10</span>                  <span class="nb">print</span><span class="p">(</span><span class="s2">"skipped"</span><span class="p">,</span> <span class="n">ticker</span><span class="p">)</span>
+<span class="ln">11</span>      <span class="k">return</span> <span class="n">trades</span>
+<span class="ln">12</span>  
+<span class="ln">13</span>  <span class="k">def</span><span class="w"> </span><span class="nf">net</span><span class="p">(</span><span class="n">trades</span><span class="p">):</span>
+<span class="ln">14</span>      <span class="n">shares</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="ln">15</span>      <span class="k">for</span> <span class="n">ticker</span><span class="p">,</span> <span class="n">qty</span><span class="p">,</span> <span class="n">price</span> <span class="ow">in</span> <span class="n">trades</span><span class="p">:</span>
+<span class="ln">16</span>          <span class="n">shares</span><span class="p">[</span><span class="n">ticker</span><span class="p">]</span> <span class="o">=</span> <span class="n">shares</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">qty</span>
+<span class="ln">17</span>      <span class="k">return</span> <span class="n">shares</span>
+<span class="ln">18</span>  
+<span class="ln">19</span>  <span class="n">trades</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="s2">"trades.csv"</span><span class="p">)</span>
+<span class="ln">20</span>  <span class="n">result</span> <span class="o">=</span> <span class="n">net</span><span class="p">(</span><span class="n">trades</span><span class="p">)</span>
+<span class="ln">21</span>  <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">trades</span><span class="p">),</span> <span class="n">result</span><span class="p">)</span></pre>
+<details><summary>Show the answer</summary><div class="ans"><ul><li class="ok">Which line skips the header? → <code>Line 4</code></li><li class="ok">What is the first line on the screen? → <code>skipped NESN</code></li><li class="ok">How many trades does <code>load</code> return? → <code>3</code></li><li class="ok"><code>result[&quot;AAPL&quot;]</code> → <code>7</code></li></ul></div>
+<p class="say"><b>Key idea:</b> Read the file first, then follow one row through the program. NESN has no qty: <code>int(&quot;&quot;)</code> raises, <code>except</code> prints, the loop goes on.</p><p class="twin">Also in the session 7 review: Item 11</p></details></article><article id="K3"><header><span class="tag">K3 · 1 pt</span>
+<h2>Where does a relative path point?</h2></header><p>Li&#x27;s working directory is <code>/Users/li/dsap/week-06</code>. Her script runs <code>open(&quot;../data/prices.csv&quot;)</code>. Which file does Python try to open?</p>
+<details><summary>Show the answer</summary><div class="ans"><ul><li class="ok">✓ <code>/Users/li/dsap/data/prices.csv</code></li><li class="no">✗ <code>/Users/li/dsap/week-06/data/prices.csv</code> <span class="why">ignores the ..</span></li><li class="no">✗ <code>/data/prices.csv</code> <span class="why">reads the relative path as absolute</span></li><li class="no">✗ <code>/Users/li/data/prices.csv</code> <span class="why">goes up two folders instead of one</span></li></ul></div>
+<p class="say"><b>Key idea:</b> A relative path starts in the working directory; <code>..</code> goes up ONE folder.</p></details></article><article id="L4"><header><span class="tag">L4 · 2 pt</span>
+<h2>Which line breaks the brief?</h2></header><p><b>Brief:</b> count the positions worth <b>more than</b> 1000 CHF. The program runs without an error. Which line, if any, breaks the brief?</p><pre class="code hl"><span class="ln">1</span>  <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1905.0</span><span class="p">,</span> <span class="mf">409.2</span><span class="p">,</span> <span class="mf">1024.0</span><span class="p">,</span> <span class="mf">1000.0</span><span class="p">]</span>
+<span class="ln">2</span>  <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="ln">3</span>  <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+<span class="ln">4</span>      <span class="k">if</span> <span class="n">v</span> <span class="o">&gt;=</span> <span class="mi">1000</span><span class="p">:</span>
+<span class="ln">5</span>          <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="ln">6</span>  <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span></pre>
+<details><summary>Show the answer</summary><div class="ans"><ul><li class="ok">✓ <code>Line 4</code></li><li class="no">✗ <code>Line 2</code> <span class="why">thinks count must start at 1</span></li><li class="no">✗ <code>Line 5</code> <span class="why">thinks += is wrong for counting</span></li><li class="no">✗ <code>No line: the program follows the brief</code> <span class="why">does not check the boundary value 1000.0</span></li></ul></div>
+<p class="say"><b>Key idea:</b> Brief says MORE THAN: <code>&gt;=</code> also counts 1000.0. Always test the boundary value.</p><p class="twin">Also in the session 7 review: Item 3</p></details></article><article id="M1"><header><span class="tag">M1 · 3 pt</span>
+<h2>print is not return</h2></header><p>What appears on the screen? (Each option shows the lines in order; <i>then it crashes</i> means the program stops with an error after those lines.)</p><pre class="code hl"><span class="ln">1</span>  <span class="k">def</span><span class="w"> </span><span class="nf">value</span><span class="p">(</span><span class="n">shares</span><span class="p">,</span> <span class="n">price</span><span class="p">):</span>
+<span class="ln">2</span>      <span class="nb">print</span><span class="p">(</span><span class="n">shares</span> <span class="o">*</span> <span class="n">price</span><span class="p">)</span>
+<span class="ln">3</span>  
+<span class="ln">4</span>  <span class="n">total</span> <span class="o">=</span> <span class="n">value</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">190.5</span><span class="p">)</span> <span class="o">+</span> <span class="n">value</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mf">102.3</span><span class="p">)</span>
+<span class="ln">5</span>  <span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span></pre>
+<details><summary>Show the answer</summary><div class="ans"><ul><li class="ok">✓ <pre class="opt">1905.0
+409.2
+then it crashes</pre></li><li class="no">✗ <code>2314.2</code> <span class="why">thinks print gives back a value</span></li><li class="no">✗ <pre class="opt">1905.0
+409.2
+2314.2</pre> <span class="why">thinks the printed values are added</span></li><li class="no">✗ <pre class="opt">1905.0
+409.2
+None</pre> <span class="why">thinks None + None is None</span></li></ul></div>
+<p class="say"><b>Key idea:</b> <code>print</code> shows, <code>return</code> gives back. A function with no <code>return</code> gives <code>None</code>, and <code>None + None</code> crashes AFTER both prints.</p><p class="twin">Also in the session 7 review: Item 6</p></details></article><article id="M2"><header><span class="tag">M2 · 2 pt</span>
+<h2>Won&#x27;t start, or crashes?</h2></header><p>What appears on the screen? Remember: Python reads the whole file before it runs any line.</p><pre class="code hl"><span class="ln">1</span>  <span class="nb">print</span><span class="p">(</span><span class="s2">"start"</span><span class="p">)</span>
+<span class="ln">2</span>  <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="ln">3</span>  <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">190.5</span><span class="p">,</span> <span class="mf">102.3</span><span class="p">]</span>
+<span class="ln">4</span>      <span class="n">total</span> <span class="o">+=</span> <span class="n">p</span>
+<span class="ln">5</span>  <span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span></pre>
+<details><summary>Show the answer</summary><div class="ans"><ul><li class="ok">✓ <code>Nothing: the program does not start</code></li><li class="no">✗ <pre class="opt">start
+then it crashes</pre> <span class="why">thinks the lines before the error run first</span></li><li class="no">✗ <pre class="opt">start
+292.8</pre> <span class="why">does not see the missing colon</span></li><li class="no">✗ <code>start</code> <span class="why">thinks Python stops quietly at the bad line</span></li></ul></div>
+<p class="say"><b>Key idea:</b> Python reads the whole file first: a missing <code>:</code> means NOTHING runs, not even line 1. A crash happens later, after earlier lines printed.</p><p class="twin">Also in the session 7 review: Item 4</p></details></article><article id="M6"><header><span class="tag">M6 · 3 pt</span>
+<h2>Only one output is possible</h2></header><p><b>Brief:</b> read <code>trades.csv</code> and print how many trades are <b>buys</b> (quantity above 0) and how many shares were bought in total. Four colleagues wrote four programs and got the four outputs below. Only one output can come from a program that follows the brief. Which one?</p><p class="lab">File <code>trades.csv</code></p><pre class="code">ticker,qty
+AAPL,10
+NESN,-4
+VOO,2
+AAPL,-3
+MSFT,5</pre>
+<details><summary>Show the answer</summary><div class="ans"><ul><li class="ok">✓ <code>3 buys, 17 shares</code></li><li class="no">✗ <code>5 buys, 10 shares</code> <span class="why">every trade counted: there is no check on the sign</span></li><li class="no">✗ <code>3 buys, 5 shares</code> <span class="why">only the last buy survives: the total is reset inside the loop</span></li><li class="no">✗ <code>5 buys, 24 shares</code> <span class="why">sells counted as buys: abs() turns -4 into 4</span></li></ul></div>
+<p class="say"><b>Key idea:</b> Compute the brief by hand from the file (10 + 2 + 5 = 17, 3 buys), then match each wrong output to its bug.</p><p class="twin">Also in the session 7 review: Item 12</p></details></article><article id="K4"><header><span class="tag">K4 · 1 pt</span>
+<h2>&quot;w&quot; and &quot;a&quot;</h2></header><p>The program writes to <code>log.txt</code> several times. What number does it print?</p><pre class="code hl"><span class="ln"> 1</span>  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"log.txt"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="ln"> 2</span>      <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"AAPL</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="ln"> 3</span>  <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"NESN"</span><span class="p">,</span> <span class="s2">"VOO"</span><span class="p">]:</span>
+<span class="ln"> 4</span>      <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"log.txt"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="ln"> 5</span>          <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="ln"> 6</span>  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"log.txt"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="ln"> 7</span>      <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"MSFT</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="ln"> 8</span>  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"log.txt"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="ln"> 9</span>      <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"TSLA</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="ln">10</span>  <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">"log.txt"</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()))</span></pre>
+<details><summary>Show the answer</summary><div class="ans"><ul><li class="ok">✓ <code>2</code></li><li class="no">Common wrong answers: <span class="why">5 (thinks w also appends), 1, 3</span></li></ul></div>
+<p class="say"><b>Key idea:</b> <code>&quot;w&quot;</code> empties the file the moment it opens it; <code>&quot;a&quot;</code> adds at the end. Count only what survives the last <code>&quot;w&quot;</code>.</p></details></article>
+</div></body></html>
