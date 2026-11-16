@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="364.32pt" height="184.781719pt" viewBox="0 0 364.32 184.781719" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-16T11:15:14.544829</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 184.781719 
+L 364.32 184.781719 
+L 364.32 -0 
+L 0 -0 
+L 0 184.781719 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 47.871074 110.407251 
+L 106.899174 110.407251 
+L 106.899174 39.632783 
+L 47.871074 39.632783 
+z
+" clip-path="url(#p8d87a34fcf)" style="fill: #cfe9df; stroke: #ffffff; stroke-width: 3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 106.899174 110.407251 
+L 165.927273 110.407251 
+L 165.927273 39.632783 
+L 106.899174 39.632783 
+z
+" clip-path="url(#p8d87a34fcf)" style="fill: #f6c9c2; stroke: #ffffff; stroke-width: 3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 47.871074 181.181719 
+L 106.899174 181.181719 
+L 106.899174 110.407251 
+L 47.871074 110.407251 
+z
+" clip-path="url(#p8d87a34fcf)" style="fill: #fde3c0; stroke: #ffffff; stroke-width: 3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 106.899174 181.181719 
+L 165.927273 181.181719 
+L 165.927273 110.407251 
+L 106.899174 110.407251 
+z
+" clip-path="url(#p8d87a34fcf)" style="fill: #eef1f4; stroke: #ffffff; stroke-width: 3; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="77.385124" y="71.185284" transform="rotate(-0 77.385124 71.185284)">6</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #4b5563" x="77.385124" y="93.17829" transform="rotate(-0 77.385124 93.17829)">TP</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="136.413223" y="71.185284" transform="rotate(-0 136.413223 71.185284)">18</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #4b5563" x="136.413223" y="93.17829" transform="rotate(-0 136.413223 93.17829)">FN</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="77.385124" y="141.959752" transform="rotate(-0 77.385124 141.959752)">3</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #4b5563" x="77.385124" y="163.952758" transform="rotate(-0 77.385124 163.952758)">FP</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="136.413223" y="141.959752" transform="rotate(-0 136.413223 141.959752)">223</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #4b5563" x="136.413223" y="163.952758" transform="rotate(-0 136.413223 163.952758)">TN</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #4b5563" x="77.385124" y="33.970825" transform="rotate(-0 77.385124 33.970825)">alarm</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #4b5563" x="136.413223" y="33.970825" transform="rotate(-0 136.413223 33.970825)">no alarm</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: end; fill: #4b5563" x="44.919669" y="77.607907" transform="rotate(-0 44.919669 77.607907)">bad</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: end; fill: #4b5563" x="44.919669" y="148.382375" transform="rotate(-0 44.919669 148.382375)">normal</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 12px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="84.763636" y="12.336328" transform="rotate(-0 84.763636 12.336328)">t = 0.5</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_6">
+    <path d="M 242.663802 110.407251 
+L 301.691901 110.407251 
+L 301.691901 39.632783 
+L 242.663802 39.632783 
+z
+" clip-path="url(#pdbba9204a6)" style="fill: #cfe9df; stroke: #ffffff; stroke-width: 3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 301.691901 110.407251 
+L 360.72 110.407251 
+L 360.72 39.632783 
+L 301.691901 39.632783 
+z
+" clip-path="url(#pdbba9204a6)" style="fill: #f6c9c2; stroke: #ffffff; stroke-width: 3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 242.663802 181.181719 
+L 301.691901 181.181719 
+L 301.691901 110.407251 
+L 242.663802 110.407251 
+z
+" clip-path="url(#pdbba9204a6)" style="fill: #fde3c0; stroke: #ffffff; stroke-width: 3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 301.691901 181.181719 
+L 360.72 181.181719 
+L 360.72 110.407251 
+L 301.691901 110.407251 
+z
+" clip-path="url(#pdbba9204a6)" style="fill: #eef1f4; stroke: #ffffff; stroke-width: 3; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="272.177851" y="71.185284" transform="rotate(-0 272.177851 71.185284)">14</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #4b5563" x="272.177851" y="93.17829" transform="rotate(-0 272.177851 93.17829)">TP</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="331.20595" y="71.185284" transform="rotate(-0 331.20595 71.185284)">10</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #4b5563" x="331.20595" y="93.17829" transform="rotate(-0 331.20595 93.17829)">FN</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="272.177851" y="141.959752" transform="rotate(-0 272.177851 141.959752)">18</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #4b5563" x="272.177851" y="163.952758" transform="rotate(-0 272.177851 163.952758)">FP</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="331.20595" y="141.959752" transform="rotate(-0 331.20595 141.959752)">208</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #4b5563" x="331.20595" y="163.952758" transform="rotate(-0 331.20595 163.952758)">TN</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #4b5563" x="272.177851" y="33.970825" transform="rotate(-0 272.177851 33.970825)">alarm</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #4b5563" x="331.20595" y="33.970825" transform="rotate(-0 331.20595 33.970825)">no alarm</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: end; fill: #4b5563" x="239.712397" y="77.607907" transform="rotate(-0 239.712397 77.607907)">bad</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: end; fill: #4b5563" x="239.712397" y="148.382375" transform="rotate(-0 239.712397 148.382375)">normal</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 12px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="279.556364" y="12.336328" transform="rotate(-0 279.556364 12.336328)">t = 0.2</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p8d87a34fcf">
+   <rect x="3.6" y="14.861719" width="162.327273" height="166.32"/>
+  </clipPath>
+  <clipPath id="pdbba9204a6">
+   <rect x="198.392727" y="14.861719" width="162.327273" height="166.32"/>
+  </clipPath>
+ </defs>
+</svg>

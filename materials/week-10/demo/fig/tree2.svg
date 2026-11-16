@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="364.32pt" height="273.312pt" viewBox="0 0 364.32 273.312" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-16T11:15:13.434677</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 273.312 
+L 364.32 273.312 
+L 364.32 0 
+L 0 0 
+L 0 273.312 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <g id="patch_2">
+     <path d="M 141.881016 62.725826 
+L 222.438984 62.725826 
+Q 227.163984 62.725826 227.163984 58.000826 
+L 227.163984 23.710534 
+Q 227.163984 18.985534 222.438984 18.985534 
+L 141.881016 18.985534 
+Q 137.156016 18.985534 137.156016 23.710534 
+L 137.156016 58.000826 
+Q 137.156016 62.725826 141.881016 62.725826 
+z
+" style="fill: #fff3d1; stroke: #4b5563; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 10.5px; font-family: 'Arial'; fill: #14181d" transform="translate(143.680781 32.147755)">VOO ≤ -0.36 %?</text>
+    <text style="font-size: 10.5px; font-family: 'Arial'; fill: #14181d" transform="translate(141.881016 43.575734)">999 days: 91 bad</text>
+    <text style="font-size: 10.5px; font-family: 'Arial'; fill: #14181d" transform="translate(152.974922 55.003917)">entropy 0.44</text>
+   </g>
+   <g id="text_2">
+    <g id="patch_3">
+     <path d="M 52.601016 153.203906 
+L 133.158984 153.203906 
+Q 137.883984 153.203906 137.883984 148.478906 
+L 137.883984 114.188614 
+Q 137.883984 109.463614 133.158984 109.463614 
+L 52.601016 109.463614 
+Q 47.876016 109.463614 47.876016 114.188614 
+L 47.876016 148.478906 
+Q 47.876016 153.203906 52.601016 153.203906 
+z
+" style="fill: #fff3d1; stroke: #4b5563; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 10.5px; font-family: 'Arial'; fill: #14181d" transform="translate(54.400781 122.625835)">VOO ≤ -2.07 %?</text>
+    <text style="font-size: 10.5px; font-family: 'Arial'; fill: #14181d" transform="translate(52.601016 134.053814)">342 days: 86 bad</text>
+    <text style="font-size: 10.5px; font-family: 'Arial'; fill: #14181d" transform="translate(63.694922 145.481997)">entropy 0.81</text>
+   </g>
+   <g id="text_3">
+    <g id="patch_4">
+     <path d="M 232.960781 153.203906 
+L 309.919219 153.203906 
+Q 314.644219 153.203906 314.644219 148.478906 
+L 314.644219 114.188614 
+Q 314.644219 109.463614 309.919219 109.463614 
+L 232.960781 109.463614 
+Q 228.235781 109.463614 228.235781 114.188614 
+L 228.235781 148.478906 
+Q 228.235781 153.203906 232.960781 153.203906 
+z
+" style="fill: #fff3d1; stroke: #4b5563; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 10.5px; font-family: 'Arial'; fill: #14181d" transform="translate(232.960781 122.625835)">VOO ≤ -0.08 %?</text>
+    <text style="font-size: 10.5px; font-family: 'Arial'; fill: #14181d" transform="translate(234.080508 134.053814)">657 days: 5 bad</text>
+    <text style="font-size: 10.5px; font-family: 'Arial'; fill: #14181d" transform="translate(242.254922 145.481997)">entropy 0.06</text>
+   </g>
+   <g id="text_4">
+    <g id="patch_5">
+     <path d="M 9.094908 248.609504 
+L 83.813892 248.609504 
+Q 88.538892 248.609504 88.538892 243.884504 
+L 88.538892 221.028136 
+Q 88.538892 216.303136 83.813892 216.303136 
+L 9.094908 216.303136 
+Q 4.369908 216.303136 4.369908 221.028136 
+L 4.369908 243.884504 
+Q 4.369908 248.609504 9.094908 248.609504 
+z
+" style="fill: #f6c9c2; stroke: #4b5563; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 10.5px; font-family: 'Arial'; fill: #14181d" transform="translate(9.094908 229.459411)">18 days: 17 bad</text>
+    <text style="font-size: 10.5px; font-family: 'Arial'; fill: #14181d" transform="translate(17.269322 240.887594)">entropy 0.31</text>
+   </g>
+   <g id="text_5">
+    <g id="patch_6">
+     <path d="M 95.455416 248.609504 
+L 176.013384 248.609504 
+Q 180.738384 248.609504 180.738384 243.884504 
+L 180.738384 221.028136 
+Q 180.738384 216.303136 176.013384 216.303136 
+L 95.455416 216.303136 
+Q 90.730416 216.303136 90.730416 221.028136 
+L 90.730416 243.884504 
+Q 90.730416 248.609504 95.455416 248.609504 
+z
+" style="fill: #eef3fb; stroke: #4b5563; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 10.5px; font-family: 'Arial'; fill: #14181d" transform="translate(95.455416 229.459411)">324 days: 69 bad</text>
+    <text style="font-size: 10.5px; font-family: 'Arial'; fill: #14181d" transform="translate(106.549322 240.887594)">entropy 0.75</text>
+   </g>
+   <g id="text_6">
+    <g id="patch_7">
+     <path d="M 191.226108 248.609504 
+L 265.945092 248.609504 
+Q 270.670092 248.609504 270.670092 243.884504 
+L 270.670092 221.028136 
+Q 270.670092 216.303136 265.945092 216.303136 
+L 191.226108 216.303136 
+Q 186.501108 216.303136 186.501108 221.028136 
+L 186.501108 243.884504 
+Q 186.501108 248.609504 191.226108 248.609504 
+z
+" style="fill: #eef3fb; stroke: #4b5563; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 10.5px; font-family: 'Arial'; fill: #14181d" transform="translate(191.226108 229.459411)">104 days: 4 bad</text>
+    <text style="font-size: 10.5px; font-family: 'Arial'; fill: #14181d" transform="translate(199.400522 240.887594)">entropy 0.24</text>
+   </g>
+   <g id="text_7">
+    <g id="patch_8">
+     <path d="M 280.506108 248.609504 
+L 355.225092 248.609504 
+Q 359.950092 248.609504 359.950092 243.884504 
+L 359.950092 221.028136 
+Q 359.950092 216.303136 355.225092 216.303136 
+L 280.506108 216.303136 
+Q 275.781108 216.303136 275.781108 221.028136 
+L 275.781108 243.884504 
+Q 275.781108 248.609504 280.506108 248.609504 
+z
+" style="fill: #eef3fb; stroke: #4b5563; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 10.5px; font-family: 'Arial'; fill: #14181d" transform="translate(280.506108 229.459411)">553 days: 1 bad</text>
+    <text style="font-size: 10.5px; font-family: 'Arial'; fill: #14181d" transform="translate(288.680522 240.887594)">entropy 0.02</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 180.277295 70.801401 
+Q 137.521486 86.094188 96.028943 100.935134 
+" style="fill: none; stroke: #4b5563; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 101.356817 101.578375 
+L 96.028943 100.935134 
+L 99.74026 97.058779 
+" style="fill: none; stroke: #4b5563; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #4b5563" x="125.0208" y="88.682513" transform="rotate(-0 125.0208 88.682513)">yes</text>
+   </g>
+   <g id="patch_10">
+    <path d="M 184.042705 70.801401 
+Q 226.798514 86.094188 268.291057 100.935134 
+" style="fill: none; stroke: #4b5563; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 264.57974 97.058779 
+L 268.291057 100.935134 
+L 262.963183 101.578375 
+" style="fill: none; stroke: #4b5563; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #4b5563" x="239.2992" y="88.682611" transform="rotate(-0 239.2992 88.682611)">no</text>
+   </g>
+   <g id="patch_11">
+    <path d="M 91.403698 161.960029 
+Q 69.665675 181.896438 48.916425 200.926024 
+" style="fill: none; stroke: #4b5563; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 54.076139 199.45044 
+L 48.916425 200.926024 
+L 50.831787 195.912902 
+" style="fill: none; stroke: #4b5563; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #4b5563" x="57.168" y="184.482833" transform="rotate(-0 57.168 184.482833)">yes</text>
+   </g>
+   <g id="patch_12">
+    <path d="M 94.300284 162.017201 
+Q 114.307975 181.89581 133.363917 200.828811 
+" style="fill: none; stroke: #4b5563; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 131.650394 195.743161 
+L 133.363917 200.828811 
+L 128.267283 199.14824 
+" style="fill: none; stroke: #4b5563; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #4b5563" x="126.8064" y="184.482931" transform="rotate(-0 126.8064 184.482931)">no</text>
+   </g>
+   <g id="patch_13">
+    <path d="M 270.019716 162.017201 
+Q 250.012025 181.89581 230.956083 200.828811 
+" style="fill: none; stroke: #4b5563; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 236.052717 199.14824 
+L 230.956083 200.828811 
+L 232.669606 195.743161 
+" style="fill: none; stroke: #4b5563; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #4b5563" x="237.5136" y="184.482833" transform="rotate(-0 237.5136 184.482833)">yes</text>
+   </g>
+   <g id="patch_14">
+    <path d="M 272.916302 161.960029 
+Q 294.654325 181.896438 315.403575 200.926024 
+" style="fill: none; stroke: #4b5563; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 313.488213 195.912902 
+L 315.403575 200.926024 
+L 310.243861 199.45044 
+" style="fill: none; stroke: #4b5563; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #4b5563" x="307.152" y="184.482931" transform="rotate(-0 307.152 184.482931)">no</text>
+   </g>
+  </g>
+ </g>
+</svg>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="500.406213pt" height="151.344pt" viewBox="0 0 500.406213 151.344" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-16T11:15:14.566132</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 151.344 
+L 500.406213 151.344 
+L 500.406213 0 
+L 0 0 
+L 0 151.344 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 81.114513 147.744 
+L 427.074513 147.744 
+L 427.074513 3.6 
+L 81.114513 3.6 
+L 81.114513 147.744 
+z
+" style="fill: none"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 81.114513 40.392 
+L 395.560639 40.392 
+L 395.560639 10.152 
+L 81.114513 10.152 
+z
+" clip-path="url(#pec0b15d356)" style="fill: #cfe0f5"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 395.560639 40.392 
+L 427.074513 40.392 
+L 427.074513 10.152 
+L 395.560639 10.152 
+z
+" clip-path="url(#pec0b15d356)" style="fill: #c23a2e"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 81.114513 90.792 
+L 340.078723 90.792 
+L 340.078723 60.552 
+L 81.114513 60.552 
+z
+" clip-path="url(#pec0b15d356)" style="fill: #cfe0f5"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 340.078723 90.792 
+L 427.074513 90.792 
+L 427.074513 60.552 
+L 340.078723 60.552 
+z
+" clip-path="url(#pec0b15d356)" style="fill: #c23a2e"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 81.114513 141.192 
+L 424.441636 141.192 
+L 424.441636 110.952 
+L 81.114513 110.952 
+z
+" clip-path="url(#pec0b15d356)" style="fill: #cfe0f5"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 424.441636 141.192 
+L 427.074513 141.192 
+L 427.074513 110.952 
+L 424.441636 110.952 
+z
+" clip-path="url(#pec0b15d356)" style="fill: #c23a2e"/>
+   </g>
+   <g id="matplotlib.axis_1"/>
+   <g id="matplotlib.axis_2"/>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'Arial'; fill: #14181d" transform="translate(40.290625 22.417801)">all days</text>
+    <text style="font-size: 10px; font-family: 'Arial'; fill: #14181d" transform="translate(33.6125 33.301785)">999 days</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'Arial'; fill: #14181d" transform="translate(433.993713 22.417801)">91 bad (9 %)</text>
+    <text style="font-size: 10px; font-family: 'Arial'; fill: #14181d" transform="translate(433.993713 33.301785)">entropy 0.44</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10px; font-family: 'Arial'; fill: #14181d" transform="translate(3.951562 72.82073)">VOO ≤ −0.36 %</text>
+    <text style="font-size: 10px; font-family: 'Arial'; fill: #14181d" transform="translate(33.6125 83.70452)">342 days</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 10px; font-family: 'Arial'; fill: #14181d" transform="translate(433.993713 72.817801)">86 bad (25 %)</text>
+    <text style="font-size: 10px; font-family: 'Arial'; fill: #14181d" transform="translate(433.993713 83.701785)">entropy 0.81</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 10px; font-family: 'Arial'; fill: #14181d" transform="translate(3.6 123.22073)">VOO &gt; −0.36 %</text>
+    <text style="font-size: 10px; font-family: 'Arial'; fill: #14181d" transform="translate(33.6125 134.10452)">657 days</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 10px; font-family: 'Arial'; fill: #14181d" transform="translate(433.993713 123.217801)">5 bad (1 %)</text>
+    <text style="font-size: 10px; font-family: 'Arial'; fill: #14181d" transform="translate(433.993713 134.101785)">entropy 0.06</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pec0b15d356">
+   <rect x="81.114513" y="3.6" width="345.96" height="144.144"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="364.32pt" height="172.917084pt" viewBox="0 0 364.32 172.917084" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-16T11:15:15.911416</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 172.917084 
+L 364.32 172.917084 
+L 364.32 0 
+L 0 0 
+L 0 172.917084 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g clip-path="url(#p8bcf0f6dfd)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADUAAAA1CAYAAADh5qNwAAABXElEQVR4nOXYMarCQBgE4HF4hU2Q2KcUbG0ErQKpPEUglaXgYewELW0TbLXOCXKDNIFgZZl3gf0DKz4ezH7lDH8SWPgJOxmGYYCn+/1udsfj0ZmnaWrOnE4nfBMhiBBECCIEEYIIQZOxld73vTNfLBbmA8uydObX69WcaZrG7B6Ph9kFdVKEIEIQIYgQ9DNWtm3rzLMsM2c2m40zX61W5sxutzO7y+XizPM8D+ukCEGEIEIQIYgIbaW/Xi9nvl6vvV80nU7Nbrvdml3Xdd7vkjwpQhAhiBBEhLb9ZrOZM6+qyvuGdsx8Psc3EYIIQYQgQhAhiAhtpUdR5Myfzyd8b3XjODZn6ro2u09+nglBhCBCECGIEESEttKTJHHmy+XS+497v9+bM7fbzewOh8PYJ4ZzUoQgQhAhiAht+1nO57PZFUXhfQ/xfr8/utkN6qQIQYQgQhAhiP/9AX/hF9FRQgAAJU1QAAAAAElFTkSuQmCC" id="imagea67b7bb2fe" transform="scale(1 -1) translate(0 -38.16)" x="3.6" y="-13.797084" width="38.16" height="38.16"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="22.595745" y="11.608301" transform="rotate(-0 22.595745 11.608301)">0</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g clip-path="url(#p69fa850ebe)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADUAAAA1CAYAAADh5qNwAAABB0lEQVR4nO3aoa2EQBSF4Z8TDKEEGlhDA1gElhpwWPqgBjQ94KkEjcXx8vyMgLB5L2f3k2dyb27CZEIGkvM8Tx7UdV10bZqmYD4MQ7RmHMfLMwhDwpAwJAwJQ8JQcvdIP44jmGdZdrnXsizRtbquL/ezfFLCkDAkDAlDwpAwJAwJQ8KQMCQMpfwDr9fr0X7CkDAkDAlD4tNOv3meo2t93z82RJ7nPEkYEoaEIWFIGBKGkrs3tNu2BfOyLKM1+74H8+8N7aduP2FIGBKGhKH0bmFRFMG8bdvL/1Gs6xqt+X50c95+wpAwJAylTzeMvbT+qqoqmDdN8+gMwpAwJAwJQ8KQ/nqAd/gBfGMvv5W16P4AAAAASUVORK5CYII=" id="imageb7ee9c14f3" transform="scale(1 -1) translate(0 -38.16)" x="48.96" y="-13.797084" width="38.16" height="38.16"/>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="68.185532" y="11.608301" transform="rotate(-0 68.185532 11.608301)">1</text>
+   </g>
+  </g>
+  <g id="axes_3">
+   <g clip-path="url(#p673e6753a2)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADQAAAA1CAYAAAAOJMhOAAABSElEQVR4nOXZIc6DQBAF4MfLL7DUlitUIjgBFgOmCs0VqOIOSFAchYpeAAS2PQOOXmCnCYTkTx6ffJMhm0wy2bDeuq4rDvJ+v83a4/Ewa13XOfO6rs2eqqqcOSGGEEOIIcQQYggxf3tWcJ7nzvz5fO46RFEUzjxJks3fkpsQIYYQQ4ghzrLlOuPCuHebvV4vsxZFEY5CiCHEEGIIMYQYQoxn/VNYlsVsatvWmfd9b/aM42jWPp+PM/d9Hzj7hAgxhBhCDHGWLfeLtQGHYTB7siwza2mabtqmp5oQIYYQQ4ghxBBivD1ru2mazZfT+/1u1sqydObrjrc4uQkRYggxhBhCDCHG27O2rcewMAzNniAIzNrlcnHm8zxvPZrehAgxhBhCDHGWB69frterM5+myeyJ49is3W43HIUQQ4ghxBBiCDH87wMc7QvQ3VSKWurhwgAAAABJRU5ErkJggg==" id="image699e9f925e" transform="scale(1 -1) translate(0 -38.16)" x="95.04" y="-13.797084" width="37.44" height="38.16"/>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="113.775319" y="11.608301" transform="rotate(-0 113.775319 11.608301)">2</text>
+   </g>
+  </g>
+  <g id="axes_4">
+   <g clip-path="url(#pb671c55167)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADUAAAA1CAYAAADh5qNwAAABQUlEQVR4nOXZMcqDQBAF4JeHhWmDJ7AK6TyGSBohXsQzCDbeQAQPYO1N4iUCYmdnLuAIu+Tnh+dX7vDWhYFhWS/btm1w1Pe9Wavr2nU75Hlu1qqqct6PEEQIIgQRgghBhKDAJ/T5fMzaMAy768uymJnn8+l8hupg1Et2ihBECCIEEYICn1BZls6ZdV3N2uv1Mmu32835W5KdIgQRgghBhCBC0MXnjcJndKdp6rXfOI6762EYnqtThCBCECGIEBT4hOZ5dr6AFkXh9eJ7NOVO1SlCECGIEEQIIs52oZ2N0X29Xs0NkyRxPsQ0TfglQhAhiBBECCIEEWe7pXddt7vetq2ZaZpmdz3LMjPzfr/N2uPxODrieTpFCCIEEYKIs02/0vi5FkWRmbGm3P1+NzNxHOOXCEGEIEIQIYgQxP8+wF/4At5LQHouksdtAAAAAElFTkSuQmCC" id="image85a641eaed" transform="scale(1 -1) translate(0 -38.16)" x="140.4" y="-13.797084" width="38.16" height="38.16"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="159.365106" y="11.608301" transform="rotate(-0 159.365106 11.608301)">3</text>
+   </g>
+  </g>
+  <g id="axes_5">
+   <g clip-path="url(#p5575c15735)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADUAAAA1CAYAAADh5qNwAAABQUlEQVR4nOXawcmDQBAF4LePHDwmNpECPJlrCkgd8WgJkmsasAML0RpMEUlEEL2ZBnYCG/z54e13nGGWgYFhDuvWdV2xoWEYzNzhcPDG+743a47HY3APhCBCECGIEEQIIgTttn5wmqbglV7XtVlzv9+De5CcFCGIEEQIIgS5bwft4/HwxvM8Nx98v99m7nQ6eeNd15k18zx740mSxDUpQhAhiBBECCJiO2jHcQxe22VZBh+nzjmzpm1bb/x8Psc1KUIQIYgQRMR20FqapjFz1+vVzL1eL2/8druZNWmaeuNFUcQ1KUIQIYgQRAgiBLlfVvqyLGbu26FZVZU3nmVZaAvY7/dxTYoQRAgiBBGCCEFu638U3y745/MZfHH/ghBECCIEEYIIQbutH7xcLmZu6y0X1aQIQYQgQhAhiP/dwF/4AOOwT8UHfwXQAAAAAElFTkSuQmCC" id="image941856083c" transform="scale(1 -1) translate(0 -38.16)" x="185.76" y="-13.797084" width="38.16" height="38.16"/>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="204.954894" y="11.608301" transform="rotate(-0 204.954894 11.608301)">4</text>
+   </g>
+  </g>
+  <g id="axes_6">
+   <g clip-path="url(#pceda9ac163)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADQAAAA1CAYAAAAOJMhOAAABNklEQVR4nOXaMaqEQBAE0LIwMBL2Crqy3kY2MvcIRgYaaeoZTDf0HJoYKuhZ3AvMBA7L/1C+sIZuBhqaQfTO8zxxUdd1xrxpGrgoy9KY931/uRchhhBDiCHEEGIIMZ7L2p7n2ZiHYWitqarKejaOozFf19Va83q97jEhQgwhhhBDiPFctpyLbdusZ2maGvO2ba01dV3fY0KEGEIMIYYQQ4jx/2o1L8tyuV+SJJdr5CZEiCHEEGIIMb5LUVEUxnwYBqdLfD4fY57n+eVechMixBBiCDGEGEKM/+tHqM3j8bCeTdNkzLMss9YEQXCPCRFiCDGEGEIMIcZz+RT8fD6N+XEcTpeI49iY7/t+uZfchAgxhBhCDCHGc9ly7/fbmEdRZK1x+bPKhdyECDGEGEIMIYb/fYFf+wKrGEPjH+URVAAAAABJRU5ErkJggg==" id="imageb3e6692781" transform="scale(1 -1) translate(0 -38.16)" x="231.84" y="-13.797084" width="37.44" height="38.16"/>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="250.544681" y="11.608301" transform="rotate(-0 250.544681 11.608301)">5</text>
+   </g>
+  </g>
+  <g id="axes_7">
+   <g clip-path="url(#paeb3889787)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADUAAAA1CAYAAADh5qNwAAABQElEQVR4nOXZP4qDUBgE8HHwAMEmha1HkLSWlomdra13SGUrFgHvoYcwTU6QA9ikSZvOZfv3LeRj/8Dsr5xhQBAe8oy2bdvwptfrZXZ93wfzYRjMzel0CuZd15mbNE3NjhBECCIEEYIIQYSg2DOa59nszudzMG+axtxM0xTM8zw3N23b/q83RQgiBBGCCEGxZ3S5XN7e3O93s3s+n8H8eDzCgxBECCIEEYIIQYSgyHNHkSSJ2RVFEczrujY3ZVkG891uBw9CECGIEEQIIgRFntMvyzKz2+/3wXxZFvwWQhAhiBBECCIEEYJiz8g6tj9dr9dgvq6r6weaByGIEEQIIgQRgghBkecr/Xa7md3hcAjm4zi6fqB5EIIIQYQgQhAhKPKcfl+pqiqYPx4Pc/Pd9xeEIEIQIYgQRAjiXz/AT/gA2IRFgTVYJW0AAAAASUVORK5CYII=" id="imagedc4e81e986" transform="scale(1 -1) translate(0 -38.16)" x="277.2" y="-13.797084" width="38.16" height="38.16"/>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="296.134468" y="11.608301" transform="rotate(-0 296.134468 11.608301)">6</text>
+   </g>
+  </g>
+  <g id="axes_8">
+   <g clip-path="url(#p483aeca290)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADUAAAA1CAYAAADh5qNwAAABO0lEQVR4nOXZMcqDQBAF4OcjhW1OYWtjZWkhuYZHsPYCdl7CQiz0ArYGcoNcIJ1oaWcusBtwyZ8f3n7lDDMrDCzDGhzHceCkNE2tuaZprLkkSfALhCBCECGIEEQIIgRdXIput5s1l+e5Nfd6vYzxMAzxTYQgQhAhiBBECApcFtqPDYPAmns8Hj9ZdAlBhCBCECGIEET4dqVv22aMl2VpbTiO4+mPuN/v1lwURaf7SU6KEEQIIgQRvt1+z+fTGJ+myemwqqpO1/R9b4xnWebXpAhBhCBCECGI8O2FNrIsky5L5idt2zr94PNqUoQgQhAhiBBECApcnp27rnM6LI5jY7yua2vNuq7G+DAMfk2KEEQIIgQRgi7fbrgsizVXFIUxPs+zteZ6vRrj+777NSlCECGIEEQI4n9/wF94AzQpRraKGYdKAAAAAElFTkSuQmCC" id="image80ba4d1a33" transform="scale(1 -1) translate(0 -38.16)" x="322.56" y="-13.797084" width="38.16" height="38.16"/>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="341.724255" y="11.608301" transform="rotate(-0 341.724255 11.608301)">7</text>
+   </g>
+  </g>
+  <g id="axes_9">
+   <g clip-path="url(#p4f295342a1)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADUAAAA0CAYAAAAqunDVAAABWUlEQVR4nOXaIa6DUBAF0MtNBaKira6nBkUVqyi2EolkDdjayrKEdheYuqoKlkCQ4Pj5/g3JI/n5yeXIuRnykkkmD0IwTdMET3mem1ld1876fr83ey6Xi5nd73dnPQxDs4cQRAgiBBGCCEGbuXAcR2f99XqZPcMwOOtd15k9x+PRzM7ns7NeFMW6JkUIIgQRgghBxNpWemes4b7vzZ7H4+Gst21r9qRpambX63XuiOuZFCGIEEQIIgQFS17nv9+vmZ1OJ+9DzG3T3W7n/TzJSRGCCEGEIEIQsbYLrWW73cLX3FdY6zvEr/f77azPrXrJSRGCCEGEIEIQIShYckuvqsr7xn273cyew+FgZk3TOOtRFK1rUoQgQhAhiBAULNl+WZaZ2efz8T5EHMdm9nw+vZ8nOSlCECGIEEQIIgRtljQlSeK90suyXPRX2hKEIEIQIYgQxP8+wF/4AaXNTcJADsYQAAAAAElFTkSuQmCC" id="image8545418b2f" transform="scale(1 -1) translate(0 -37.44)" x="3.6" y="-72.837084" width="38.16" height="37.44"/>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="22.595745" y="70.309477" transform="rotate(-0 22.595745 70.309477)">8</text>
+   </g>
+  </g>
+  <g id="axes_10">
+   <g clip-path="url(#p10ee8dfa32)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADUAAAA0CAYAAAAqunDVAAABKElEQVR4nOXZIYqHQBgF8Odjm8Vus3gHPYnVq2j2CB7AoqfQZLLbLIIYtfln+8zCiLsLz1/85A0DHzwG9K7runBDWZbG+TiO1sy6rsZ50zTWTBiGzncjBBGCCEGEIEKQd7f9nmzMqqqsmWEYjPM4jt+1KUIQIYgQRAgiBHlPV/qyLM6PU1vVf5vn2Tiv6/pdmyIEEYIIQYSgr7vBNE2N877vrZmiKJwftLb2e92mCEGEIEIQIYh4W6Wf52n9Zqvu4zismSzL4CoIAueM5KYIQYQgQhAhiHhbpW/b5nzgT7UdRZFxPk0TnkQIIgQRgghBxNvaz/d95wO7rnPOJEmCJxGCCEGEIEIQIYgQ5N396ZbnuXG+77s107Yt/gIhiBBECCIE8b8v8Bs+bgtKF3ulYvMAAAAASUVORK5CYII=" id="imaged2f92e6fa6" transform="scale(1 -1) translate(0 -37.44)" x="48.96" y="-72.837084" width="38.16" height="37.44"/>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="68.185532" y="70.309477" transform="rotate(-0 68.185532 70.309477)">9</text>
+   </g>
+  </g>
+  <g id="axes_11">
+   <g clip-path="url(#pc8f79e4f71)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAABPUlEQVR4nOXaMaqDUBAF0JtLCiuxtxC0TucOsgFdgq1bMFvQUjBV6lTJLkJ2YWFrbWf4/ZsPTwKffz3lHUaFgeHx8LCu6wpPy7I486ZpzJ7X62XW7ve7M4/j2PfTQIghxBBiCDGEmMOWLVeWpfeL0jT17mnb1rtHbkKEGEIMIYYQQ4g5+h5AfzweD2f+fr/NntPpZNbqunbm0zSZPdbBVW5ChBhCDCGG2MuWG8fR+2FhGJq1IAjMWp7nzvz5fHpvRrkJEWIIMYQYQgyxl7WdJAn+I0IMIYYQQ4ghxBBijlvuFCzX63XTte48z/gWQgwhhhBDiCH2suWiKDKbqqpy5l3XmT1Zlpm12+3mzIdhAPY+IUIMIYYQQ4gh9rK2f9P3vfe/CJfLxawVReHMz+czsPcJEWIIMYQY/vUHfNsHepo9QjUdZeQAAAAASUVORK5CYII=" id="image1605cd6001" transform="scale(1 -1) translate(0 -37.44)" x="95.04" y="-72.837084" width="37.44" height="37.44"/>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="113.775319" y="70.309477" transform="rotate(-0 113.775319 70.309477)">0</text>
+   </g>
+  </g>
+  <g id="axes_12">
+   <g clip-path="url(#pff4a92e5b5)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADUAAAA0CAYAAAAqunDVAAABJElEQVR4nO3aMYqGQAwF4OfDwlKwsPf3CnoBL+BBrLyYnsJGrKwtLGwVbLRzLzCzMMssC8/9yoSEQCSNEzzP88Cj+76N8aqqrDXDMFhz13UZ41EUWWsIQYQgQhAhiBAU+m64rqvzhft8Ptbcd1fuVZsiBBGCCEGEIEJQ6LvheZ7ONfu+e52BEEQIIgQRgoi3Xb9t24zxpmmsNfM8Ow/Rti18IgQRgghBhCBCEPG2k54kiTGeZZm1pu975yGmaYJPhCBCECGIEEQIIgQFvn+65XlujC/LYq2p69qa67rOeQbJTRGCCEGEIEJQ4Pv6jeNojJdl+aN+x3EY43Ecv2tThCBCECGIEEQICn03LIrC+a1EmqbW3P87CuXPjxBECOJfD/AbvgDJCTq3Y+wh8gAAAABJRU5ErkJggg==" id="imageb975bda26e" transform="scale(1 -1) translate(0 -37.44)" x="140.4" y="-72.837084" width="38.16" height="37.44"/>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="159.365106" y="70.309477" transform="rotate(-0 159.365106 70.309477)">1</text>
+   </g>
+  </g>
+  <g id="axes_13">
+   <g clip-path="url(#p13d675ca97)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADUAAAA0CAYAAAAqunDVAAABOElEQVR4nOXYIa6DUBQE0GFSgSSIdgFYcOwDxUbqq0gJhjWg8FgEnh2wgtoGB46/Ae5P+tLPT4Yj72TCS15y84K3bduGD71eLzN7PB5mlqbp7rxtW7NzvV5351VVmR1CECGIEEQIIgRdXEpN0zhlXdftzu/3u9kJw3B3frvdznVThCBCECGIEEQI8lwetL8ZhsHM8jzfnb/f728eAZI3RQgiBBGCCEGey/ab59nMgiCwP+Z5u/NlWcyO7/sfnk70pghBhCBCECGIONs/itlY3UVRmJ26rs0siqKvre3T3RQhiBBECCIEEWdb6YHx4h7H0eys62pmSZLgCIQgQhAhiBBECLq4lKZpMrM4js3s+XziCIQgQhAhiBBECCIEXVxKfd+bWVmWZpZlGY5ACCIEEYIIQfzvA/yFH7qcPkR+wxD3AAAAAElFTkSuQmCC" id="imaged6cf4d1909" transform="scale(1 -1) translate(0 -37.44)" x="185.76" y="-72.837084" width="38.16" height="37.44"/>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="204.954894" y="70.309477" transform="rotate(-0 204.954894 70.309477)">2</text>
+   </g>
+  </g>
+  <g id="axes_14">
+   <g clip-path="url(#p92985b3f81)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAABR0lEQVR4nOXYIa6DYBAE4OmkB2hqKnAYDlJV1XoUSM5AMZwBy0mqEGBwqF4B0RBUHS/1/zbhhaTJ/J+czQLJJpsNu2VZFjhM0wRLkiRYaxxHsxZFkTOv63r1ewgxhBhCDCGGELOzttz7/TabhmFw5vM8mz1FUZi1tm2d+ePxMHvO57MfEyLEEGIIMYQYwpe1vbVvx24Yhs6867rVB63chAgxhBhCDCFm/+tN9nG73VZtMq8mRIghxBBiCDGEmN2Wx2mapmataRqz1ve9Mz8cDqu/QW5ChBhCDCGGEEOI2W/5sDiO/7W2rUt8MH45fwRB4MeECDGEGEIM4ctx+nw+Vx+h37bc6/Uya/f73ZlXVWX2ZFnmx4QIMYQYQgwhhvDlOD2dTmbT5XJx5nmemz3H49GslWXpzK/XK+D7hAgxhBhCDH/9AVv7A6E5VLhV4wIIAAAAAElFTkSuQmCC" id="imagecdcb2b47f4" transform="scale(1 -1) translate(0 -37.44)" x="231.84" y="-72.837084" width="37.44" height="37.44"/>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="250.544681" y="70.309477" transform="rotate(-0 250.544681 70.309477)">3</text>
+   </g>
+  </g>
+  <g id="axes_15">
+   <g clip-path="url(#pfcabc8a137)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADUAAAA0CAYAAAAqunDVAAABUElEQVR4nO3aMY6CYBQE4GGyhZRWHIAYGlsawh0oOYONhZR6BPUKnMTaRDgCHsDKlg6z/XubSNxsMv9+5ZCBP/nJCwGiaZomfFDTNGbetq3buV6vZp5l2aw1EIIIQYQgQhAhKPr09BvH0czjOHY7u93OzE+n06w1EIIIQYQgQhAhiAhtpI/OeN7v9+4JvQfX5/PpdtI0NfNhGDAHIYgQRAgiBBGCvn46eDwezfx8PrudoijM/PF4uJ37/W7mXde5nTzPw9opQhAhiBBECCJCG+mr1ertE263WzOvqsrteO8v/ke6+u1HCCIEEYKI0EZ6Xddmfrvd3M5mszHzsizdznK5NPO+7zEHIYgQRAgiBBGCojkf3bw3t9/W67WZJ0nidi6Xy7tLwGKxCGunCEGEIEIQIYgI7YF2zjj1/ok4HA4fvU5wO0UIIgQRgvjXC/gNL9BBS0/BBSKBAAAAAElFTkSuQmCC" id="imagedbdc161aee" transform="scale(1 -1) translate(0 -37.44)" x="277.2" y="-72.837084" width="38.16" height="37.44"/>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="296.134468" y="70.309477" transform="rotate(-0 296.134468 70.309477)">4</text>
+   </g>
+  </g>
+  <g id="axes_16">
+   <g clip-path="url(#p98b2ea0a9f)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADUAAAA0CAYAAAAqunDVAAABKElEQVR4nOXaIaqGQBQF4PMf3gLsRoPYRbBYDK5F3I/R3Zi0mQw2k0GrzbeBGcHB9z8488V7uTowcBiG+VzXdcFinmdjPc9z2wiO43jcC4IAbyIEEYIIQYQgQtDnLv3O8zTWp2myfrCqKmsvSRJjve97vIkQRAgiBBGCCEGEb5HuYhgGay/LMmN9XVfrTBiGj9cguVOEIEIQIYgQ9HPXtB1o3z6AuiScdztFCCIEEYIIQYRvkd51nbHeNI3Tz6IowjcQgghBhCBCECGI8C3SXaK5KAprr21bfAMhiBBECCIEEb6l3ziOxvqyLNaZfd+tvTRNjfWyLK0zcRzfLdGfnSIEEYIIQYQgwrdIr+v68UuxbdusPZe7DZeXZ4QgQhAhiBDE/17AX/gFyUpE+Kmj9FkAAAAASUVORK5CYII=" id="image68bdccb83f" transform="scale(1 -1) translate(0 -37.44)" x="322.56" y="-72.837084" width="38.16" height="37.44"/>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="341.724255" y="70.309477" transform="rotate(-0 341.724255 70.309477)">5</text>
+   </g>
+  </g>
+  <g id="axes_17">
+   <g clip-path="url(#pcdb2234789)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADUAAAA1CAYAAADh5qNwAAABP0lEQVR4nOXaoaqEYBAF4OPBYNwF38BiMVq2mPYBNq1Ro+DDGMx2H8HoM1itm602L7f/IyheLpz94gxHBgZ+f0Rv27YNF+r73lmvqsrMLMti9sqydNa7rjMzhCBCECGIEEQIIgR5Z470z+dj9rIsc9aLojAzdV2bvfv97qzvvQYkN0UIIgQRgghB/plQkiRmb+9UsrRta/aiKHLWb7fbd22KEEQIIgQRgghB3pkLrfUd4lee54eHeDweZq9pGmc9TdPv2hQhiBBECCIE+WdCYRgezuxddPcup2cQgghBhCBCECGIEOSfCcVxfDgzDIPZe7/fuBIhiBBECCIEEYIIQd7V/1G8Xi9nfZomMzPP85UjQHJThCBCECGIEORf/cDn8+msj+NoZtZ1NXtBEByeQXJThCBCECGIEMT/HuAv/ABX5kDLPoaj2AAAAABJRU5ErkJggg==" id="image3c87f25925" transform="scale(1 -1) translate(0 -38.16)" x="3.6" y="-131.157084" width="38.16" height="38.16"/>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="22.595745" y="129.010654" transform="rotate(-0 22.595745 129.010654)">6</text>
+   </g>
+  </g>
+  <g id="axes_18">
+   <g clip-path="url(#p30fc6250f0)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADUAAAA1CAYAAADh5qNwAAABNklEQVR4nO3aMa5FUBQF0G3nDYBX0pmMkikwDoagVap1SpVeYg4qkZiBzpvAvZIn/v/Jvn+V++TISa6c4uKd53niQUVRWGtxHBvzsiyfHAGEIEIQIYgQRAgiBL2efmAQBNbaMAzG/H+lu/r6EYIIQYRr2+84DmutbVtjviyLtWffd2PeNI21J01TYx5FkVsnRQgiBBGCCEGEIO/uHYXnefgNWZYZ877v3TopQhAhiBBECHrdbVzX1Zhv22btSZLEmOd5bu2pqurr2SRPihBECCIEEYII11b6PM/WWtd1xryua2uPbXVf3Wv4vn81ojsnRQgiBBGCCEGEays9DENrbZomY/5+v609V7UnEYIIQYQgQhDh2vaLLj5sjeP41ce4q18Lru4o7iAEEYIIQYQgQhD/eoCf8AGa5zwVSv/RawAAAABJRU5ErkJggg==" id="image8f99c0a2e2" transform="scale(1 -1) translate(0 -38.16)" x="48.96" y="-131.157084" width="38.16" height="38.16"/>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="68.185532" y="129.010654" transform="rotate(-0 68.185532 129.010654)">7</text>
+   </g>
+  </g>
+  <g id="axes_19">
+   <g clip-path="url(#p0b0ea2b2e9)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADQAAAA1CAYAAAAOJMhOAAABI0lEQVR4nOXYsQmEQBQE0HG4QDMtxExtwE4swRo0sAlT69DIwAYEsQVTM4/L/QcrcgfjC/czICwM6/eO4zjgqCiK0/NhGMxM13XmLE1T3IUQQ4ghxBBiCDGEmJc12PfdDEVRdHo+TZOZSZLEnC3LgrsQYggxhBhCDPGUlvN93wyt6+qcieMYv0CIIcQQYggxhBjiKbV9RZ7n5qxtW/wCIYYQQ4ghxBBivCubU+v3PAgCM1OWpTmr69r5sfuYGyLEEGIIMYQYQox3pbbneT49b5rGedv6sW3bbQ9aQgwhhhBDiCHEEGK8K7VdVZVT/X5bH3/0fe+cCcPwGTdEiCHEEGIIMa8rIavNsiwzM+M4Ou8bQqPJHnVDhBhCDCGGEMN/f8Dd3slER0/oc4wQAAAAAElFTkSuQmCC" id="image941a063e37" transform="scale(1 -1) translate(0 -38.16)" x="95.04" y="-131.157084" width="37.44" height="38.16"/>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="113.775319" y="129.010654" transform="rotate(-0 113.775319 129.010654)">8</text>
+   </g>
+  </g>
+  <g id="axes_20">
+   <g clip-path="url(#p7273d75869)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADUAAAA1CAYAAADh5qNwAAABKklEQVR4nOXYv8mEQBAF8HcPA0MvtgB7sBLFyMQCbMEeNDO3DWMDwdjACgQjM68BR9iF7w/vfuE8ZhAGVt3XdV0XHA3DYGZZlrmOQ5qmZpYkyW29bVuzhxBECCIEEYIIQYSgl8+Rfp6nmW3b5vwQ8zw7vyL2ff+uTRGCCEGEIEJQ4NMUhqHzB+iT4zjMrCzL23oURd+1KUIQIYgQRAgiBAX4B7quM7OmaZznSW6KEEQIIgQRggKfpqff+TzPnee9328zi+PYeZ7kpghBhCBCECGIEBT4NPV9b2bLstzW13U1e55uW30QgghBhCBCECGIEBT4NE3TZGbW0V3XtdnzdIXsgxBECCIEEYIIQYFPU1EUZjaO4229qir8FkIQIYgQRAgiBPGvH+AnfAB17zthEzBvSAAAAABJRU5ErkJggg==" id="image2a0346c52f" transform="scale(1 -1) translate(0 -38.16)" x="140.4" y="-131.157084" width="38.16" height="38.16"/>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="159.365106" y="129.010654" transform="rotate(-0 159.365106 129.010654)">9</text>
+   </g>
+  </g>
+  <g id="axes_21">
+   <g clip-path="url(#pbd716f2565)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADUAAAA1CAYAAADh5qNwAAABP0lEQVR4nO3aMcqDQBAF4OfDwlIsvICFuYOlhYWXUI8gllZJjmCdHCppvIKN3sBcYCeg+PPDM185j1kWVpZh0VvXdcVGy7KYWV3XZjZNk7P+eDzMnjRNN+4OIAQRgghBhCBCECHI39M0DIOZvV4vM6uqylkvy9Lseb/fznoQBOc6KUIQIYgQRAjy9gy0URSZWdu2Ztb3vbOeZZnZc71enfU8z891UoQgQhAhiBBECPL3NM3zbGZd121eL45jMxvH0Vn/XekKCEGEIOJsA+1o3DyXy8VccMd8DM/zNt+0YRie66QIQYQgQhAhiBDkH73g/X7fPOwmSXLoHghBhCBCECGIEEQI8vY8OzdNY2bP5xNH+k3pyp8fIYgQRAjy9zTdbjdsfdf49kdYURRmz7e3iFOdFCGIEEQIIgTxvzfwFz6Er0fHn0YhpwAAAABJRU5ErkJggg==" id="image0adb485926" transform="scale(1 -1) translate(0 -38.16)" x="185.76" y="-131.157084" width="38.16" height="38.16"/>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="204.954894" y="129.010654" transform="rotate(-0 204.954894 129.010654)">0</text>
+   </g>
+  </g>
+  <g id="axes_22">
+   <g clip-path="url(#pe88076932a)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADQAAAA1CAYAAAAOJMhOAAABE0lEQVR4nOXasamEQBSF4bMHCzCzhDWxFg1N7cKWzGzBaCMjEw0MjbUDXwPOA2Vg4d8vvJd7GLgwwejrPM9TkRzHEew1TRPsDcNwWf98PsGZ9/t9WbdgLBgLxoKxYCyYJGbYOI7BXt/3t/OyLLs9g9uQBWPBWDAWTBIzbFmWR3NVVV3W0zS9nYXbkAVjwVgwFowFkzwZ2rbtsr6u66NDTNOkWCwYC8aCsWCsX7nluq4LDtV1HfUQRVFEy7JgLBgLxoKxYKxfubbLsgwOzfN8WW/bNurL6RO4DVkwFowFY8FYMK+Y/yn89xSc5/ntvH3fg73QMzFuQxaMBWPBWDBJzLAnn+Fjs2AsGAvGgrFg/O0DxPYHic4yT38aP1gAAAAASUVORK5CYII=" id="image7dce9a08b4" transform="scale(1 -1) translate(0 -38.16)" x="231.84" y="-131.157084" width="37.44" height="38.16"/>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="250.544681" y="129.010654" transform="rotate(-0 250.544681 129.010654)">1</text>
+   </g>
+  </g>
+  <g id="axes_23">
+   <g clip-path="url(#p184680ba74)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADUAAAA1CAYAAADh5qNwAAABPklEQVR4nOXYMYqEQBAF0O9nAyee0FQwMpzEdA7gATyC1zDVK5hqZGwwFxDmGCYDmmrmXqBrQXF34fvCX5Q2FDRFe9u2bdipbVuz1jQNzvL5fMza6/Uya4QgQhAhiBBECCIEeUeu9DAMzdo8z868KIq9v0GapmYtCIJrTYoQRAgiBBGCvCO33ziOZi2OY2fe973Z83g8cCZCECGIEEQIIgQRgrwjV/pPrMX1/X6bPV3XnXkESE6KEEQIIgQRgryzF9r7/e7Mb7eb2bMsizP3fR9HEIIIQYQgQhAhiBD0daSpqiqzVpalM0+SxOyZpmn3K+zlJkUIIgQRgghBxNW29HVdnfnz+TQ/GEWRM6/r2uw5+ZkEkpMiBBGCCEHE1RZa33gjyLLM7Mnz3JkPw4C/QggiBBGCCEGEIP73AX7DN9DUThjbYdffAAAAAElFTkSuQmCC" id="image686eec7fa9" transform="scale(1 -1) translate(0 -38.16)" x="277.2" y="-131.157084" width="38.16" height="38.16"/>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="296.134468" y="129.010654" transform="rotate(-0 296.134468 129.010654)">2</text>
+   </g>
+  </g>
+  <g id="axes_24">
+   <g clip-path="url(#p6a6c785e15)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADUAAAA1CAYAAADh5qNwAAABOklEQVR4nOXZu6mGQBAF4OPBwNRXKwZ/ZBWmNmEPtmAkGJoYCYa/2IqpjxK8DewKivdeOH7hDLM7MLCu6hzHceCiKIqsuXVdrbksy4zxqqqsNb7vX+wOIAQRgghBhCBCECHIuXOkN01jzS3LYs2VZXn5MXCjPUhOihBECCIEEYLcO0V5nt/abNs2Y7zrOjyJEEQIIgQRgghBhCD3LzezHd11XT+6DyGIEEQIIgQRgpw7r/Nn9n235oIgMMbTNLXWDMNgjHue965JEYIIQYQgQhAhyH16wbOfZLZvFJ/Px1rTtq0xfvadRHJShCBCECGIEES87ZY+z7MxXhSFdcEkSS430ff95Zrv9/uuSRGCCEGEIOJtF9o4ji+fcGcn2TiOxngYhtaaaZrOWnzPpAhBhCBCECGI/93Ab/gBamVJs2/WRtUAAAAASUVORK5CYII=" id="imagef52cb223b9" transform="scale(1 -1) translate(0 -38.16)" x="322.56" y="-131.157084" width="38.16" height="38.16"/>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #14181d" x="341.724255" y="129.010654" transform="rotate(-0 341.724255 129.010654)">3</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p8bcf0f6dfd">
+   <rect x="3.6" y="13.923242" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="p69fa850ebe">
+   <rect x="49.189787" y="13.923242" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="p673e6753a2">
+   <rect x="94.779574" y="13.923242" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="pb671c55167">
+   <rect x="140.369362" y="13.923242" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="p5575c15735">
+   <rect x="185.959149" y="13.923242" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="pceda9ac163">
+   <rect x="231.548936" y="13.923242" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="paeb3889787">
+   <rect x="277.138723" y="13.923242" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="p483aeca290">
+   <rect x="322.728511" y="13.923242" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="p4f295342a1">
+   <rect x="3.6" y="72.624419" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="p10ee8dfa32">
+   <rect x="49.189787" y="72.624419" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="pc8f79e4f71">
+   <rect x="94.779574" y="72.624419" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="pff4a92e5b5">
+   <rect x="140.369362" y="72.624419" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="p13d675ca97">
+   <rect x="185.959149" y="72.624419" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="p92985b3f81">
+   <rect x="231.548936" y="72.624419" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="pfcabc8a137">
+   <rect x="277.138723" y="72.624419" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="p98b2ea0a9f">
+   <rect x="322.728511" y="72.624419" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="pcdb2234789">
+   <rect x="3.6" y="131.325595" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="p30fc6250f0">
+   <rect x="49.189787" y="131.325595" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="p0b0ea2b2e9">
+   <rect x="94.779574" y="131.325595" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="p7273d75869">
+   <rect x="140.369362" y="131.325595" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="pbd716f2565">
+   <rect x="185.959149" y="131.325595" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="pe88076932a">
+   <rect x="231.548936" y="131.325595" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="p184680ba74">
+   <rect x="277.138723" y="131.325595" width="37.991489" height="37.991489"/>
+  </clipPath>
+  <clipPath id="p6a6c785e15">
+   <rect x="322.728511" y="131.325595" width="37.991489" height="37.991489"/>
+  </clipPath>
+ </defs>
+</svg>
