@@ -1,0 +1,256 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Solutions — session 10</title>
+<style>
+:root { --bg:#fff; --ink:#1b2233; --muted:#5b6478; --code:#f4f6f8; --mark:#ffe58f; --step:#0b4fb3; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#11151d; --ink:#e8ecf3; --muted:#9aa5b8; --code:#1a2130; --mark:#7a5d00; --step:#8ab4ff; } }
+:root[data-theme="dark"] { --bg:#11151d; --ink:#e8ecf3; --muted:#9aa5b8; --code:#1a2130; --mark:#7a5d00; --step:#8ab4ff; }
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 -apple-system,"Helvetica Neue",Arial,sans-serif; padding:0 16px 48px }
+.wrap { max-width:900px; margin:0 auto }
+h1 { font-size:24px; margin:28px 0 6px } p { color:var(--muted) }
+pre { background:var(--code); padding:14px 16px; border-radius:6px; overflow-x:auto; font:13.5px/1.5 Menlo,Consolas,monospace }
+mark { background:var(--mark); color:inherit; padding:0 2px; border-radius:3px }
+.step { color:var(--step); font-weight:700 }
+</style></head><body><div class="wrap">
+<h1>Session 10 workshop: good news, bad news, or neither?: solutions</h1>
+<p>The solved steps. Each <mark>highlighted</mark> piece is what went in a <code>___</code> blank.
+Run the file with these answers and every step prints ✓ with what the result means.</p>
+<pre><span class="step"># ── Step 1: load the sentences and take a first look ──────────────────</span>
+# Open step-1.png: how many sentences of each label?
+try:
+    news = pd.read_csv(HERE / &quot;phrasebank.csv&quot;)
+    print(news.sample(5, random_state=1).to_string())
+    counts = news[&quot;label&quot;].<mark title="the blank">value_counts</mark>()
+    print(counts)
+    share_neutral = counts[&quot;neutral&quot;] / len(news)
+    counts.plot.bar(figsize=(5, 3.5), title=&quot;How many sentences of each kind?&quot;, rot=0)
+    plt.tight_layout(); plt.savefig(HERE / &quot;step-1.png&quot;); plt.close()
+    check(1, round(share_neutral, 3), 0.614, &quot;Which pandas method counts how often each value appears?&quot;,
+          &quot;61 % of the sentences are neutral. A &#x27;model&#x27; that always says neutral is right 61 % of the time: &quot;
+          &quot;every model today must beat that.&quot;)
+except Exception as e:
+    stuck(1, e)
+
+
+<span class="step"># ── Step 2: text → numbers, way 1: the bag of words ───────────────────</span>
+# CountVectorizer makes one column per word of the vocabulary; each cell
+# counts how often that word appears in that sentence. Open step-2.png.
+try:
+    bag = CountVectorizer()
+    X_bag = bag.<mark title="the blank">fit_transform</mark>(news[&quot;sentence&quot;])
+    rows, cols = X_bag.shape
+    zeros = 1 - X_bag.nnz / (rows * cols)
+    print(&quot;bag of words:&quot;, rows, &quot;rows ×&quot;, cols, &quot;columns;&quot;, round(100 * zeros, 2), &quot;% of the cells are 0&quot;)
+    words_used = (X_bag &gt; 0).sum(axis=1).A1          # how many different words each sentence uses
+    plt.figure(figsize=(6, 3.5)); plt.hist(words_used, bins=40)
+    plt.title(f&quot;Words used per sentence, out of {cols} columns&quot;); plt.xlabel(&quot;different words in the sentence&quot;)
+    plt.tight_layout(); plt.savefig(HERE / &quot;step-2.png&quot;); plt.close()
+    check(2, cols, 6057, &quot;The verb for models, plus _transform: it learns the words AND makes the table.&quot;,
+          &quot;More columns than rows, and almost every cell is 0: each sentence uses only a handful of the words.&quot;)
+except Exception as e:
+    stuck(2, e)
+
+
+<span class="step"># ── Step 3: cosine similarity by hand ─────────────────────────────────</span>
+# cos = (a · b) / (length of a × length of b). 1 = same direction, 0 = nothing in common.
+try:
+    i, j = 172, 404
+    a = X_bag[i].toarray()[0]
+    b = X_bag[j].toarray()[0]
+    cos = (a * b).sum() / (np.sqrt((a * a).sum()) * np.sqrt(<mark title="the blank">(b * b).sum()</mark>))
+    print(&quot;A:&quot;, news[&quot;sentence&quot;][i]); print(&quot;B:&quot;, news[&quot;sentence&quot;][j])
+    sk = cosine_similarity(X_bag[i], X_bag[j])[0, 0]
+    print(&quot;by hand:&quot;, round(cos, 3), &quot;  scikit-learn:&quot;, round(sk, 3))
+    check(3, round(cos, 3), round(sk, 3), &quot;The length of b, like the length of a: square root of the sum of b times b.&quot;,
+          &quot;Same number as scikit-learn. A and B share words (operating, profit, EUR, from), so the bag of words finds them close.&quot;)
+except Exception as e:
+    stuck(3, e)
+
+
+<span class="step"># ── Step 4: text → numbers, way 2: embeddings ─────────────────────────</span>
+# A sentence model (EmbeddingGemma, by Google) turned each sentence into 768
+# numbers, so that sentences with a SIMILAR MEANING get similar numbers.
+# It was run once for you: embeddings.npy.
+try:
+    E = np.load(HERE / &quot;embeddings.npy&quot;)
+    print(&quot;embeddings:&quot;, E.shape[0], &quot;rows ×&quot;, E.shape[1], &quot;columns&quot;)
+    i, j = 361, 2171
+    bag_cos = cosine_similarity(X_bag[i], X_bag[j])[0, 0]
+    emb_cos = cosine_similarity(E[[i]], E[<mark title="the blank">[j]</mark>])[0, 0]
+    print(&quot;A:&quot;, news[&quot;sentence&quot;][i]); print(&quot;B:&quot;, news[&quot;sentence&quot;][j])
+    print(&quot;bag of words:&quot;, round(bag_cos, 2), &quot;  embeddings:&quot;, round(emb_cos, 2))
+    check(4, bool(emb_cos &gt; 0.5 and bag_cos &lt; 0.1), True, &quot;Same shape as E[[i]], for sentence j.&quot;,
+          &quot;A and B share NO word, so the bag of words sees nothing in common. Both say &#x27;the numbers went down&#x27;: &quot;
+          &quot;the embedding sees it.&quot;)
+except Exception as e:
+    stuck(4, e)
+
+
+<span class="step"># ── Step 5: the closest sentences, two ways ───────────────────────────</span>
+# For one sentence, find the 3 most similar others, with words and with meaning.
+# Then open step-5.png: similarity of six sentences, bright = similar.
+try:
+    q = 2050
+    print(&quot;Sentence:&quot;, news[&quot;sentence&quot;][q])
+    for name, S in [(&quot;bag of words&quot;, cosine_similarity(X_bag[q], X_bag)[0]),
+                    (&quot;embeddings&quot;, cosine_similarity(E[[q]], E)[0])]:
+        S[q] = -1                                  # not itself
+        top3 = np.argsort(S)[<mark title="the blank">-3:</mark>]
+        print(&quot; &quot;, name)
+        for k in top3[::-1]:
+            print(f&quot;    {S[k]:.2f}  {news[&#x27;label&#x27;][k]:8}  {news[&#x27;sentence&#x27;][k]}&quot;)
+    six = [2050, 2021, 2093, 361, 172, 404]       # 3 &#x27;went down&#x27;, 3 &#x27;went up&#x27;
+    fig, ax = plt.subplots(1, 2, figsize=(10, 4.2))
+    for k, (name, M) in enumerate([(&quot;bag of words&quot;, cosine_similarity(X_bag[six])), (&quot;embeddings&quot;, cosine_similarity(E[six]))]):
+        ax[k].imshow(M, vmin=0, vmax=1, cmap=&quot;viridis&quot;); ax[k].set_title(name)
+        ax[k].set_xticks(range(6)); ax[k].set_yticks(range(6))
+    plt.tight_layout(); plt.savefig(HERE / &quot;step-5.png&quot;); plt.close()
+    for k, p in enumerate(six):
+        print(f&quot;  {k}  {news[&#x27;label&#x27;][p]:8}  {news[&#x27;sentence&#x27;][p]}&quot;)
+    check(5, int(top3[-1]), 2021, &quot;The 3 LARGEST similarities are at the end of argsort: [-3:]&quot;,
+          &quot;The bag of words finds the same WORDS, and its closest sentence says the opposite (EPS improved). &quot;
+          &quot;The embeddings put the sentence with the same meaning first; one positive is still close: &quot;
+          &quot;same topic is not yet the same sentiment.&quot;)
+except Exception as e:
+    stuck(5, e)
+
+
+<span class="step"># ── Step 6: a classifier on the bag of words ──────────────────────────</span>
+# Keep 30 % of the sentences for the test. stratify keeps the same share of each label in both parts.
+try:
+    y = news[&quot;label&quot;]
+    tr, te = train_test_split(news.index, test_size=0.3, random_state=0, stratify=y)
+    vec = CountVectorizer().fit(news[&quot;sentence&quot;][tr])         # the vocabulary comes from training only
+    model_bag = LogisticRegression(max_iter=3000)
+    # your line: fit model_bag on vec.transform(news[&quot;sentence&quot;][tr]) and y[tr]
+    <mark title="the blank">model_bag.fit(vec.transform(news[&quot;sentence&quot;][tr]), y[tr])</mark>
+    acc_bag = model_bag.score(vec.transform(news[&quot;sentence&quot;][te]), y[te])
+    print(&quot;always &#x27;neutral&#x27;:&quot;, round((y[te] == &quot;neutral&quot;).mean(), 3), &quot;  bag of words:&quot;, round(acc_bag, 3))
+    check(6, round(acc_bag, 3), 0.882, &quot;One line: model_bag.fit(X, y) with the training rows.&quot;,
+          &quot;Much better than always saying neutral. Each word gets a weight for each label.&quot;)
+except Exception as e:
+    stuck(6, e)
+
+
+<span class="step"># ── Step 7: the same classifier on the embeddings ─────────────────────</span>
+try:
+    model_emb = LogisticRegression(max_iter=3000).fit(E[tr], y[tr])
+    acc_emb = model_emb.score(<mark title="the blank">E[te], y[te]</mark>)
+    print(&quot;bag of words:&quot;, round(acc_bag, 3), &quot;  embeddings:&quot;, round(acc_emb, 3))
+    check(7, round(acc_emb, 3), 0.935, &quot;Score on the TEST rows: E[te], y[te]&quot;,
+          &quot;Same model, better numbers in: the embedding already &#x27;knows&#x27; that fell, dropped and declined mean the same.&quot;)
+except Exception as e:
+    stuck(7, e)
+
+
+<span class="step"># ── Step 8: PICTURE — how many labelled sentences do you need? ────────</span>
+# Train on only 50, 100, 200, 500 sentences, then on all, and test each time.
+# Open step-8.png.
+try:
+    sizes = [50, 100, 200, 500, len(tr)]
+    rng = np.random.default_rng(0)
+    curve = {&quot;bag of words&quot;: [], &quot;embeddings&quot;: []}
+    for n in sizes:
+        small = rng.choice(tr, size=<mark title="the blank">n</mark>, replace=False)
+        v = CountVectorizer().fit(news[&quot;sentence&quot;][small])
+        curve[&quot;bag of words&quot;].append(LogisticRegression(max_iter=3000)
+                                     .fit(v.transform(news[&quot;sentence&quot;][small]), y[small])
+                                     .score(v.transform(news[&quot;sentence&quot;][te]), y[te]))
+        curve[&quot;embeddings&quot;].append(LogisticRegression(max_iter=3000).fit(E[small], y[small]).score(E[te], y[te]))
+    plt.figure(figsize=(6, 4))
+    for name, accs in curve.items():
+        plt.plot(sizes, accs, marker=&quot;o&quot;, label=name)
+    plt.axhline((y[te] == &quot;neutral&quot;).mean(), color=&quot;grey&quot;, linestyle=&quot;--&quot;, label=&quot;always neutral&quot;)
+    plt.xscale(&quot;log&quot;); plt.xlabel(&quot;labelled sentences used for training&quot;); plt.ylabel(&quot;test accuracy&quot;)
+    plt.legend(); plt.tight_layout(); plt.savefig(HERE / &quot;step-8.png&quot;); plt.close()
+    print(pd.DataFrame(curve, index=sizes).round(3))
+    check(8, round(curve[&quot;embeddings&quot;][3], 3), 0.913, &quot;Each time, draw n training sentences: size=n&quot;,
+          &quot;With only 200 labelled sentences, the embeddings already beat the bag of words trained on all 1,584. &quot;
+          &quot;That is the magic: the model learned language from millions of sentences before it saw ours.&quot;)
+except Exception as e:
+    stuck(8, e)
+
+
+<span class="step"># ── Step 9: the four models from the lecture, on words and on meaning ─</span>
+# Open step-9.png (the grey line: always say &#x27;neutral&#x27;).
+try:
+    from sklearn.neighbors import KNeighborsClassifier
+    from sklearn.tree import DecisionTreeClassifier
+    from sklearn.ensemble import RandomForestClassifier
+    models = {&quot;kNN (5 neighbours)&quot;: KNeighborsClassifier(5),
+              &quot;logistic regression&quot;: LogisticRegression(max_iter=3000),
+              &quot;decision tree&quot;: DecisionTreeClassifier(random_state=0),
+              &quot;random forest&quot;: RandomForestClassifier(300, random_state=0)}
+    inputs = {&quot;bag of words&quot;: (vec.transform(news[&quot;sentence&quot;][tr]), vec.transform(news[&quot;sentence&quot;][te])),
+              &quot;embeddings&quot;: (E[tr], E[te])}
+    results = {}
+    for rep, (A, B) in inputs.items():
+        for name, model in models.items():
+            results[(name, rep)] = model.<mark title="the blank">fit(A, y[tr])</mark>.score(B, y[te])
+    table = pd.Series(results).unstack().round(3)
+    print(table)
+    table.plot.barh(figsize=(7, 4), xlim=(0.5, 1), title=&quot;Test accuracy, four models × two ways&quot;)
+    plt.axvline((y[te] == &quot;neutral&quot;).mean(), color=&quot;grey&quot;, linestyle=&quot;--&quot;)
+    plt.tight_layout(); plt.savefig(HERE / &quot;step-9.png&quot;); plt.close()
+    check(9, round(table.loc[&quot;logistic regression&quot;, &quot;embeddings&quot;], 3), 0.935,
+          &quot;Fit on the training rows, then score: model.fit(A, y[tr])&quot;,
+          &quot;Logistic regression is best on both. kNN works on embeddings but not on word counts: distances &quot;
+          &quot;between word counts mean little. One tree does better on words (one word like &#x27;decreased&#x27; can decide) &quot;
+          &quot;than on embeddings, where one of 768 numbers means nothing alone.&quot;)
+except Exception as e:
+    stuck(9, e)
+
+
+# ═══ ★ Faster? Three more steps ═══════════════════════════════════
+
+<span class="step"># ── ★ Step 10: which words push a sentence to &#x27;negative&#x27;? ─────────────</span>
+# The bag-of-words model has one row of weights per label. Sort the &#x27;negative&#x27; row.
+try:
+    labels = list(model_bag.classes_)
+    w = pd.Series(model_bag.coef_[labels.index(&quot;negative&quot;)], index=vec.get_feature_names_out()).sort_values()
+    top5 = list(w.index[<mark title="the blank">-5:</mark>])
+    print(&quot;most &#x27;negative&#x27; words:&quot;, top5[::-1])
+    check(10, top5[-1], &quot;decreased&quot;, &quot;The last five of a sorted Series: [-5:]&quot;,
+          &quot;The model found real finance vocabulary on its own, from the labels only.&quot;)
+except Exception as e:
+    stuck(10, e)
+
+
+<span class="step"># ── ★ Step 11: which mistakes? The confusion matrix (session 10) ──────</span>
+try:
+    from sklearn.metrics import confusion_matrix
+    order = [&quot;negative&quot;, &quot;neutral&quot;, &quot;positive&quot;]
+    pred = model_emb.predict(E[te])
+    cm = pd.DataFrame(confusion_matrix(y[te], pred, labels=order), index=order, columns=order)
+    print(&quot;rows = truth, columns = prediction&quot;); print(cm)
+    plt.figure(figsize=(4.5, 4)); plt.imshow(cm, cmap=&quot;Blues&quot;)
+    for r in range(3):
+        for c in range(3):
+            plt.text(c, r, cm.iloc[r, c], ha=&quot;center&quot;, va=&quot;center&quot;,
+                     color=&quot;white&quot; if cm.iloc[r, c] &gt; cm.values.max() / 2 else &quot;black&quot;)
+    plt.xticks(range(3), order); plt.yticks(range(3), order); plt.xlabel(&quot;prediction&quot;); plt.ylabel(&quot;truth&quot;)
+    plt.tight_layout(); plt.savefig(HERE / &quot;step-11.png&quot;); plt.close()
+    recall_neg = cm.loc[&quot;negative&quot;, &quot;negative&quot;] / cm.loc[&quot;negative&quot;].<mark title="the blank">sum()</mark>
+    check(11, round(recall_neg, 3), 0.912, &quot;Recall: of all the truly negative sentences, which share did we find? Divide by the row total.&quot;,
+          &quot;Most mistakes are between neutral and the other two; positive and negative are rarely confused.&quot;)
+except Exception as e:
+    stuck(11, e)
+
+
+<span class="step"># ── ★ Step 12: kNN with cosine on the embeddings, by hand ─────────────</span>
+# For one test sentence: the 5 most similar training sentences vote.
+try:
+    q = te[0]
+    sims = cosine_similarity(E[[q]], E[tr])[0]
+    nearest = tr[np.argsort(sims)[<mark title="the blank">-5:</mark>]]
+    vote = y[nearest].value_counts().idxmax()
+    print(&quot;sentence:&quot;, news[&quot;sentence&quot;][q]); print(&quot;vote:&quot;, vote, &quot;  truth:&quot;, y[q])
+    for k in nearest[::-1]:
+        print(f&quot;    {news[&#x27;label&#x27;][k]:8} {news[&#x27;sentence&#x27;][k]}&quot;)
+    best = float(round(cosine_similarity(E[[q]], E[[nearest[-1]]])[0, 0], 3))
+    check(12, best, float(round(sims.max(), 3)), &quot;The 5 LARGEST similarities are at the end of argsort: [-5:]&quot;,
+          &quot;kNN with embeddings: find the sentences that mean the same, and copy their label.&quot;)
+except Exception as e:
+    stuck(12, e)
+</pre>
+</div></body></html>
