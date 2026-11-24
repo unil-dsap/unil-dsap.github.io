@@ -1,0 +1,224 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Solutions — session 9</title>
+<style>
+:root { --bg:#fff; --ink:#1b2233; --muted:#5b6478; --code:#f4f6f8; --mark:#ffe58f; --step:#0b4fb3; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#11151d; --ink:#e8ecf3; --muted:#9aa5b8; --code:#1a2130; --mark:#7a5d00; --step:#8ab4ff; } }
+:root[data-theme="dark"] { --bg:#11151d; --ink:#e8ecf3; --muted:#9aa5b8; --code:#1a2130; --mark:#7a5d00; --step:#8ab4ff; }
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 -apple-system,"Helvetica Neue",Arial,sans-serif; padding:0 16px 48px }
+.wrap { max-width:900px; margin:0 auto }
+h1 { font-size:24px; margin:28px 0 6px } p { color:var(--muted) }
+pre { background:var(--code); padding:14px 16px; border-radius:6px; overflow-x:auto; font:13.5px/1.5 Menlo,Consolas,monospace }
+mark { background:var(--mark); color:inherit; padding:0 2px; border-radius:3px }
+.step { color:var(--step); font-weight:700 }
+</style></head><body><div class="wrap">
+<h1>Session 9 workshop: how much does each share follow the market?: solutions</h1>
+<p>The solved steps. Each <mark>highlighted</mark> piece is what went in a <code>___</code> blank.
+Run the file with these answers and every step prints ✓ with what the result means.</p>
+<pre><span class="step"># ── Step 1: load the file and take a first look ────────────────────</span>
+# read_csv reads a table. Date becomes the index (the row labels).
+try:
+    prices = pd.<mark title="the blank">read_csv</mark>(HERE / &quot;prices.csv&quot;, index_col=&quot;Date&quot;, parse_dates=True)
+    print(prices.head(3))
+    check(1, prices.shape, (250, 4), &quot;Which pandas function READS a CSV file?&quot;,
+          &quot;250 days, 4 shares. Date is the index (the row labels), so it is not a column.&quot;)
+except Exception as e:
+    stuck(1, e)
+
+
+<span class="step"># ── Step 2: daily returns, and which share moves the most ─────────</span>
+# pct_change() = (today - yesterday) / yesterday. The first day has no
+# yesterday (NaN): dropna() removes it. describe() summarises every column.
+try:
+    returns = prices.pct_change().<mark title="the blank">dropna</mark>() * 100        # in %
+    print(returns.describe().round(2))
+    check(2, returns.std().idxmax(), &quot;AAPL&quot;, &quot;Remove the first row: which method drops the NaN rows?&quot;,
+          &quot;Apple moves about 1.7 % on a typical day, Nestlé only 0.9 %. Read the std row above.&quot;)
+except Exception as e:
+    stuck(2, e)
+
+
+<span class="step"># ── Step 3: PICTURE — the year, all four shares start at 100 ─────────</span>
+# Divide every row by the FIRST row, times 100. Open step-3.png.
+try:
+    growth = prices / prices.iloc[<mark title="the blank">0</mark>] * 100
+    growth.plot(figsize=(8, 4), title=&quot;Growth of 100&quot;)
+    plt.savefig(HERE / &quot;step-3.png&quot;)
+    plt.close()
+    check(3, round(growth.iloc[-1][&quot;AAPL&quot;], 1), 142.0, &quot;Which row is the first one? (positions start at...)&quot;,
+          &quot;100 francs in Apple became 142. In step-3.png: the four lines go up and down on the SAME days.&quot;)
+except Exception as e:
+    stuck(3, e)
+
+
+<span class="step"># ── Step 4: PICTURE — the cloud: market (x) against Apple (y) ─────────</span>
+# Nothing to fill: run it, open step-4.png, and GUESS the slope.
+try:
+    plt.figure(figsize=(5, 5))
+    plt.scatter(returns[&quot;VOO&quot;], returns[&quot;AAPL&quot;], s=10)
+    plt.xlabel(&quot;VOO (the market), daily return %&quot;)
+    plt.ylabel(&quot;AAPL, daily return %&quot;)
+    plt.savefig(HERE / &quot;step-4.png&quot;)
+    plt.close()
+    check(4, round(returns[&quot;AAPL&quot;].corr(returns[&quot;VOO&quot;]), 3), 0.759, &quot;Run steps 1 and 2 first.&quot;,
+          &quot;Correlation 0.76: the cloud in step-4.png rises, and fairly tightly. Guess the slope before step 5!&quot;)
+except Exception as e:
+    stuck(4, e)
+
+
+<span class="step"># ── Step 5: the line with scikit-learn: make a model, FIT it, read it ──</span>
+# X must be a TABLE (double brackets), y one column.
+try:
+    X = returns[[&quot;VOO&quot;]]
+    y = returns[&quot;AAPL&quot;]
+    model = LinearRegression().<mark title="the blank">fit</mark>(X, y)
+    beta = model.coef_[0]
+    print(&quot;beta:&quot;, round(beta, 3), &quot; R²:&quot;, round(model.score(X, y), 3))
+    check(5, round(beta, 3), 1.296, &quot;The scikit-learn verb that learns from the data: model.___(X, y)&quot;,
+          &quot;When the market moves 1 %, Apple moves 1.3 % on average. Same number as cov / var in the lecture.&quot;)
+except Exception as e:
+    stuck(5, e)
+
+
+<span class="step"># ── Step 6: PICTURE — the line on the cloud, and a forecast ───────────</span>
+# predict() gives the point on the line. The market falls 2 % tomorrow:
+# what does the line say for Apple? Open step-6.png.
+try:
+    plt.figure(figsize=(5, 5))
+    plt.scatter(returns[&quot;VOO&quot;], returns[&quot;AAPL&quot;], s=10)
+    plt.plot(returns[&quot;VOO&quot;], model.predict(X), color=&quot;red&quot;)
+    plt.savefig(HERE / &quot;step-6.png&quot;)
+    plt.close()
+    tomorrow = pd.DataFrame({&quot;VOO&quot;: [<mark title="the blank">-2.0</mark>]})
+    forecast = model.predict(tomorrow)[0]
+    check(6, round(forecast, 2), -2.58, &quot;The market FALLS by 2 %: which number goes in the table?&quot;,
+          &quot;The line says Apple falls 2.6 %. ON AVERAGE: in step-6.png, single days are far from the red line.&quot;)
+except Exception as e:
+    stuck(6, e)
+
+
+<span class="step"># ── Step 7: PICTURE — one typo in the file ────────────────────────────</span>
+# prices_typo.csv has ONE Apple price with the decimal point moved.
+# Fit the same line on it. Look at the beta, at describe(), at step-7.png.
+try:
+    bad = pd.read_csv(HERE / <mark title="the blank">&quot;prices_typo.csv&quot;</mark>, index_col=&quot;Date&quot;, parse_dates=True)
+    rb = bad.pct_change().dropna() * 100
+    m_bad = LinearRegression().fit(rb[[&quot;VOO&quot;]], rb[&quot;AAPL&quot;])
+    print(&quot;beta with the typo:&quot;, round(m_bad.coef_[0], 3))
+    print(rb[&quot;AAPL&quot;].describe().round(1))
+    plt.figure(figsize=(5, 5))
+    plt.scatter(rb[&quot;VOO&quot;], rb[&quot;AAPL&quot;], s=10)
+    plt.savefig(HERE / &quot;step-7.png&quot;)
+    plt.close()
+    check(7, rb[&quot;AAPL&quot;].idxmin().strftime(&quot;%Y-%m-%d&quot;), &quot;2026-03-16&quot;, &quot;Which FILE has the typo? Give its name as text.&quot;,
+          &quot;ONE wrong price out of 250 turned the beta from +1.3 into -0.75. describe() shows it: min -90 %, max +900 %.&quot;)
+except Exception as e:
+    stuck(7, e)
+
+
+# ═══ Part 2: build it yourself, no scikit-learn ══════════════════
+#  This morning Pavel built the line by hand. Now you do it, and you
+#  check that you get EXACTLY the numbers scikit-learn gave you.
+
+<span class="step"># ── Step 8: the slope by hand ─────────────────────────────────────────</span>
+# Least squares: b = sum(dx * dy) / sum(dx * dx), where dx and dy are the
+# distances from the mean. Then the line goes through the two means.
+try:
+    x = returns[&quot;VOO&quot;]
+    y = returns[&quot;AAPL&quot;]
+    dx = x - x.mean()
+    dy = y - y.<mark title="the blank">mean()</mark>
+    b = (dx * dy).sum() / (dx * dx).sum()
+    a = y.mean() - b * x.mean()
+    print(&quot;by hand: a =&quot;, round(a, 3), &quot; b =&quot;, round(b, 3))
+    check(8, round(b, 3), 1.296, &quot;dy is the distance of y from ITS mean: y - y.___&quot;,
+          &quot;Exactly the beta of step 5. scikit-learn&#x27;s fit is just this formula.&quot;)
+except Exception as e:
+    stuck(8, e)
+
+
+<span class="step"># ── Step 9: R² by hand ────────────────────────────────────────────────</span>
+# R² = 1 - (what the line misses) / (all the movement of y).
+# Both are sums of SQUARED distances.
+try:
+    fitted = a + b * x                  # the point on the line, every day
+    residuals = y - fitted              # what the line misses
+    r2 = 1 - (residuals ** 2).sum() / (dy ** <mark title="the blank">2</mark>).sum()
+    check(9, round(r2, 3), 0.577, &quot;Squared distances: dy to the power ___&quot;,
+          &quot;The market explains 58 % of Apple&#x27;s daily moves. The other 42 % (the residuals) is Apple&#x27;s own news.&quot;)
+except Exception as e:
+    stuck(9, e)
+
+
+<span class="step"># ── Step 10: PICTURE — the computer finds the line by walking downhill ──</span>
+# Gradient descent, as in the lecture: start from a flat line (a = b = 0),
+# measure the error, take a small step in the direction that LOWERS it,
+# repeat. Open step-10.png: the error at every step.
+try:
+    a_gd, b_gd = 0.0, 0.0
+    rate = 0.1                          # the size of each step
+    losses = []
+    for step in range(60):
+        errors = (a_gd + b_gd * x) - y
+        losses.append((errors ** 2).mean())
+        grad_a = 2 * errors.mean()
+        grad_b = 2 * (errors * x).mean()
+        a_gd = a_gd - rate * grad_a     # a step DOWNHILL
+        b_gd = <mark title="the blank">b_gd - rate * grad_b</mark>    # the same step for b: copy the line above
+    plt.figure(figsize=(6, 3))
+    plt.plot(losses)
+    plt.xlabel(&quot;step&quot;)
+    plt.ylabel(&quot;mean squared error&quot;)
+    plt.savefig(HERE / &quot;step-10.png&quot;)
+    plt.close()
+    print(&quot;after 60 steps: a =&quot;, round(a_gd, 3), &quot; b =&quot;, round(b_gd, 3))
+    check(10, round(b_gd, 3), 1.296, &quot;Write the step for b like the step for a, one line above.&quot;,
+          &quot;60 small steps reach the same line again. The error falls fast, then flattens: see step-10.png.&quot;)
+except Exception as e:
+    stuck(10, e)
+
+
+# ═══ ★ Faster? Three more steps ═══════════════════════════════════
+
+
+<span class="step"># ── ★ Step 11: every position has a beta ──────────────────────────────</span>
+# Same fit in a for loop. Which share follows the market least?
+try:
+    for ticker in [&quot;AAPL&quot;, &quot;NESN&quot;, &quot;MSFT&quot;]:
+        m = LinearRegression().fit(returns[[&quot;VOO&quot;]], returns[<mark title="the blank">ticker</mark>])
+        print(ticker, &quot;beta&quot;, round(m.coef_[0], 3), &quot;R²&quot;, round(m.score(returns[[&quot;VOO&quot;]], returns[ticker]), 3))
+    check(11, round(m.coef_[0], 3), 1.113, &quot;y is the column of the share in the loop: returns[___]&quot;,
+          &quot;Nestlé: beta 0.47, R² 0.26. It follows the market least: people buy food in every economy.&quot;)
+except Exception as e:
+    stuck(11, e)
+
+
+<span class="step"># ── ★ Step 12: a beta is an estimate, not a fixed number ─────────────</span>
+# Fit Apple&#x27;s line on the first half of the year, then on the second half.
+try:
+    first = returns.iloc[:125]
+    second = returns.iloc[<mark title="the blank">125:</mark>]
+    b1 = LinearRegression().fit(first[[&quot;VOO&quot;]], first[&quot;AAPL&quot;]).coef_[0]
+    b2 = LinearRegression().fit(second[[&quot;VOO&quot;]], second[&quot;AAPL&quot;]).coef_[0]
+    print(&quot;first half:&quot;, round(b1, 3), &quot; second half:&quot;, round(b2, 3))
+    check(12, round(b2, 3), 1.348, &quot;The second half starts at row 125 and goes to the end: [___]&quot;,
+          &quot;1.23 and 1.35 from the SAME share: with other days, another number. Every estimate from data has noise.&quot;)
+except Exception as e:
+    stuck(12, e)
+
+
+<span class="step"># ── ★ Step 13: the beta of the whole ledger ───────────────────────────</span>
+# Weight of a position = its value / the total value.
+# Portfolio beta = sum of weight × beta. VOO&#x27;s beta is 1: it IS the market.
+try:
+    value = pd.Series({&quot;AAPL&quot;: 10 * 190.50, &quot;NESN&quot;: 4 * 102.30, &quot;VOO&quot;: 2 * 512.00})
+    weight = value / value.<mark title="the blank">sum()</mark>
+    betas = pd.Series({&quot;AAPL&quot;: 1.296, &quot;NESN&quot;: 0.474, &quot;VOO&quot;: 1.0})
+    b_port = (weight * betas).sum()
+    print(&quot;weights:&quot;, weight.round(3).to_dict())
+    check(13, round(b_port, 3), 1.104, &quot;The total value of the ledger: value.___&quot;,
+          &quot;Beta 1.1: if the market falls 2 %, the ledger falls about 2.2 %. Apple is 57 % of it.&quot;)
+except Exception as e:
+    stuck(13, e)
+</pre>
+</div></body></html>
